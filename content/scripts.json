@@ -1,0 +1,60 @@
+[
+  {
+    "id": "1",
+    "title": "Script Appel - 30 secondes",
+    "type": "appel",
+    "content": "Bonjour [Prénom], je suis [Votre nom], partenaire de Nexus Circle. Nous accompagnons les entreprises comme la vôtre dans leur transformation digitale. Avez-vous 15 minutes cette semaine pour un échange rapide sur vos besoins ?",
+    "duration": "30 sec",
+    "tags": ["appel", "prospection"]
+  },
+  {
+    "id": "2",
+    "title": "Script DM LinkedIn - Entreprise",
+    "type": "dm",
+    "content": "Bonjour [Prénom],\n\nJ'ai remarqué que [Entreprise] est en pleine croissance. Avez-vous déjà pensé à moderniser votre présence digitale ?\n\nNexus Circle accompagne les entreprises comme la vôtre avec des solutions sur-mesure : sites vitrines, e-commerce, outils internes, branding.\n\nSeriez-vous disponible pour un échange de 15 minutes cette semaine ?\n\nCordialement,\n[Votre nom]",
+    "tags": ["linkedin", "entreprise"]
+  },
+  {
+    "id": "3",
+    "title": "Script DM LinkedIn - Influenceur",
+    "type": "dm",
+    "content": "Salut [Prénom] 👋\n\nJe vois que tu développes une belle communauté ! As-tu déjà pensé à créer ton propre e-book ou application mobile pour monétiser davantage ?\n\nNexus Circle accompagne les créateurs comme toi dans leurs projets digitaux. On peut en discuter 15 minutes si tu veux ?\n\nÀ bientôt,\n[Votre nom]",
+    "tags": ["linkedin", "influenceur"]
+  },
+  {
+    "id": "4",
+    "title": "Script SMS/WhatsApp",
+    "type": "sms",
+    "content": "Bonjour [Prénom], \n\nNexus Circle accompagne les entreprises dans leur digitalisation (sites web, e-commerce, apps). \n\nDisponible pour un échange de 15 min cette semaine ? \n\n[Votre nom]",
+    "tags": ["sms", "whatsapp"]
+  },
+  {
+    "id": "5",
+    "title": "Script Email - Présentation",
+    "type": "email",
+    "content": "Objet : Accompagnement digital pour [Entreprise]\n\nBonjour [Prénom],\n\nJe me permets de vous contacter car j'ai remarqué que [Entreprise] est en pleine expansion.\n\nNexus Circle accompagne les entreprises comme la vôtre dans leur transformation digitale avec des solutions sur-mesure : sites vitrines, e-commerce, applications, branding.\n\nSeriez-vous disponible pour un échange de 15 minutes cette semaine pour discuter de vos besoins ?\n\nJe reste à votre disposition.\n\nCordialement,\n[Votre nom]\nPartenaire Nexus Circle",
+    "tags": ["email", "entreprise"]
+  },
+  {
+    "id": "6",
+    "title": "Objection : Prix trop élevé",
+    "type": "objection",
+    "content": "Je comprends votre préoccupation. Les prix que j'ai mentionnés sont des fourchettes indicatives. Chaque projet est unique et nécessite un devis personnalisé.\n\nL'avantage de prendre un RDV avec Nexus Circle, c'est que vous obtiendrez un devis adapté à vos besoins réels et votre budget. Sans engagement de votre part.\n\nQuand seriez-vous disponible pour cet échange ?",
+    "tags": ["objection", "prix"]
+  },
+  {
+    "id": "7",
+    "title": "Objection : Pas le temps",
+    "type": "objection",
+    "content": "Je comprends que votre temps est précieux. C'est justement pour ça que je propose un échange de 15 minutes seulement.\n\nL'objectif est simple : comprendre vos besoins et voir si Nexus Circle peut vous aider. Si ce n'est pas le cas, pas de problème, vous aurez juste perdu 15 minutes.\n\nSi c'est le cas, vous pourriez gagner beaucoup de temps et d'argent sur le long terme.\n\nÇa vaut le coup, non ?",
+    "tags": ["objection", "temps"]
+  },
+  {
+    "id": "8",
+    "title": "Objection : Déjà un prestataire",
+    "type": "objection",
+    "content": "C'est une bonne chose d'avoir déjà un prestataire ! L'idée n'est pas de le remplacer, mais peut-être de compléter son offre ou d'avoir une deuxième opinion.\n\nNexus Circle peut intervenir sur des projets spécifiques ou vous proposer des solutions que votre prestataire actuel ne couvre peut-être pas.\n\nUn échange de 15 minutes ne vous engage à rien et pourrait vous apporter des idées intéressantes. Qu'en pensez-vous ?",
+    "tags": ["objection", "prestataire"]
+  }
+]
+

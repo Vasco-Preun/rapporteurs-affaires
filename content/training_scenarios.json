@@ -1,0 +1,324 @@
+[
+  {
+    "id": "auto-ecole-1",
+    "title": "Auto-école - Site existant / Question prix",
+    "category": "entreprise",
+    "channel": "appel",
+    "difficulty": "moyen",
+    "context": "Auto-école familiale avec 2 agences. Le prospect a déjà un site web basique mais il ne génère pas beaucoup de candidats. Il est sceptique car il a déjà investi dans le web et les résultats n'étaient pas à la hauteur.",
+    "objection": "J'ai déjà un site, pourquoi en refaire un ? Et combien ça coûte exactement ?",
+    "goal": "Obtenir un RDV de 15 minutes pour présenter l'optimisation de son site et le référencement local",
+    "ideal_answer": "Je comprends votre préoccupation. Un site qui existe déjà est une bonne base, mais l'optimisation peut faire la différence. Pour un site vitrine optimisé avec référencement local, on est dans un ordre d'idée de 2500 à 3500€ selon vos besoins spécifiques. Chaque projet est unique, c'est pourquoi je vous propose un échange de 15 minutes pour analyser votre situation et vous faire une proposition sur-mesure. Quand seriez-vous disponible cette semaine ?",
+    "scoring": {
+      "must_include_any": ["ordre d'idée", "fourchette", "2500", "3000", "3500", "indicatif"],
+      "must_include_all": [],
+      "bonus_keywords": ["référencement", "optimisation", "google", "local"],
+      "forbidden_keywords": ["garanti", "promis", "assuré", "remise", "réduction", "moins cher"],
+      "rdv_keywords": ["rdv", "rendez-vous", "échange", "15 min", "15 minutes", "créneau", "disponible"],
+      "price_fixed_keywords": ["ça coûte exactement", "prix fixe", "1500€", "2000€", "2500€", "3000€", "garanti au prix"],
+      "qualification_keywords": ["besoin", "situation", "agences", "candidats"],
+      "framework_keywords": ["sur-mesure", "personnalisé", "devis", "nexus circle"]
+    }
+  },
+  {
+    "id": "restaurant-1",
+    "title": "Restaurant - Pas le temps",
+    "category": "entreprise",
+    "channel": "appel",
+    "difficulty": "facile",
+    "context": "Restaurant traditionnel qui souhaite développer la vente à emporter et améliorer sa visibilité. Le chef-gérant est très occupé et pense ne pas avoir le temps pour un site web.",
+    "objection": "Je n'ai vraiment pas le temps pour ça, je gère déjà le restaurant et la cuisine",
+    "goal": "Décrocher un RDV de 15 minutes en valorisant le gain de temps",
+    "ideal_answer": "Je comprends parfaitement, votre temps est précieux. C'est justement pour ça qu'un site avec commande en ligne vous ferait gagner du temps : moins d'appels, commandes en ligne automatisées, surtout le soir et le week-end. L'objectif est de vous libérer du temps, pas d'en prendre. On peut en discuter 15 minutes ? C'est un investissement qui vous rapportera du temps sur le long terme. Quand seriez-vous disponible ?",
+    "scoring": {
+      "must_include_any": ["temps", "gagner", "libérer", "automatisé"],
+      "bonus_keywords": ["commande en ligne", "gain de temps", "moins d'appels"],
+      "forbidden_keywords": ["garanti", "promis", "remise"],
+      "rdv_keywords": ["rdv", "rendez-vous", "15 min", "disponible", "échange"],
+      "price_fixed_keywords": ["ça coûte", "prix fixe", "exactement"],
+      "qualification_keywords": ["temps", "situation", "besoin"],
+      "framework_keywords": ["investissement", "sur-mesure"]
+    }
+  },
+  {
+    "id": "artisan-1",
+    "title": "Artisan - Pas de budget",
+    "category": "entreprise",
+    "channel": "dm",
+    "difficulty": "moyen",
+    "context": "Plombier indépendant qui reçoit beaucoup d'appels mais veut optimiser sa gestion et sa visibilité. Il pense qu'un site web coûte trop cher pour son budget.",
+    "objection": "Je n'ai pas le budget pour ça, c'est trop cher pour moi",
+    "goal": "Obtenir un RDV en expliquant que le prix est adapté à ses besoins",
+    "ideal_answer": "Je comprends votre préoccupation budgétaire. Pour un site vitrine avec formulaire de devis en ligne et référencement local, on est dans un ordre d'idée de 2500€. Ce n'est pas un coût, c'est un investissement qui peut vous faire gagner du temps et attirer plus de clients. Chaque projet est personnalisé selon votre budget. Voulez-vous qu'on en discute 15 minutes pour voir ce qui est possible ?",
+    "scoring": {
+      "must_include_any": ["ordre d'idée", "investissement", "budget", "personnalisé"],
+      "bonus_keywords": ["formulaire de devis", "référencement", "gagner du temps"],
+      "forbidden_keywords": ["pas cher", "gratuit", "remise", "moins cher", "garanti"],
+      "rdv_keywords": ["rdv", "discute", "15 min", "échange", "disponible"],
+      "price_fixed_keywords": ["exactement", "prix fixe", "garanti au prix"],
+      "qualification_keywords": ["budget", "besoin", "situation"],
+      "framework_keywords": ["sur-mesure", "personnalisé", "ordre d'idée"]
+    }
+  },
+  {
+    "id": "salle-sport-1",
+    "title": "Salle de sport - Agence existante",
+    "category": "entreprise",
+    "channel": "whatsapp",
+    "difficulty": "dur",
+    "context": "Salle de sport qui veut digitaliser les inscriptions et créer une app pour ses membres. Elle travaille déjà avec une agence web mais n'est pas satisfaite.",
+    "objection": "On a déjà une agence qui s'occupe de notre site, on n'a pas besoin de vous",
+    "goal": "Décrocher un RDV en montrant la complémentarité ou la différence",
+    "ideal_answer": "C'est une bonne chose d'avoir déjà un prestataire ! L'idée n'est pas de le remplacer, mais de compléter son offre. Nexus Circle peut intervenir sur des projets spécifiques comme une app mobile ou des outils que votre agence actuelle ne couvre peut-être pas. Un échange de 15 minutes pour voir ce qui pourrait vous apporter de la valeur, sans engagement. Ça vous va ?",
+    "scoring": {
+      "must_include_any": ["compléter", "projet spécifique", "app mobile", "complémentaire"],
+      "bonus_keywords": ["complémentarité", "valeur ajoutée", "sans engagement"],
+      "forbidden_keywords": ["meilleur", "remplace", "change", "garanti"],
+      "rdv_keywords": ["rdv", "échange", "15 min", "disponible"],
+      "price_fixed_keywords": ["exactement", "prix fixe"],
+      "qualification_keywords": ["besoin", "projet", "situation"],
+      "framework_keywords": ["sans engagement", "sur-mesure"]
+    }
+  },
+  {
+    "id": "ecommerce-1",
+    "title": "E-commerce - Conversion faible / Question prix",
+    "category": "entreprise",
+    "channel": "appel",
+    "difficulty": "moyen",
+    "context": "Entrepreneur qui vend déjà en ligne mais rencontre des problèmes de conversion, de logistique et de budget serré. Le taux de conversion est faible et les ventes stagnent.",
+    "objection": "Ma conversion est faible et je ne sais pas si un nouveau site va vraiment changer quelque chose. Et combien ça coûte vraiment ?",
+    "goal": "Obtenir un RDV pour un audit et des solutions concrètes",
+    "ideal_answer": "Je comprends votre préoccupation. Une faible conversion peut venir de plusieurs facteurs : design, vitesse du site, tunnel de commande... C'est pourquoi je propose un échange de 15 minutes pour analyser votre situation. Pour une boutique e-commerce optimisée, on est dans un ordre d'idée de 5000 à 8000€ selon les fonctionnalités. Chaque projet est personnalisé. Quand seriez-vous disponible cette semaine pour qu'on discute de vos besoins spécifiques ?",
+    "scoring": {
+      "must_include_any": ["ordre d'idée", "5000", "8000", "fourchette", "personnalisé"],
+      "bonus_keywords": ["audit", "analyse", "optimisation", "conversion", "tunnel de commande"],
+      "forbidden_keywords": ["garanti", "promis", "assuré", "remise"],
+      "rdv_keywords": ["rdv", "échange", "15 min", "disponible", "semaine"],
+      "price_fixed_keywords": ["exactement", "prix fixe", "ça coûte 5000€"],
+      "qualification_keywords": ["besoin", "situation", "conversion", "ventes"],
+      "framework_keywords": ["personnalisé", "sur-mesure", "ordre d'idée"]
+    }
+  },
+  {
+    "id": "logiciel-1",
+    "title": "Logiciel/CRM interne - À quoi ça sert ?",
+    "category": "entreprise",
+    "channel": "dm",
+    "difficulty": "facile",
+    "context": "Entreprise qui gère ses commandes et sa logistique manuellement. Les processus sont chronophages et il y a beaucoup d'erreurs. Le dirigeant ne comprend pas l'intérêt d'un logiciel interne.",
+    "objection": "Ça sert à quoi un logiciel interne ? On fonctionne bien comme ça",
+    "goal": "Obtenir un RDV pour expliquer les bénéfices et qualifier le besoin",
+    "ideal_answer": "Je comprends la question. Un logiciel interne sert à automatiser vos processus manuels : gestion des commandes, suivi des stocks, génération de documents... Ça vous fait gagner du temps et réduit les erreurs. Par exemple, ce qui prend 4h manuellement peut être fait en 30 minutes. Pour mieux comprendre vos besoins spécifiques et voir ce qui pourrait vous aider, êtes-vous disponible pour un échange de 15 minutes cette semaine ?",
+    "scoring": {
+      "must_include_any": ["automatiser", "gagner du temps", "réduire", "processus"],
+      "bonus_keywords": ["exemple", "4h", "30 minutes", "erreurs"],
+      "forbidden_keywords": ["garanti", "promis", "assuré"],
+      "rdv_keywords": ["rdv", "échange", "15 min", "disponible"],
+      "price_fixed_keywords": ["exactement", "prix fixe"],
+      "qualification_keywords": ["besoin", "comprendre", "situation"],
+      "framework_keywords": ["sur-mesure", "personnalisé"]
+    }
+  },
+  {
+    "id": "branding-1",
+    "title": "Branding - Juste un logo pas cher",
+    "category": "entreprise",
+    "channel": "whatsapp",
+    "difficulty": "dur",
+    "context": "Entrepreneur qui veut juste un logo pas cher. Il ne comprend pas l'intérêt d'une identité de marque complète et pense qu'un logo seul suffit.",
+    "objection": "Je veux juste un logo pas cher, pas besoin de tout le reste",
+    "goal": "Obtenir un RDV pour expliquer la valeur d'une identité complète",
+    "ideal_answer": "Je comprends. Un logo seul peut suffire pour démarrer, mais une identité de marque complète vous différencie et renforce la confiance de vos clients. Pour une identité complète (logo + charte graphique), on est dans un ordre d'idée de 3500 à 5000€. Chaque projet est personnalisé selon votre budget. Voulez-vous qu'on en discute 15 minutes pour voir ce qui vous correspond le mieux ?",
+    "scoring": {
+      "must_include_any": ["ordre d'idée", "3500", "5000", "personnalisé", "budget"],
+      "bonus_keywords": ["identité de marque", "différenciation", "confiance"],
+      "forbidden_keywords": ["pas cher", "gratuit", "remise", "moins cher"],
+      "rdv_keywords": ["rdv", "discute", "15 min", "échange"],
+      "price_fixed_keywords": ["exactement", "prix fixe"],
+      "qualification_keywords": ["besoin", "budget"],
+      "framework_keywords": ["personnalisé", "sur-mesure", "ordre d'idée"]
+    }
+  },
+  {
+    "id": "contenu-1",
+    "title": "Production de contenu - Pourquoi payer ?",
+    "category": "entreprise",
+    "channel": "appel",
+    "difficulty": "moyen",
+    "context": "Salon de coiffure qui veut développer sa présence sur les réseaux sociaux mais pense qu'il peut tout faire avec son téléphone. Il ne comprend pas pourquoi payer pour de la production de contenu.",
+    "objection": "Pourquoi payer pour du contenu alors que j'ai un téléphone et je peux faire des photos moi-même ?",
+    "goal": "Obtenir un RDV pour expliquer la valeur professionnelle et le gain de temps",
+    "ideal_answer": "Bonne question ! Vous pouvez effectivement faire des photos avec votre téléphone, mais un contenu professionnel et régulier demande du temps et une stratégie. Notre équipe vous libère de cette tâche et produit un contenu de qualité qui attire plus de clients. Pour un pack contenu mensuel, on est dans un ordre d'idée de 1500 à 2500€/mois selon le volume. Chaque projet est adapté à votre besoin. On peut en discuter 15 minutes ?",
+    "scoring": {
+      "must_include_any": ["ordre d'idée", "1500", "2500", "mois", "adapté"],
+      "bonus_keywords": ["professionnel", "stratégie", "régulier", "gain de temps"],
+      "forbidden_keywords": ["garanti", "promis", "remise"],
+      "rdv_keywords": ["rdv", "discute", "15 min", "échange"],
+      "price_fixed_keywords": ["exactement", "prix fixe"],
+      "qualification_keywords": ["besoin", "volume"],
+      "framework_keywords": ["adapté", "personnalisé", "ordre d'idée"]
+    }
+  },
+  {
+    "id": "createur-ebook-1",
+    "title": "Créateur - E-book / Masterclass",
+    "category": "influenceur",
+    "channel": "dm",
+    "difficulty": "facile",
+    "context": "Influenceur avec 20k+ followers sur Instagram qui hésite à créer un e-book pour monétiser son savoir-faire. Il ne sait pas quoi vendre et pense que c'est trop compliqué.",
+    "objection": "Je sais pas quoi vendre et ça a l'air compliqué de faire un e-book",
+    "goal": "Obtenir un RDV pour discuter du projet et le rassurer",
+    "ideal_answer": "Je comprends l'hésitation ! Pour un e-book, l'idée c'est de transformer ce que vous savez déjà en produit digital. On s'occupe de tout : mise en page, design, illustrations, distribution. Pour un e-book professionnel, on est dans un ordre d'idée de 2000 à 3000€. Chaque projet est unique selon votre contenu. On peut en discuter 15 minutes pour voir ce qui vous correspond ?",
+    "scoring": {
+      "must_include_any": ["ordre d'idée", "2000", "3000", "unique"],
+      "bonus_keywords": ["transformer", "produit digital", "on s'occupe de tout"],
+      "forbidden_keywords": ["garanti", "promis", "remise"],
+      "rdv_keywords": ["rdv", "discute", "15 min", "échange"],
+      "price_fixed_keywords": ["exactement", "prix fixe"],
+      "qualification_keywords": ["contenu", "besoin"],
+      "framework_keywords": ["unique", "personnalisé", "ordre d'idée"]
+    }
+  },
+  {
+    "id": "createur-site-1",
+    "title": "Créateur - Site vitrine",
+    "category": "influenceur",
+    "channel": "whatsapp",
+    "difficulty": "facile",
+    "context": "Créateur de contenu qui veut un site vitrine pour présenter sa marque mais ne voit pas l'utilité. Il pense que ses réseaux sociaux suffisent.",
+    "objection": "Ça sert à quoi un site alors que j'ai déjà Instagram et TikTok ?",
+    "goal": "Obtenir un RDV pour expliquer l'intérêt d'un site personnel",
+    "ideal_answer": "Bonne question ! Les réseaux sociaux sont essentiels, mais un site web vous appartient à 100% et vous permet de présenter votre marque de manière professionnelle, créer une newsletter, vendre vos produits. C'est votre espace à vous, sans dépendre des algorithmes. Pour un site vitrine, on est dans un ordre d'idée de 3000 à 4000€. Chaque projet est sur-mesure. On en discute 15 minutes ?",
+    "scoring": {
+      "must_include_any": ["ordre d'idée", "3000", "4000", "sur-mesure"],
+      "bonus_keywords": ["vous appartient", "professionnel", "sans dépendre"],
+      "forbidden_keywords": ["garanti", "promis", "remise"],
+      "rdv_keywords": ["rdv", "discute", "15 min", "échange"],
+      "price_fixed_keywords": ["exactement", "prix fixe"],
+      "qualification_keywords": ["marque", "besoin"],
+      "framework_keywords": ["sur-mesure", "personnalisé", "ordre d'idée"]
+    }
+  },
+  {
+    "id": "createur-ecommerce-1",
+    "title": "Créateur - Boutique en ligne",
+    "category": "influenceur",
+    "channel": "appel",
+    "difficulty": "moyen",
+    "context": "Influenceur qui veut lancer une boutique en ligne pour vendre des produits dérivés de sa marque. Il est intéressé mais hésite sur le budget et l'investissement.",
+    "objection": "Je veux lancer une boutique mais je ne sais pas si c'est le bon moment et combien ça coûte vraiment",
+    "goal": "Obtenir un RDV pour discuter du projet et des modalités",
+    "ideal_answer": "Je comprends la question du timing. Une boutique en ligne vous permet de monétiser votre communauté 24/7, même quand vous ne postez pas. Pour une boutique e-commerce complète avec catalogue, paiement et gestion des stocks, on est dans un ordre d'idée de 5000 à 7000€ selon les fonctionnalités. Chaque projet est personnalisé. Pour mieux comprendre vos besoins et voir si c'est le bon moment, êtes-vous disponible pour un échange de 15 minutes cette semaine ?",
+    "scoring": {
+      "must_include_any": ["ordre d'idée", "5000", "7000", "personnalisé"],
+      "bonus_keywords": ["monétiser", "24/7", "communauté"],
+      "forbidden_keywords": ["garanti", "promis", "remise"],
+      "rdv_keywords": ["rdv", "échange", "15 min", "disponible", "semaine"],
+      "price_fixed_keywords": ["exactement", "prix fixe"],
+      "qualification_keywords": ["besoin", "moment", "comprendre"],
+      "framework_keywords": ["personnalisé", "sur-mesure", "ordre d'idée"]
+    }
+  },
+  {
+    "id": "createur-app-1",
+    "title": "Créateur - Application mobile",
+    "category": "influenceur",
+    "channel": "dm",
+    "difficulty": "dur",
+    "context": "Influenceur fitness avec une grande communauté qui veut créer une app mobile mais trouve ça trop cher et n'est pas sûr que ça vaille le coup.",
+    "objection": "Une app c'est trop cher et je ne suis pas sûr que ma communauté va payer",
+    "goal": "Obtenir un RDV pour expliquer le modèle économique et rassurer",
+    "ideal_answer": "Je comprends la préoccupation. Une app mobile crée un espace exclusif pour votre communauté et peut générer des revenus récurrents avec des abonnements. Pour une app iOS et Android avec contenu exclusif, on est dans un ordre d'idée de 8000 à 12000€ selon les fonctionnalités. Chaque projet est unique. Pour discuter du modèle économique et voir si ça correspond à votre communauté, êtes-vous disponible pour un échange de 15 minutes ?",
+    "scoring": {
+      "must_include_any": ["ordre d'idée", "8000", "12000", "unique"],
+      "bonus_keywords": ["exclusif", "revenus récurrents", "abonnements", "communauté"],
+      "forbidden_keywords": ["garanti", "promis", "remise"],
+      "rdv_keywords": ["rdv", "échange", "15 min", "disponible"],
+      "price_fixed_keywords": ["exactement", "prix fixe"],
+      "qualification_keywords": ["communauté", "modèle économique", "besoin"],
+      "framework_keywords": ["unique", "personnalisé", "ordre d'idée"]
+    }
+  },
+  {
+    "id": "cabinet-medical-1",
+    "title": "Cabinet médical - Prise de RDV en ligne",
+    "category": "entreprise",
+    "channel": "appel",
+    "difficulty": "facile",
+    "context": "Cabinet de médecine générale qui accueille beaucoup de patients. Les appels téléphoniques pour prendre rendez-vous sont chronophages pour la secrétaire.",
+    "objection": "On fonctionne bien avec les appels téléphoniques, je ne vois pas l'intérêt",
+    "goal": "Obtenir un RDV pour expliquer le gain de temps et l'amélioration de l'expérience patient",
+    "ideal_answer": "Je comprends. Les appels fonctionnent, mais une prise de rendez-vous en ligne libère du temps pour votre secrétaire et facilite la vie de vos patients qui peuvent réserver 24/7, même en dehors des heures d'ouverture. Pour un site avec système de prise de RDV intégré, on est dans un ordre d'idée de 3000 à 4500€. Chaque projet est adapté à votre fonctionnement. On peut en discuter 15 minutes pour voir comment ça pourrait vous aider ?",
+    "scoring": {
+      "must_include_any": ["ordre d'idée", "3000", "4500", "adapté"],
+      "bonus_keywords": ["libère du temps", "24/7", "facilite", "expérience patient"],
+      "forbidden_keywords": ["garanti", "promis", "remise"],
+      "rdv_keywords": ["rdv", "discute", "15 min", "échange"],
+      "price_fixed_keywords": ["exactement", "prix fixe"],
+      "qualification_keywords": ["fonctionnement", "besoin"],
+      "framework_keywords": ["adapté", "personnalisé", "ordre d'idée"]
+    }
+  },
+  {
+    "id": "immobilier-1",
+    "title": "Agence immobilière - Outils internes",
+    "category": "entreprise",
+    "channel": "dm",
+    "difficulty": "moyen",
+    "context": "Agence immobilière qui gère beaucoup de biens et veut optimiser la gestion des visites et le suivi des clients. Les processus sont manuels et chronophages.",
+    "objection": "On gère déjà bien nos visites, pourquoi changer ?",
+    "goal": "Obtenir un RDV pour présenter les outils d'optimisation",
+    "ideal_answer": "Je comprends. Si ça fonctionne, pourquoi changer ? Mais des outils internes peuvent vous faire gagner beaucoup de temps : planning automatisé, suivi des clients, gestion des visites... Ça libère du temps pour vous concentrer sur les ventes. Pour des outils sur-mesure, on est dans un ordre d'idée variable selon vos besoins. Chaque projet est unique. Pour mieux comprendre vos processus et voir ce qui pourrait vous aider, êtes-vous disponible pour un échange de 15 minutes ?",
+    "scoring": {
+      "must_include_any": ["ordre d'idée", "variable", "unique", "selon"],
+      "bonus_keywords": ["gagner du temps", "automatisé", "libère", "ventes"],
+      "forbidden_keywords": ["garanti", "promis", "remise"],
+      "rdv_keywords": ["rdv", "échange", "15 min", "disponible"],
+      "price_fixed_keywords": ["exactement", "prix fixe"],
+      "qualification_keywords": ["processus", "besoin", "comprendre"],
+      "framework_keywords": ["unique", "personnalisé", "sur-mesure", "ordre d'idée"]
+    }
+  },
+  {
+    "id": "coiffure-1",
+    "title": "Salon de coiffure - Réseaux sociaux",
+    "category": "entreprise",
+    "channel": "whatsapp",
+    "difficulty": "facile",
+    "context": "Salon de coiffure qui veut développer sa présence sur les réseaux sociaux mais n'a pas le temps de créer du contenu régulièrement.",
+    "objection": "Je n'ai pas le temps de m'occuper des réseaux sociaux",
+    "goal": "Obtenir un RDV pour présenter la solution de production de contenu",
+    "ideal_answer": "Je comprends, votre métier c'est la coiffure, pas les réseaux sociaux ! C'est justement pour ça qu'on peut vous aider : on s'occupe de créer le contenu régulier pour vos réseaux, photos, vidéos, posts... Vous vous concentrez sur vos clients. Pour un pack contenu mensuel, on est dans un ordre d'idée de 1500 à 2000€/mois. Chaque projet est adapté à votre salon. On peut en discuter 15 minutes ?",
+    "scoring": {
+      "must_include_any": ["ordre d'idée", "1500", "2000", "mois", "adapté"],
+      "bonus_keywords": ["on s'occupe", "régulier", "vous concentrez"],
+      "forbidden_keywords": ["garanti", "promis", "remise"],
+      "rdv_keywords": ["rdv", "discute", "15 min", "échange"],
+      "price_fixed_keywords": ["exactement", "prix fixe"],
+      "qualification_keywords": ["salon", "besoin"],
+      "framework_keywords": ["adapté", "personnalisé", "ordre d'idée"]
+    }
+  },
+  {
+    "id": "avocat-1",
+    "title": "Cabinet d'avocats - Site professionnel",
+    "category": "entreprise",
+    "channel": "appel",
+    "difficulty": "moyen",
+    "context": "Cabinet d'avocats qui veut moderniser son site web pour attirer plus de clients. Le site actuel est obsolète mais ils hésitent sur l'investissement.",
+    "objection": "Un site moderne, c'est bien mais est-ce que ça va vraiment m'amener des clients ? Et combien ça coûte ?",
+    "goal": "Obtenir un RDV pour expliquer le référencement et la génération de leads",
+    "ideal_answer": "Excellente question. Un site moderne avec référencement local peut effectivement vous amener des clients qui vous cherchent sur Google. Pour un site professionnel avec référencement optimisé, on est dans un ordre d'idée de 3500 à 5000€ selon vos besoins. Chaque projet est personnalisé. Pour mieux comprendre comment ça pourrait fonctionner pour votre cabinet, êtes-vous disponible pour un échange de 15 minutes cette semaine ?",
+    "scoring": {
+      "must_include_any": ["ordre d'idée", "3500", "5000", "personnalisé"],
+      "bonus_keywords": ["référencement", "google", "clients", "leads"],
+      "forbidden_keywords": ["garanti", "promis", "assuré", "remise"],
+      "rdv_keywords": ["rdv", "échange", "15 min", "disponible", "semaine"],
+      "price_fixed_keywords": ["exactement", "prix fixe"],
+      "qualification_keywords": ["cabinet", "besoin", "comprendre"],
+      "framework_keywords": ["personnalisé", "sur-mesure", "ordre d'idée"]
+    }
+  }
+]
+

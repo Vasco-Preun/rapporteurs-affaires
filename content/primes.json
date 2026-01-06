@@ -1,0 +1,21 @@
+[
+  {
+    "id": "1",
+    "title": "Challenge du Mois - Janvier 2024",
+    "description": "Décrochez 5 RDV validés ce mois et gagnez un bonus de 300€",
+    "amount": "300€",
+    "conditions": "Minimum 5 RDV validés avec transmission des coordonnées complètes à Nexus Circle",
+    "status": "active",
+    "startDate": "2024-01-01",
+    "endDate": "2024-01-31"
+  },
+  {
+    "id": "2",
+    "title": "Prime Premier RDV",
+    "description": "Bonus de 100€ pour votre premier RDV décroché",
+    "amount": "100€",
+    "conditions": "Premier RDV validé et transmis à Nexus Circle",
+    "status": "active"
+  }
+]
+

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "1",
+    "service": "Site Vitrine",
+    "problem": "Votre site web est obsolète ou inexistant, vous perdez des clients potentiels",
+    "benefit": "Un site moderne augmente votre crédibilité et attire de nouveaux clients 24/7",
+    "example": "Un restaurant a vu ses réservations en ligne augmenter de 40% après la création de son nouveau site",
+    "closingQuestion": "Quand souhaiteriez-vous rencontrer notre équipe pour discuter de votre projet ?",
+    "tags": ["entreprise", "web"]
+  },
+  {
+    "id": "2",
+    "service": "E-commerce",
+    "problem": "Vous vendez uniquement en physique, vous limitez votre potentiel de vente",
+    "benefit": "Une boutique en ligne vous permet de vendre 24/7 et d'atteindre de nouveaux marchés",
+    "example": "Un artisan a doublé son chiffre d'affaires en 6 mois grâce à sa boutique en ligne",
+    "closingQuestion": "Seriez-vous disponible cette semaine pour un échange sur votre projet e-commerce ?",
+    "tags": ["entreprise", "vente"]
+  },
+  {
+    "id": "3",
+    "service": "Branding",
+    "problem": "Votre identité visuelle n'est pas cohérente, vous perdez en crédibilité",
+    "benefit": "Une identité de marque forte vous différencie et renforce la confiance de vos clients",
+    "example": "Une auto-école a vu ses inscriptions augmenter de 30% après un rebranding complet",
+    "closingQuestion": "Aimeriez-vous découvrir comment nous pourrions moderniser votre image ?",
+    "tags": ["entreprise", "image"]
+  },
+  {
+    "id": "4",
+    "service": "Production de Contenu",
+    "problem": "Vous n'avez pas le temps de créer du contenu pour vos réseaux sociaux",
+    "benefit": "Du contenu régulier et de qualité augmente votre visibilité et votre engagement",
+    "example": "Un salon de coiffure a multiplié ses followers par 5 en 3 mois grâce à un contenu régulier",
+    "closingQuestion": "Quand pourrions-nous discuter de votre stratégie de contenu ?",
+    "tags": ["entreprise", "réseaux sociaux"]
+  },
+  {
+    "id": "5",
+    "service": "Outils Internes",
+    "problem": "Vos processus sont manuels et chronophages, vous perdez en productivité",
+    "benefit": "Des outils sur-mesure automatisent vos tâches et libèrent du temps pour l'essentiel",
+    "example": "Une entreprise a réduit son temps de traitement des commandes de 4h à 30 minutes",
+    "closingQuestion": "Quel processus vous fait perdre le plus de temps actuellement ?",
+    "tags": ["entreprise", "productivité"]
+  },
+  {
+    "id": "6",
+    "service": "E-book / Masterclass",
+    "problem": "Vous avez du savoir-faire mais vous ne le monétisez pas",
+    "benefit": "Un e-book ou une masterclass vous permet de générer des revenus passifs et d'établir votre expertise",
+    "example": "Un coach a généré 50 000€ de revenus en 6 mois avec son premier e-book",
+    "closingQuestion": "Avez-vous déjà pensé à transformer votre expertise en produit digital ?",
+    "tags": ["influenceur", "monétisation"]
+  },
+  {
+    "id": "7",
+    "service": "Application Mobile",
+    "problem": "Votre communauté grandit mais vous n'avez pas d'espace dédié pour l'engager",
+    "benefit": "Une app mobile crée un espace exclusif pour votre communauté et génère des abonnements récurrents",
+    "example": "Un influenceur fitness a généré 10 000€/mois d'abonnements avec son app dédiée",
+    "closingQuestion": "Seriez-vous intéressé par une application pour votre communauté ?",
+    "tags": ["influenceur", "app"]
+  }
+]
+

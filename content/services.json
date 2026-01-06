@@ -1,0 +1,75 @@
+[
+  {
+    "id": "1",
+    "title": "Sites Vitrines",
+    "description": "Site web professionnel pour présenter votre entreprise et vos services.",
+    "category": "entreprise",
+    "features": ["Design sur-mesure", "Responsive", "SEO optimisé", "Formulaire de contact"],
+    "priceRange": "À partir de 2 500€"
+  },
+  {
+    "id": "2",
+    "title": "E-commerce",
+    "description": "Boutique en ligne complète avec gestion des commandes et paiements.",
+    "category": "entreprise",
+    "features": ["Catalogue produits", "Paiement sécurisé", "Gestion des stocks", "Suivi commandes"],
+    "priceRange": "À partir de 5 000€"
+  },
+  {
+    "id": "3",
+    "title": "Logiciels & Outils Internes",
+    "description": "Solutions sur-mesure pour optimiser vos processus internes.",
+    "category": "entreprise",
+    "features": ["Développement sur-mesure", "Intégration API", "Tableaux de bord", "Automatisation"],
+    "priceRange": "Sur devis"
+  },
+  {
+    "id": "4",
+    "title": "Applications Mobiles",
+    "description": "Applications iOS et Android pour votre entreprise.",
+    "category": "entreprise",
+    "features": ["iOS & Android", "Design natif", "Notifications push", "Synchronisation cloud"],
+    "priceRange": "À partir de 10 000€"
+  },
+  {
+    "id": "5",
+    "title": "Branding & Identité Visuelle",
+    "description": "Création de votre identité de marque complète.",
+    "category": "entreprise",
+    "features": ["Logo", "Charte graphique", "Supports print", "Guidelines"],
+    "priceRange": "À partir de 3 500€"
+  },
+  {
+    "id": "6",
+    "title": "Production de Contenu",
+    "description": "Création de contenu pour vos réseaux sociaux et votre communication.",
+    "category": "entreprise",
+    "features": ["Photos", "Vidéos", "Graphismes", "Stratégie de contenu"],
+    "priceRange": "À partir de 1 500€/mois"
+  },
+  {
+    "id": "7",
+    "title": "E-books & Masterclass",
+    "description": "Création et mise en page de vos contenus digitaux premium.",
+    "category": "influenceur",
+    "features": ["Design professionnel", "Mise en page", "Illustrations", "Distribution"],
+    "priceRange": "À partir de 2 000€"
+  },
+  {
+    "id": "8",
+    "title": "Applications Mobiles",
+    "description": "Application dédiée pour votre communauté.",
+    "category": "influenceur",
+    "features": ["iOS & Android", "Contenu exclusif", "Abonnements", "Notifications"],
+    "priceRange": "À partir de 8 000€"
+  },
+  {
+    "id": "9",
+    "title": "Sites Vitrines & E-commerce",
+    "description": "Site web pour présenter votre marque et vendre vos produits.",
+    "category": "influenceur",
+    "features": ["Design personnalisé", "Boutique en ligne", "Intégration réseaux sociaux", "Blog"],
+    "priceRange": "À partir de 3 000€"
+  }
+]
+
