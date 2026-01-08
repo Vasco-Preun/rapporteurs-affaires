@@ -10,17 +10,36 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Palette Nexus Circle
+        background: {
+          primary: "#0B0B0B",
+          secondary: "#111111",
+        },
+        border: {
+          subtle: "#1E1E1E",
+        },
+        text: {
+          primary: "#F5F5F5",
+          secondary: "#B5B5B5",
+          muted: "#6F6F6F",
+        },
+        gold: {
+          DEFAULT: "#C7B38A",
+          hover: "#A89263",
+        },
+        // Garder primary pour compatibilité, mais utiliser gold comme accent
         primary: {
-          50: "#f0f9ff",
-          100: "#e0f2fe",
-          200: "#bae6fd",
-          300: "#7dd3fc",
-          400: "#38bdf8",
-          500: "#0ea5e9",
-          600: "#0284c7",
-          700: "#0369a1",
-          800: "#075985",
-          900: "#0c4a6e",
+          DEFAULT: "#C7B38A",
+          50: "#faf9f6",
+          100: "#f5f2eb",
+          200: "#e8e0d0",
+          300: "#d9ccb5",
+          400: "#C7B38A",
+          500: "#C7B38A",
+          600: "#A89263",
+          700: "#8a7550",
+          800: "#6b5a3f",
+          900: "#4d3f2e",
         },
       },
     },

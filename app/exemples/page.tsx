@@ -133,8 +133,8 @@ On peut en discuter ?`,
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-4xl font-bold text-gray-900 mb-8">Exemples d&apos;Approche</h1>
-      <p className="text-gray-600 mb-8">
+      <h1 className="text-4xl font-extrabold text-text-primary mb-8 uppercase tracking-wide">Exemples d&apos;Approche</h1>
+      <p className="text-text-secondary mb-8">
         Voici des exemples concrets d&apos;approche par type de business. Adaptez-les à votre style et
         à votre prospect.
       </p>
@@ -142,7 +142,7 @@ On peut en discuter ?`,
       {/* Search */}
       <div className="mb-8">
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-muted" size={20} />
           <input
             type="text"
             placeholder="Rechercher un exemple (auto-école, restaurant, artisan...)"
@@ -159,15 +159,15 @@ On peut en discuter ?`,
           <div key={example.id} className="card">
             <div className="flex items-start justify-between mb-4">
               <div className="flex items-center">
-                <Building2 className="text-primary-600 mr-2" size={24} />
-                <h3 className="text-xl font-semibold text-gray-900">{example.businessType}</h3>
+                <Building2 className="text-gold mr-2" size={24} />
+                <h3 className="text-xl font-bold text-text-primary uppercase tracking-wide">{example.businessType}</h3>
               </div>
               {example.tags && (
                 <div className="flex flex-wrap gap-2">
                   {example.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded"
+                      className="text-xs bg-border-subtle text-text-secondary px-2 py-1 rounded"
                     >
                       {tag}
                     </span>
@@ -177,27 +177,27 @@ On peut en discuter ?`,
             </div>
 
             <div className="space-y-4">
-              <div className="bg-gray-50 rounded p-4">
-                <h4 className="font-semibold text-gray-900 mb-2">Contexte</h4>
-                <p className="text-gray-700">{example.context}</p>
+              <div className="bg-background-secondary rounded p-4">
+                <h4 className="font-bold text-text-primary mb-2 uppercase tracking-wide">Contexte</h4>
+                <p className="text-text-secondary">{example.context}</p>
               </div>
 
-              <div className="bg-blue-50 border-l-4 border-blue-500 rounded p-4">
+              <div className="bg-background-secondary border-l-4 border-blue-500 rounded p-4">
                 <div className="flex items-start">
-                  <MessageSquare className="text-blue-600 mr-2 flex-shrink-0 mt-0.5" size={20} />
+                  <MessageSquare className="text-blue-500 mr-2 flex-shrink-0 mt-0.5" size={20} />
                   <div className="flex-grow">
-                    <h4 className="font-semibold text-gray-900 mb-2">Message / Phrase d&apos;Approche</h4>
-                    <p className="text-gray-700 whitespace-pre-line text-sm">{example.message}</p>
+                    <h4 className="font-bold text-text-primary mb-2 uppercase tracking-wide">Message / Phrase d&apos;Approche</h4>
+                    <p className="text-text-secondary whitespace-pre-line text-sm">{example.message}</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-primary-50 border-l-4 border-primary-500 rounded p-4">
+              <div className="bg-background-secondary border-l-4 border-gold rounded p-4">
                 <div className="flex items-start">
-                  <Target className="text-primary-600 mr-2 flex-shrink-0 mt-0.5" size={20} />
+                  <Target className="text-gold mr-2 flex-shrink-0 mt-0.5" size={20} />
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Objectif du RDV</h4>
-                    <p className="text-gray-700">{example.objective}</p>
+                    <h4 className="font-bold text-text-primary mb-2 uppercase tracking-wide">Objectif du RDV</h4>
+                    <p className="text-text-secondary">{example.objective}</p>
                   </div>
                 </div>
               </div>
@@ -207,7 +207,7 @@ On peut en discuter ?`,
       </div>
 
       {filteredExamples.length === 0 && (
-        <div className="text-center py-12 text-gray-500">
+        <div className="text-center py-12 text-text-muted">
           Aucun exemple trouvé pour cette recherche.
         </div>
       )}

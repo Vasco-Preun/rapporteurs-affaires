@@ -26,6 +26,8 @@ export default function TrainingPage() {
 
   // Videos state
   const [videoSearchQuery, setVideoSearchQuery] = useState("");
+  const [allVideos, setAllVideos] = useState<VideoItem[]>([]);
+  const [videosLoaded, setVideosLoaded] = useState(false);
 
   // Load scenarios
   const [allScenarios, setAllScenarios] = useState<TrainingScenario[]>([]);
@@ -43,6 +45,26 @@ export default function TrainingPage() {
       })
       .catch((error) => {
         console.error("Error loading scenarios:", error);
+      });
+  }, []);
+
+  useEffect(() => {
+    // Load videos from API (since we're client-side)
+    fetch("/api/training/videos")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.videos) {
+          // Trier pour mettre le guide complet en premier
+          const sortedVideos = [
+            ...data.videos.filter((v: VideoItem) => v.id === "guide-cold-call"),
+            ...data.videos.filter((v: VideoItem) => v.id !== "guide-cold-call")
+          ];
+          setAllVideos(sortedVideos);
+          setVideosLoaded(true);
+        }
+      })
+      .catch((error) => {
+        console.error("Error loading videos:", error);
       });
   }, []);
 
@@ -86,55 +108,7 @@ export default function TrainingPage() {
     }
   }, [selectedScenarioId, selectedScenario]);
 
-  const videos: VideoItem[] = [
-    {
-      id: "1",
-      title: "Comment décrocher un RDV en 30 secondes",
-      description: "Tutoriel complet sur les techniques de prospection téléphonique efficace.",
-      category: "youtube",
-      youtubeId: "dQw4w9WgXcQ",
-      tags: ["prospection", "appel", "tutoriel"],
-      content: `Dans cette vidéo, vous découvrirez les techniques essentielles pour décrocher un rendez-vous en moins de 30 secondes lors de vos appels de prospection.\n\n**Points clés abordés :**\n- L'accroche parfaite pour capter l'attention\n- La présentation efficace de votre offre\n- Les questions à poser pour qualifier rapidement\n- La fermeture qui mène au RDV\n\n**Comment l'utiliser :**\nÉcoutez cette vidéo avant vos sessions de prospection téléphonique. Notez les phrases clés qui résonnent avec votre style et adaptez-les à votre façon de parler. L'objectif est de transformer chaque appel en opportunité de rendez-vous.`,
-    },
-    {
-      id: "2",
-      title: "Scripts DM LinkedIn qui convertissent",
-      description: "Découvrez les meilleurs scripts pour vos messages LinkedIn.",
-      category: "youtube",
-      youtubeId: "dQw4w9WgXcQ",
-      tags: ["linkedin", "dm", "scripts"],
-      content: `Cette vidéo vous présente des scripts éprouvés pour vos messages LinkedIn qui ont permis de décrocher des dizaines de rendez-vous.\n\n**Ce que vous apprendrez :**\n- La structure d'un DM LinkedIn qui convertit\n- Les formules d'accroche personnalisées\n- Comment éviter le spam et créer de la valeur\n- Les templates à adapter selon votre cible\n\n**Astuce pratique :**\nCréez votre bibliothèque personnelle de scripts en notant ceux qui fonctionnent le mieux selon le type de prospect (entrepreneur, dirigeant, influenceur). Testez différentes approches et mesurez vos taux de réponse.`,
-    },
-    {
-      id: "3",
-      title: "Gérer les objections courantes",
-      description: "Comment répondre aux objections les plus fréquentes en prospection.",
-      category: "youtube",
-      youtubeId: "dQw4w9WgXcQ",
-      tags: ["objections", "vente"],
-      content: `Apprenez à transformer les objections en opportunités avec cette formation sur la gestion des objections courantes.\n\n**Objections traitées :**\n- "Je n'ai pas le temps"\n- "C'est trop cher"\n- "J'ai déjà un prestataire"\n- "Ce n'est pas le bon moment"\n- "Je dois réfléchir"\n\n**Pourquoi c'est important :**\nLes objections sont normales et attendues. Cette vidéo vous donne les outils pour les anticiper et les gérer de manière professionnelle. Chaque objection bien gérée rapproche votre prospect d'un rendez-vous.`,
-    },
-    {
-      id: "4",
-      title: "Techniques de closing pour obtenir un RDV",
-      description: "Les meilleures techniques pour transformer un prospect en RDV.",
-      category: "youtube",
-      youtubeId: "dQw4w9WgXcQ",
-      tags: ["closing", "rdv"],
-      content: `Le closing est l'étape cruciale qui transforme une conversation intéressante en rendez-vous concret.\n\n**Techniques abordées :**\n- La technique de l'alternative (choix guidé)\n- La question assumante\n- Le closing par l'urgence\n- Le closing par la curiosité\n- La reformulation pour confirmer\n\n**À retenir :**\nUn bon closing n'est pas de la manipulation, c'est aider votre prospect à prendre une décision qui lui sera bénéfique. Cette vidéo vous apprend à fermer naturellement et professionnellement chaque conversation.`,
-    },
-    {
-      id: "5",
-      title: "Vidéo Nexus Circle - Exemple d'appel réussi",
-      description: "Exemple concret d'un appel réussi avec un prospect.",
-      category: "nexus",
-      url: "#",
-      tags: ["exemple", "appel"],
-      content: `Cette vidéo montre un exemple réel d'un appel de prospection qui a abouti à un rendez-vous.\n\n**Analyse de l'appel :**\n- Structure de la conversation\n- Moments clés qui ont fait basculer\n- Gestion des silences et objections\n- Fermeture naturelle sur le RDV\n\n**Comment tirer profit de cette vidéo :**\nAnalysez chaque phase de l'appel et identifiez ce qui a fonctionné. Réécoutez les moments où le prospect montre de l'intérêt et notez les phrases qui créent cet engagement. Adaptez ces techniques à votre propre style.`,
-    },
-  ];
-
-  const filteredVideos = videos.filter((video) => {
+  const filteredVideos = allVideos.filter((video) => {
     return (
       video.title.toLowerCase().includes(videoSearchQuery.toLowerCase()) ||
       video.description.toLowerCase().includes(videoSearchQuery.toLowerCase()) ||
@@ -166,11 +140,11 @@ export default function TrainingPage() {
   const getDifficultyColor = (difficulty: ScenarioDifficulty) => {
     switch (difficulty) {
       case "facile":
-        return "bg-green-100 text-green-800";
+        return "bg-green-500/20 text-green-400";
       case "moyen":
-        return "bg-yellow-100 text-yellow-800";
+        return "bg-yellow-500/20 text-yellow-400";
       case "dur":
-        return "bg-red-100 text-red-800";
+        return "bg-red-500/20 text-red-400";
     }
   };
 
@@ -188,21 +162,21 @@ export default function TrainingPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Ressources & Entraînement</h1>
-        <p className="text-gray-600 text-lg">
+        <h1 className="text-4xl font-extrabold text-text-primary mb-4 uppercase tracking-wide">Ressources & Entraînement</h1>
+        <p className="text-text-secondary text-lg">
           Découvrez nos vidéos de prospection et entraînez-vous avec nos scénarios pour améliorer vos compétences.
         </p>
       </div>
 
       {/* Tabs */}
-      <div className="border-b border-gray-200 mb-8">
+      <div className="border-b border-border-subtle mb-8">
         <nav className="flex space-x-8">
           <button
             onClick={() => setActiveTab("videos")}
             className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors ${
               activeTab === "videos"
-                ? "border-primary-500 text-primary-600"
-                : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                ? "border-gold text-gold"
+                : "border-transparent text-text-secondary hover:text-text-primary hover:border-border-subtle"
             }`}
           >
             <Youtube className="inline mr-2" size={20} />
@@ -212,8 +186,8 @@ export default function TrainingPage() {
             onClick={() => setActiveTab("training")}
             className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors ${
               activeTab === "training"
-                ? "border-primary-500 text-primary-600"
-                : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                ? "border-gold text-gold"
+                : "border-transparent text-text-secondary hover:text-text-primary hover:border-border-subtle"
             }`}
           >
             <Video className="inline mr-2" size={20} />
@@ -228,7 +202,7 @@ export default function TrainingPage() {
           {/* Search */}
           <div className="mb-8">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-muted" size={20} />
               <input
                 type="text"
                 placeholder="Rechercher une vidéo ou un thème..."
@@ -241,14 +215,28 @@ export default function TrainingPage() {
 
           {/* Videos Grid */}
           <div className="space-y-8">
-            {filteredVideos.map((video) => (
-              <div key={video.id} className="card">
+            {filteredVideos.map((video) => {
+              const isGuideComplet = video.id === "guide-cold-call";
+              return (
+              <div key={video.id} className={`card ${isGuideComplet ? "border-gold/50 border-2" : ""}`}>
+                {isGuideComplet && (
+                  <div className="mb-4 pb-4 border-b border-gold/30">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="bg-gold/20 text-gold px-3 py-1 rounded-full text-xs font-medium tracking-widest uppercase">
+                        Guide Complet
+                      </span>
+                      <span className="text-gold font-bold text-sm">Formation Essentielle</span>
+                    </div>
+                  </div>
+                )}
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center">
-                    <PlayCircle className="text-primary-600 mr-3" size={28} />
+                    <PlayCircle className="text-gold mr-3" size={28} />
                     <div>
-                      <h3 className="text-2xl font-semibold text-gray-900">{video.title}</h3>
-                      <p className="text-gray-600 mt-1">{video.description}</p>
+                      <h3 className={`font-bold text-text-primary uppercase tracking-wide ${isGuideComplet ? "text-3xl" : "text-2xl"}`}>
+                        {video.title}
+                      </h3>
+                      <p className="text-text-secondary mt-1">{video.description}</p>
                     </div>
                   </div>
                   {video.tags && (
@@ -256,7 +244,7 @@ export default function TrainingPage() {
                       {video.tags.map((tag, idx) => (
                         <span
                           key={idx}
-                          className="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded"
+                          className="text-xs bg-border-subtle text-gold px-2 py-1 rounded"
                         >
                           {tag}
                         </span>
@@ -278,14 +266,14 @@ export default function TrainingPage() {
                       />
                     </div>
                   ) : video.url && video.url !== "#" ? (
-                    <div className="aspect-video bg-gray-100 rounded-lg flex items-center justify-center">
-                      <p className="text-gray-500">Vidéo à intégrer (embed ou upload)</p>
+                    <div className="aspect-video bg-background-secondary rounded-lg flex items-center justify-center">
+                      <p className="text-text-muted">Vidéo à intégrer (embed ou upload)</p>
                     </div>
                   ) : (
-                    <div className="aspect-video bg-gray-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
+                    <div className="aspect-video bg-background-secondary rounded-lg flex items-center justify-center border-2 border-dashed border-border-subtle">
                       <div className="text-center">
-                        <Video className="mx-auto text-gray-400 mb-2" size={48} />
-                        <p className="text-gray-500">Vidéo à venir</p>
+                        <Video className="mx-auto text-text-muted mb-2" size={48} />
+                        <p className="text-text-muted">Vidéo à venir</p>
                       </div>
                     </div>
                   )}
@@ -293,23 +281,41 @@ export default function TrainingPage() {
 
                 {/* Content Text */}
                 {video.content && (
-                  <div className="bg-blue-50 border-l-4 border-primary-500 rounded-lg p-6">
-                    <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
-                      <span className="bg-primary-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2">i</span>
-                      À propos de cette vidéo
+                  <div className={`border-l-4 border-gold rounded-lg p-4 ${isGuideComplet ? "bg-background-primary border-gold" : "bg-background-secondary"}`}>
+                    <h4 className="font-bold text-text-primary mb-3 flex items-center uppercase tracking-wide text-sm">
+                      <span className="bg-gold text-background-primary rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2">i</span>
+                      {isGuideComplet ? "Contenu" : "À propos"}
                     </h4>
-                    <div className="text-gray-700 whitespace-pre-line leading-relaxed">
-                      {video.content}
+                    <div className={`text-sm leading-relaxed space-y-2 ${isGuideComplet ? "text-text-primary" : "text-text-secondary"}`}>
+                      {video.content.split('\n').map((line, idx) => {
+                        const trimmed = line.trim();
+                        // Titre en gras
+                        if (trimmed.startsWith('**') && trimmed.endsWith('**')) {
+                          const text = trimmed.replace(/\*\*/g, '');
+                          return <p key={idx} className="font-bold text-text-primary mt-3 first:mt-0">{text}</p>;
+                        }
+                        // Puces
+                        if (trimmed.startsWith('•') || trimmed.startsWith('-')) {
+                          return <p key={idx} className="ml-3">{trimmed}</p>;
+                        }
+                        // Ligne vide
+                        if (trimmed === '') {
+                          return null;
+                        }
+                        // Texte normal
+                        return <p key={idx}>{trimmed}</p>;
+                      })}
                     </div>
                   </div>
                 )}
               </div>
-            ))}
+            );
+            })}
           </div>
 
           {filteredVideos.length === 0 && (
-            <div className="text-center py-12 text-gray-500">
-              <Search className="mx-auto mb-4 text-gray-400" size={48} />
+            <div className="text-center py-12 text-text-muted">
+              <Search className="mx-auto mb-4 text-text-muted" size={48} />
               <p>Aucune vidéo trouvée pour cette recherche.</p>
             </div>
           )}
@@ -323,14 +329,14 @@ export default function TrainingPage() {
             <>
               {/* Scenario Selector */}
               <div className="card mb-8">
-                <h2 className="text-xl font-semibold mb-4">Choisissez un scénario d&apos;entraînement</h2>
+                <h2 className="text-xl font-bold mb-4 text-text-primary uppercase tracking-wide">Choisissez un scénario d&apos;entraînement</h2>
                 
                 {/* Filters */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Recherche</label>
+                    <label className="block text-sm font-medium text-text-secondary mb-2 tracking-widest">Recherche</label>
                     <div className="relative">
-                      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
+                      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-muted" size={16} />
                       <input
                         type="text"
                         placeholder="Rechercher..."
@@ -341,7 +347,7 @@ export default function TrainingPage() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Catégorie</label>
+                    <label className="block text-sm font-medium text-text-secondary mb-2 tracking-widest">Catégorie</label>
                     <select
                       value={categoryFilter}
                       onChange={(e) => setCategoryFilter(e.target.value as ScenarioCategory | "all")}
@@ -353,7 +359,7 @@ export default function TrainingPage() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Canal</label>
+                    <label className="block text-sm font-medium text-text-secondary mb-2 tracking-widest">Canal</label>
                     <select
                       value={channelFilter}
                       onChange={(e) => setChannelFilter(e.target.value as ScenarioChannel | "all")}
@@ -366,7 +372,7 @@ export default function TrainingPage() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Difficulté</label>
+                    <label className="block text-sm font-medium text-text-secondary mb-2 tracking-widest">Difficulté</label>
                     <select
                       value={difficultyFilter}
                       onChange={(e) => setDifficultyFilter(e.target.value as ScenarioDifficulty | "all")}
@@ -383,9 +389,9 @@ export default function TrainingPage() {
                 {/* Scenarios List */}
                 <div className="space-y-2 max-h-96 overflow-y-auto">
                   {!scenariosLoaded ? (
-                    <p className="text-gray-500 text-center py-8">Chargement des scénarios...</p>
+                    <p className="text-text-muted text-center py-8">Chargement des scénarios...</p>
                   ) : filteredScenarios.length === 0 ? (
-                    <p className="text-gray-500 text-center py-8">Aucun scénario trouvé</p>
+                    <p className="text-text-muted text-center py-8">Aucun scénario trouvé</p>
                   ) : (
                     filteredScenarios.map((scenario) => (
                       <button
@@ -396,20 +402,20 @@ export default function TrainingPage() {
                         }}
                         className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
                           selectedScenarioId === scenario.id
-                            ? "border-primary-500 bg-primary-50"
-                            : "border-gray-200 hover:border-primary-300 hover:bg-gray-50"
+                            ? "border-gold bg-border-subtle"
+                            : "border-border-subtle hover:border-gold/50 hover:bg-background-secondary"
                         }`}
                       >
                         <div className="flex items-start justify-between">
                           <div className="flex-1">
                             <div className="flex items-center gap-2 mb-2">
-                              <h3 className="font-semibold text-gray-900">{scenario.title}</h3>
+                              <h3 className="font-bold text-text-primary uppercase tracking-wide">{scenario.title}</h3>
                               <span className={`text-xs px-2 py-1 rounded ${getDifficultyColor(scenario.difficulty)}`}>
                                 {scenario.difficulty}
                               </span>
                             </div>
-                            <p className="text-sm text-gray-600 mb-2">{scenario.context}</p>
-                            <div className="flex items-center gap-3 text-xs text-gray-500">
+                            <p className="text-sm text-text-secondary mb-2">{scenario.context}</p>
+                            <div className="flex items-center gap-3 text-xs text-text-muted">
                               <span>{scenario.category === "entreprise" ? "🏢" : "👤"} {scenario.category === "entreprise" ? "Entreprise" : "Influenceur"}</span>
                               <span>{getChannelIcon(scenario.channel)} {scenario.channel}</span>
                             </div>
@@ -426,15 +432,15 @@ export default function TrainingPage() {
                 <div ref={scenarioSectionRef} className="card mb-6">
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <h3 className="text-2xl font-semibold text-gray-900 mb-2">{selectedScenario.title}</h3>
+                      <h3 className="text-2xl font-bold text-text-primary mb-2 uppercase tracking-wide">{selectedScenario.title}</h3>
                       <div className="flex items-center gap-3 mb-4">
                         <span className={`text-xs px-2 py-1 rounded ${getDifficultyColor(selectedScenario.difficulty)}`}>
                           {selectedScenario.difficulty}
                         </span>
-                        <span className="text-sm text-gray-600">
+                        <span className="text-sm text-text-secondary">
                           {selectedScenario.category === "entreprise" ? "🏢" : "👤"} {selectedScenario.category === "entreprise" ? "Entreprise" : "Influenceur"}
                         </span>
-                        <span className="text-sm text-gray-600">
+                        <span className="text-sm text-text-secondary">
                           {getChannelIcon(selectedScenario.channel)} {selectedScenario.channel}
                         </span>
                       </div>
@@ -442,24 +448,24 @@ export default function TrainingPage() {
                   </div>
 
                   <div className="space-y-4">
-                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
-                      <h4 className="font-semibold text-gray-900 mb-2">📋 Contexte</h4>
-                      <p className="text-gray-700 text-sm">{selectedScenario.context}</p>
+                    <div className="bg-background-secondary border-l-4 border-blue-500 p-4 rounded">
+                      <h4 className="font-bold text-text-primary mb-2 uppercase tracking-wide">📋 Contexte</h4>
+                      <p className="text-text-secondary text-sm">{selectedScenario.context}</p>
                     </div>
 
-                    <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
-                      <h4 className="font-semibold text-gray-900 mb-2">❓ Objection principale</h4>
-                      <p className="text-gray-700 text-sm italic">&quot;{selectedScenario.objection}&quot;</p>
+                    <div className="bg-background-secondary border-l-4 border-red-500 p-4 rounded">
+                      <h4 className="font-bold text-text-primary mb-2 uppercase tracking-wide">❓ Objection principale</h4>
+                      <p className="text-text-secondary text-sm italic">&quot;{selectedScenario.objection}&quot;</p>
                     </div>
 
-                    <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
-                      <h4 className="font-semibold text-gray-900 mb-2">🎯 Objectif</h4>
-                      <p className="text-gray-700 text-sm">{selectedScenario.goal}</p>
+                    <div className="bg-background-secondary border-l-4 border-green-500 p-4 rounded">
+                      <h4 className="font-bold text-text-primary mb-2 uppercase tracking-wide">🎯 Objectif</h4>
+                      <p className="text-text-secondary text-sm">{selectedScenario.goal}</p>
                     </div>
 
-                    <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
-                      <h4 className="font-semibold text-gray-900 mb-2">⚠️ Rappels importants</h4>
-                      <ul className="text-gray-700 text-sm space-y-1">
+                    <div className="bg-background-secondary border-l-4 border-yellow-500 p-4 rounded">
+                      <h4 className="font-bold text-text-primary mb-2 uppercase tracking-wide">⚠️ Rappels importants</h4>
+                      <ul className="text-text-secondary text-sm space-y-1">
                         <li>❌ Pas de prix fixe - utilisez des fourchettes indicatives</li>
                         <li>❌ Pas de promesses ou garanties</li>
                         <li>❌ Pas de négociation</li>
@@ -470,7 +476,7 @@ export default function TrainingPage() {
 
                   {/* Answer Textarea */}
                   <div className="mt-6">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-text-secondary mb-2 tracking-widest">
                       Votre réponse (comme si vous parliez au prospect) :
                     </label>
                     <textarea
@@ -499,38 +505,38 @@ export default function TrainingPage() {
             /* Evaluation Results */
             <div className="space-y-6">
               {/* Score Card */}
-              <div className="card bg-gradient-to-r from-primary-50 to-blue-50 border-primary-200">
+              <div className="card border-gold/30">
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-2xl font-bold text-gray-900">Rapport d&apos;Évaluation</h2>
+                  <h2 className="text-2xl font-bold text-text-primary uppercase tracking-wide">Rapport d&apos;Évaluation</h2>
                   <div className="flex items-center space-x-2">
                     {evaluation.rdv_obtained ? (
-                      <span className="flex items-center px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                      <span className="flex items-center px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-medium tracking-widest">
                         <CheckCircle className="mr-1" size={16} />
                         RDV Obtenu
                       </span>
                     ) : (
-                      <span className="flex items-center px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-medium">
+                      <span className="flex items-center px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-sm font-medium tracking-widest">
                         <XCircle className="mr-1" size={16} />
                         RDV Non Obtenu
                       </span>
                     )}
                   </div>
                 </div>
-                <div className="text-5xl font-bold text-primary-600 mb-2">
+                <div className="text-5xl font-black text-gold mb-2">
                   {evaluation.score.toFixed(1)}/10
                 </div>
-                <p className="text-gray-600">Note globale</p>
+                <p className="text-text-secondary">Note globale</p>
               </div>
 
               {/* Strengths */}
-              <div className="card bg-green-50 border-green-200">
-                <h3 className="text-xl font-semibold mb-4 flex items-center">
-                  <CheckCircle className="mr-2 text-green-600" size={24} />
+              <div className="card border-green-500/30">
+                <h3 className="text-xl font-bold mb-4 flex items-center text-text-primary uppercase tracking-wide">
+                  <CheckCircle className="mr-2 text-green-500" size={24} />
                   Points Forts
                 </h3>
                 <ul className="space-y-2">
                   {evaluation.strengths.map((strength, idx) => (
-                    <li key={idx} className="text-gray-700">
+                    <li key={idx} className="text-text-secondary">
                       {strength}
                     </li>
                   ))}
@@ -538,14 +544,14 @@ export default function TrainingPage() {
               </div>
 
               {/* Improvements */}
-              <div className="card bg-yellow-50 border-yellow-200">
-                <h3 className="text-xl font-semibold mb-4 flex items-center">
-                  <AlertCircle className="mr-2 text-yellow-600" size={24} />
+              <div className="card border-yellow-500/30">
+                <h3 className="text-xl font-bold mb-4 flex items-center text-text-primary uppercase tracking-wide">
+                  <AlertCircle className="mr-2 text-yellow-500" size={24} />
                   Axes d&apos;Amélioration
                 </h3>
                 <ul className="space-y-2">
                   {evaluation.improvements.map((improvement, idx) => (
-                    <li key={idx} className="text-gray-700">
+                    <li key={idx} className="text-text-secondary">
                       {improvement}
                     </li>
                   ))}
@@ -553,10 +559,10 @@ export default function TrainingPage() {
               </div>
 
               {/* Ideal Answer */}
-              <div className="card bg-blue-50 border-blue-200">
-                <h3 className="text-xl font-semibold mb-4">Réponse Idéale</h3>
-                <div className="bg-white rounded-lg p-4 border border-blue-200">
-                  <p className="text-gray-700 whitespace-pre-line">{evaluation.ideal_answer}</p>
+              <div className="card border-blue-500/30">
+                <h3 className="text-xl font-bold mb-4 text-text-primary uppercase tracking-wide">Réponse Idéale</h3>
+                <div className="bg-background-primary rounded-lg p-4 border border-border-subtle">
+                  <p className="text-text-secondary whitespace-pre-line">{evaluation.ideal_answer}</p>
                 </div>
               </div>
 

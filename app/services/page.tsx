@@ -96,17 +96,17 @@ export default function ServicesPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-4xl font-bold text-gray-900 mb-8">Nos Services</h1>
+      <h1 className="text-4xl font-extrabold text-text-primary mb-8 uppercase tracking-wide">Nos Services</h1>
 
       {/* Tabs */}
-      <div className="border-b border-gray-200 mb-8">
+      <div className="border-b border-border-subtle mb-8">
         <nav className="flex space-x-8">
           <button
             onClick={() => setActiveTab("entreprise")}
             className={`py-4 px-1 border-b-2 font-medium text-sm ${
               activeTab === "entreprise"
-                ? "border-primary-500 text-primary-600"
-                : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                ? "border-gold text-gold"
+                : "border-transparent text-text-secondary hover:text-text-primary hover:border-border-subtle"
             }`}
           >
             <Building2 className="inline mr-2" size={20} />
@@ -116,8 +116,8 @@ export default function ServicesPage() {
             onClick={() => setActiveTab("influenceur")}
             className={`py-4 px-1 border-b-2 font-medium text-sm ${
               activeTab === "influenceur"
-                ? "border-primary-500 text-primary-600"
-                : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                ? "border-gold text-gold"
+                : "border-transparent text-text-secondary hover:text-text-primary hover:border-border-subtle"
             }`}
           >
             <Users className="inline mr-2" size={20} />
@@ -130,30 +130,30 @@ export default function ServicesPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {currentServices.map((service) => (
           <div key={service.id} className="card hover:shadow-md transition-shadow">
-            <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-            <p className="text-gray-600 mb-4">{service.description}</p>
+            <h3 className="text-xl font-bold mb-2 text-text-primary uppercase tracking-wide">{service.title}</h3>
+            <p className="text-text-secondary mb-4">{service.description}</p>
             {service.features && (
               <ul className="space-y-2 mb-4">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start text-sm text-gray-700">
-                    <Check className="text-primary-600 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                  <li key={idx} className="flex items-start text-sm text-text-secondary">
+                    <Check className="text-gold mr-2 flex-shrink-0 mt-0.5" size={16} />
                     {feature}
                   </li>
                 ))}
               </ul>
             )}
             {service.priceRange && (
-              <div className="mt-4 pt-4 border-t border-gray-200">
-                <p className="text-sm text-gray-600 mb-1">Tranche de prix :</p>
-                <p className="text-primary-600 font-bold text-lg">{service.priceRange}</p>
+              <div className="mt-4 pt-4 border-t border-border-subtle">
+                <p className="text-sm text-text-muted mb-1 tracking-widest">Tranche de prix :</p>
+                <p className="text-gold font-black text-lg">{service.priceRange}</p>
               </div>
             )}
           </div>
         ))}
       </div>
 
-      <div className="mt-8 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-        <p className="text-sm text-yellow-800">
+      <div className="mt-8 card border-yellow-500/30">
+        <p className="text-sm text-yellow-400">
           <strong>Note importante :</strong> Les fourchettes de prix sont indicatives et servent
           uniquement à décrocher un RDV. Les prix définitifs seront établis lors du devis.
         </p>

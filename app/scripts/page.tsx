@@ -142,12 +142,12 @@ Un échange de 15 minutes ne vous engage à rien et pourrait vous apporter des i
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-4xl font-bold text-gray-900 mb-8">Scripts & Objections</h1>
+      <h1 className="text-4xl font-extrabold text-text-primary mb-8 uppercase tracking-wide">Scripts & Objections</h1>
 
       {/* Search and Filters */}
       <div className="mb-8 space-y-4">
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-muted" size={20} />
           <input
             type="text"
             placeholder="Rechercher un script..."
@@ -166,8 +166,8 @@ Un échange de 15 minutes ne vous engage à rien et pourrait vous apporter des i
                 onClick={() => setSelectedType(type.value)}
                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                   selectedType === type.value
-                    ? "bg-primary-600 text-white"
-                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                    ? "bg-gold text-background-primary"
+                    : "bg-background-secondary text-text-secondary hover:bg-border-subtle"
                 }`}
               >
                 {Icon && <Icon className="inline mr-2" size={16} />}
@@ -183,22 +183,22 @@ Un échange de 15 minutes ne vous engage à rien et pourrait vous apporter des i
         {filteredScripts.map((script) => (
           <div key={script.id} className="card">
             <div className="flex items-start justify-between mb-3">
-              <h3 className="text-lg font-semibold">{script.title}</h3>
+              <h3 className="text-lg font-bold text-text-primary uppercase tracking-wide">{script.title}</h3>
               {script.duration && (
-                <span className="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded">
+                <span className="text-xs bg-border-subtle text-gold px-2 py-1 rounded">
                   {script.duration}
                 </span>
               )}
             </div>
-            <div className="bg-gray-50 rounded p-4 mb-4">
-              <p className="text-sm text-gray-700 whitespace-pre-line">{script.content}</p>
+            <div className="bg-background-primary rounded p-4 mb-4 border border-border-subtle">
+              <p className="text-sm text-text-secondary whitespace-pre-line">{script.content}</p>
             </div>
             {script.tags && script.tags.length > 0 && (
               <div className="flex flex-wrap gap-2">
                 {script.tags.map((tag, idx) => (
                   <span
                     key={idx}
-                    className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded"
+                    className="text-xs bg-border-subtle text-text-secondary px-2 py-1 rounded"
                   >
                     {tag}
                   </span>
@@ -210,7 +210,7 @@ Un échange de 15 minutes ne vous engage à rien et pourrait vous apporter des i
       </div>
 
       {filteredScripts.length === 0 && (
-        <div className="text-center py-12 text-gray-500">
+        <div className="text-center py-12 text-text-muted">
           Aucun script trouvé pour cette recherche.
         </div>
       )}

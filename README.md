@@ -30,10 +30,12 @@ Plateforme web moderne pour les apporteurs d'affaires de Nexus Circle. Espace d�
    
    Créer un fichier `.env.local` à la racine du projet :
    ```env
-   ADMIN_PASSWORD=votre-mot-de-passe-securise
+   SITE_PASSWORD=votre-mot-de-passe-site-securise
    ```
    
-   ⚠️ **Important** : Changez le mot de passe par défaut en production !
+   ⚠️ **Important** : 
+   - `SITE_PASSWORD` : Mot de passe pour accéder au site (obligatoire)
+   - Changez le mot de passe par défaut en production !
    
    Note : L'entraînement fonctionne 100% en local sans aucune API externe.
 
@@ -87,14 +89,7 @@ Plateforme web moderne pour les apporteurs d'affaires de Nexus Circle. Espace d�
 
 ## ✏️ Modifier le Contenu
 
-### Méthode 1 : Via l'interface Admin (Recommandé)
-
-1. Accéder à `/admin/login`
-2. Entrer le mot de passe défini dans `.env.local`
-3. Éditer le contenu directement dans l'interface
-4. Cliquer sur "Sauvegarder"
-
-### Méthode 2 : Via les fichiers JSON
+### Via les fichiers JSON
 
 Modifier directement les fichiers dans le dossier `/content/` :
 
@@ -126,11 +121,13 @@ Modifier directement les fichiers dans le dossier `/content/` :
    }
    ```
 
-## 🔒 Sécurité Admin
+## 🔒 Sécurité
 
-- Le mot de passe est stocké dans `.env.local` (ne pas commiter)
-- Session cookie sécurisée (24h)
-- Protection des routes API admin
+### Authentification Site
+- **Protection globale** : Toutes les pages du site nécessitent un mot de passe (sauf `/login`)
+- **Mot de passe** : Défini dans `.env.local` avec la variable `SITE_PASSWORD`
+- **Session** : Cookie sécurisé valide 24h
+- **Page de login** : Accessible à `/login`
 
 ## 🏗️ Build pour Production
 
@@ -261,8 +258,8 @@ rm -rf node_modules package-lock.json
 npm install
 ```
 
-### Erreur d'authentification admin
-- Vérifier que `.env.local` existe avec `ADMIN_PASSWORD`
+### Erreur d'authentification
+- Vérifier que `.env.local` existe avec `SITE_PASSWORD`
 - Redémarrer le serveur après modification de `.env.local`
 
 ### Contenu non mis à jour

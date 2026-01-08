@@ -16,18 +16,22 @@ export default function Navigation() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Ne pas afficher la nav sur la page admin
-  if (pathname?.startsWith("/admin")) {
+  // Ne pas afficher la nav sur la page login
+  if (pathname === "/login") {
     return null;
   }
 
   return (
-    <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <nav className="bg-background-secondary border-b border-border-subtle sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold text-primary-600">Nexus Circle</span>
-            <span className="text-sm text-gray-600">Portail Partenaires</span>
+          <Link href="/" className="flex items-center space-x-3">
+            <img
+              src="/logo-detoure-blanc-copie.png"
+              alt="Nexus Circle"
+              className="h-8 w-auto object-contain"
+            />
+            <span className="text-sm text-text-secondary font-medium tracking-widest hidden sm:block">Portail Partenaires</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -38,9 +42,10 @@ export default function Navigation() {
                 href={item.href}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                   pathname === item.href
-                    ? "bg-primary-100 text-primary-700"
-                    : "text-gray-700 hover:bg-gray-100"
+                    ? "bg-border-subtle text-gold"
+                    : "text-text-secondary hover:bg-border-subtle hover:text-text-primary"
                 }`}
+                style={{ fontWeight: 500 }}
               >
                 {item.label}
               </Link>
@@ -49,7 +54,7 @@ export default function Navigation() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
+            className="md:hidden p-2 rounded-md text-text-secondary hover:bg-border-subtle hover:text-text-primary"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -66,8 +71,8 @@ export default function Navigation() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block px-3 py-2 rounded-md text-base font-medium ${
                   pathname === item.href
-                    ? "bg-primary-100 text-primary-700"
-                    : "text-gray-700 hover:bg-gray-100"
+                    ? "bg-border-subtle text-gold"
+                    : "text-text-secondary hover:bg-border-subtle hover:text-text-primary"
                 }`}
               >
                 {item.label}

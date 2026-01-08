@@ -92,8 +92,8 @@ export default function ArgumentsPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-4xl font-bold text-gray-900 mb-8">Arguments de Vente</h1>
-      <p className="text-gray-600 mb-8">
+      <h1 className="text-4xl font-extrabold text-text-primary mb-8 uppercase tracking-wide">Arguments de Vente</h1>
+      <p className="text-text-secondary mb-8">
         Utilisez ces arguments structurés pour chaque service. Chaque argument suit la logique :
         Problème → Bénéfice → Exemple → Question de closing.
       </p>
@@ -101,7 +101,7 @@ export default function ArgumentsPage() {
       {/* Search and Filters */}
       <div className="mb-8 space-y-4">
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-muted" size={20} />
           <input
             type="text"
             placeholder="Rechercher un argument..."
@@ -116,8 +116,8 @@ export default function ArgumentsPage() {
             onClick={() => setSelectedService("all")}
             className={`px-4 py-2 rounded-lg font-medium transition-colors ${
               selectedService === "all"
-                ? "bg-primary-600 text-white"
-                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                ? "bg-gold text-background-primary"
+                : "bg-background-secondary text-text-secondary hover:bg-border-subtle"
             }`}
           >
             Tous les services
@@ -128,8 +128,8 @@ export default function ArgumentsPage() {
               onClick={() => setSelectedService(service)}
               className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                 selectedService === service
-                  ? "bg-primary-600 text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                  ? "bg-gold text-background-primary"
+                  : "bg-background-secondary text-text-secondary hover:bg-border-subtle"
               }`}
             >
               {service}
@@ -143,13 +143,13 @@ export default function ArgumentsPage() {
         {filteredArguments.map((arg) => (
           <div key={arg.id} className="card">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-xl font-semibold text-primary-600">{arg.service}</h3>
+              <h3 className="text-xl font-bold text-gold uppercase tracking-wide">{arg.service}</h3>
               {arg.tags && (
                 <div className="flex flex-wrap gap-2">
                   {arg.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded"
+                      className="text-xs bg-border-subtle text-text-secondary px-2 py-1 rounded"
                     >
                       {tag}
                     </span>
@@ -159,42 +159,42 @@ export default function ArgumentsPage() {
             </div>
 
             <div className="space-y-4">
-              <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
+              <div className="bg-background-secondary border-l-4 border-red-500 p-4 rounded">
                 <div className="flex items-start">
-                  <Target className="text-red-600 mr-2 flex-shrink-0 mt-0.5" size={20} />
+                  <Target className="text-red-500 mr-2 flex-shrink-0 mt-0.5" size={20} />
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Le Problème</h4>
-                    <p className="text-gray-700">{arg.problem}</p>
+                    <h4 className="font-bold text-text-primary mb-1 uppercase tracking-wide">Le Problème</h4>
+                    <p className="text-text-secondary">{arg.problem}</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
+              <div className="bg-background-secondary border-l-4 border-green-500 p-4 rounded">
                 <div className="flex items-start">
-                  <Lightbulb className="text-green-600 mr-2 flex-shrink-0 mt-0.5" size={20} />
+                  <Lightbulb className="text-green-500 mr-2 flex-shrink-0 mt-0.5" size={20} />
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Le Bénéfice</h4>
-                    <p className="text-gray-700">{arg.benefit}</p>
+                    <h4 className="font-bold text-text-primary mb-1 uppercase tracking-wide">Le Bénéfice</h4>
+                    <p className="text-text-secondary">{arg.benefit}</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+              <div className="bg-background-secondary border-l-4 border-blue-500 p-4 rounded">
                 <div className="flex items-start">
-                  <MessageCircle className="text-blue-600 mr-2 flex-shrink-0 mt-0.5" size={20} />
+                  <MessageCircle className="text-blue-500 mr-2 flex-shrink-0 mt-0.5" size={20} />
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Exemple Concret</h4>
-                    <p className="text-gray-700">{arg.example}</p>
+                    <h4 className="font-bold text-text-primary mb-1 uppercase tracking-wide">Exemple Concret</h4>
+                    <p className="text-text-secondary">{arg.example}</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-primary-50 border-l-4 border-primary-500 p-4 rounded">
+              <div className="bg-background-secondary border-l-4 border-gold p-4 rounded">
                 <div className="flex items-start">
-                  <CheckCircle className="text-primary-600 mr-2 flex-shrink-0 mt-0.5" size={20} />
+                  <CheckCircle className="text-gold mr-2 flex-shrink-0 mt-0.5" size={20} />
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Question de Closing</h4>
-                    <p className="text-gray-700 font-medium">{arg.closingQuestion}</p>
+                    <h4 className="font-bold text-text-primary mb-1 uppercase tracking-wide">Question de Closing</h4>
+                    <p className="text-text-secondary font-medium">{arg.closingQuestion}</p>
                   </div>
                 </div>
               </div>
@@ -204,7 +204,7 @@ export default function ArgumentsPage() {
       </div>
 
       {filteredArguments.length === 0 && (
-        <div className="text-center py-12 text-gray-500">
+        <div className="text-center py-12 text-text-muted">
           Aucun argument trouvé pour cette recherche.
         </div>
       )}

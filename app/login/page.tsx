@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Lock } from "lucide-react";
 
-export default function AdminLoginPage() {
+export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -16,17 +16,18 @@ export default function AdminLoginPage() {
     setLoading(true);
 
     try {
-      const response = await fetch("/api/admin/login", {
+      const response = await fetch("/api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ password }),
       });
 
       if (response.ok) {
-        router.push("/admin");
+        router.push("/");
         router.refresh();
       } else {
-        setError("Mot de passe incorrect");
+        const data = await response.json();
+        setError(data.error || "Mot de passe incorrect");
       }
     } catch (err) {
       setError("Une erreur est survenue");
@@ -36,18 +37,25 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-background-primary flex items-center justify-center px-4">
       <div className="max-w-md w-full">
         <div className="card">
           <div className="text-center mb-8">
-            <Lock className="mx-auto text-primary-600 mb-4" size={48} />
-            <h1 className="text-2xl font-bold text-gray-900">Accès Administrateur</h1>
-            <p className="text-gray-600 mt-2">Entrez le mot de passe pour accéder à l&apos;administration</p>
+            <div className="mb-6 flex justify-center">
+              <img
+                src="/logo-detoure-blanc-copie.png"
+                alt="Nexus Circle"
+                className="h-16 w-auto object-contain"
+              />
+            </div>
+            <Lock className="mx-auto text-gold mb-4" size={48} />
+            <h1 className="text-2xl font-extrabold text-text-primary uppercase tracking-wide">Accès au Portail</h1>
+            <p className="text-text-secondary mt-2">Entrez le mot de passe pour accéder au site</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="password" className="block text-sm font-medium text-text-secondary mb-2 tracking-widest">
                 Mot de passe
               </label>
               <input
@@ -58,11 +66,12 @@ export default function AdminLoginPage() {
                 className="input-field"
                 required
                 autoFocus
+                placeholder="Entrez le mot de passe"
               />
             </div>
 
             {error && (
-              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
+              <div className="bg-red-500/20 border border-red-500/30 text-red-400 px-4 py-3 rounded">
                 {error}
               </div>
             )}
@@ -80,4 +89,3 @@ export default function AdminLoginPage() {
     </div>
   );
 }
-

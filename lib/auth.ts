@@ -1,9 +1,14 @@
 import { cookies } from "next/headers";
 import bcrypt from "bcryptjs";
 
-const SESSION_COOKIE = "admin_session";
+// Admin session
+const ADMIN_SESSION_COOKIE = "admin_session";
 const SESSION_DURATION = 60 * 60 * 24; // 24 heures
 
+// Site session
+const SITE_SESSION_COOKIE = "site_session";
+
+// Admin functions
 export async function verifyPassword(password: string): Promise<boolean> {
   const adminPassword = process.env.ADMIN_PASSWORD;
   if (!adminPassword) {
@@ -20,7 +25,7 @@ export async function verifyPassword(password: string): Promise<boolean> {
 
 export async function createSession(): Promise<void> {
   const cookieStore = await cookies();
-  cookieStore.set(SESSION_COOKIE, "authenticated", {
+  cookieStore.set(ADMIN_SESSION_COOKIE, "authenticated", {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
@@ -30,12 +35,47 @@ export async function createSession(): Promise<void> {
 
 export async function deleteSession(): Promise<void> {
   const cookieStore = await cookies();
-  cookieStore.delete(SESSION_COOKIE);
+  cookieStore.delete(ADMIN_SESSION_COOKIE);
 }
 
 export async function isAuthenticated(): Promise<boolean> {
   const cookieStore = await cookies();
-  const session = cookieStore.get(SESSION_COOKIE);
+  const session = cookieStore.get(ADMIN_SESSION_COOKIE);
+  return session?.value === "authenticated";
+}
+
+// Site authentication functions
+export async function verifySitePassword(password: string): Promise<boolean> {
+  const sitePassword = process.env.SITE_PASSWORD;
+  if (!sitePassword) {
+    // Si pas de mot de passe défini, on refuse l'accès (sécurité par défaut)
+    return false;
+  }
+  try {
+    return await bcrypt.compare(password, sitePassword) || password === sitePassword;
+  } catch {
+    return password === sitePassword;
+  }
+}
+
+export async function createSiteSession(): Promise<void> {
+  const cookieStore = await cookies();
+  cookieStore.set(SITE_SESSION_COOKIE, "authenticated", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    maxAge: SESSION_DURATION,
+  });
+}
+
+export async function deleteSiteSession(): Promise<void> {
+  const cookieStore = await cookies();
+  cookieStore.delete(SITE_SESSION_COOKIE);
+}
+
+export async function isSiteAuthenticated(): Promise<boolean> {
+  const cookieStore = await cookies();
+  const session = cookieStore.get(SITE_SESSION_COOKIE);
   return session?.value === "authenticated";
 }
 
