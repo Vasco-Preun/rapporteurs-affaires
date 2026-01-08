@@ -16,11 +16,6 @@ export default function Navigation() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Ne pas afficher la nav sur la page login
-  if (pathname === "/login") {
-    return null;
-  }
-
   return (
     <nav className="bg-background-secondary border-b border-border-subtle sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

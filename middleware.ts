@@ -2,26 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-  
-  // Vérifier si l'utilisateur a une session site
-  const siteSession = request.cookies.get("site_session");
-  const isAuthenticated = siteSession?.value === "authenticated";
-  
-  // Pages publiques (login et API login)
-  const publicPaths = ["/login", "/api/login"];
-  const isPublicPath = publicPaths.some(path => pathname.startsWith(path));
-  
-  // Si pas authentifié et pas sur une page publique, rediriger vers login
-  if (!isAuthenticated && !isPublicPath) {
-    return NextResponse.redirect(new URL("/login", request.url));
-  }
-  
-  // Si authentifié et sur la page login, rediriger vers l'accueil
-  if (isAuthenticated && pathname === "/login") {
-    return NextResponse.redirect(new URL("/", request.url));
-  }
-  
+  // Plus de protection par mot de passe - toutes les pages sont publiques
   return NextResponse.next();
 }
 

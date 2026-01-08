@@ -49,12 +49,25 @@ export async function verifySitePassword(password: string): Promise<boolean> {
   const sitePassword = process.env.SITE_PASSWORD;
   if (!sitePassword) {
     // Si pas de mot de passe défini, on refuse l'accès (sécurité par défaut)
+    console.error("[AUTH] SITE_PASSWORD non défini dans les variables d'environnement");
     return false;
   }
+  
+  // Nettoyer les espaces en début/fin
+  const cleanPassword = password.trim();
+  const cleanSitePassword = sitePassword.trim();
+  
   try {
-    return await bcrypt.compare(password, sitePassword) || password === sitePassword;
-  } catch {
-    return password === sitePassword;
+    // Essayer d'abord la comparaison en clair (pour Vercel)
+    if (cleanPassword === cleanSitePassword) {
+      return true;
+    }
+    // Ensuite essayer bcrypt si le mot de passe dans l'env est hashé
+    return await bcrypt.compare(cleanPassword, cleanSitePassword);
+  } catch (error) {
+    // En cas d'erreur bcrypt, fallback sur comparaison en clair
+    console.error("[AUTH] Erreur lors de la vérification:", error);
+    return cleanPassword === cleanSitePassword;
   }
 }
 
