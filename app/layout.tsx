@@ -12,8 +12,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Portail Partenaires Nexus Circle",
-  description: "Espace dédié aux apporteurs d'affaires de Nexus Circle",
+  title: "Apport d'Affaires Auto-Écoles - Nexus Circle",
+  description: "Espace dédié aux apporteurs d'affaires pour sites vitrines auto-écoles. Décrochez des rendez-vous avec Nexus Circle.",
 };
 
 export default function RootLayout({

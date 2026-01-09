@@ -1,23 +1,170 @@
 [
   {
     "id": "auto-ecole-1",
-    "title": "Auto-école - Site existant / Question prix",
+    "title": "Auto-école - Site existant mais pas visible Google",
+    "category": "entreprise",
+    "channel": "appel",
+    "difficulty": "facile",
+    "context": "Auto-école familiale avec 2 agences dans une ville de 50 000 habitants. Elle a un site web mais n'apparaît pas sur Google quand on cherche 'auto-école [ville]'. Elle perd des candidats au profit de concurrents mieux référencés.",
+    "objection": "J'ai déjà un site, pourquoi en refaire un ?",
+    "goal": "Obtenir un RDV de 15 minutes pour présenter l'optimisation du référencement local et la modernisation du site",
+    "ideal_answer": "Je comprends, c'est une bonne chose d'avoir déjà un site ! L'idée n'est pas forcément de le remplacer, mais de le moderniser et surtout d'améliorer votre visibilité sur Google. Beaucoup d'auto-écoles ont un site mais n'apparaissent pas en première page quand on cherche 'auto-école [ville]'. Résultat : les candidats ne vous trouvent pas et vont chez vos concurrents. Pour un site optimisé avec référencement local, on est dans un ordre d'idée à partir de 1500€ selon vos besoins. Chaque projet est unique, c'est pourquoi je vous propose un échange de 15 minutes pour analyser votre situation. Quand seriez-vous disponible cette semaine ?",
+    "scoring": {
+      "must_include_any": ["ordre d'idée", "fourchette", "1500", "à partir de", "indicatif"],
+      "must_include_all": [],
+      "bonus_keywords": ["référencement", "optimisation", "google", "local", "visibilité", "première page"],
+      "forbidden_keywords": ["garanti", "promis", "assuré", "remise", "réduction", "moins cher"],
+      "rdv_keywords": ["rdv", "rendez-vous", "échange", "15 min", "15 minutes", "créneau", "disponible"],
+      "price_fixed_keywords": ["ça coûte exactement", "prix fixe", "2000€", "2500€", "3000€", "garanti au prix"],
+      "qualification_keywords": ["besoin", "situation", "agences", "candidats", "google"],
+      "framework_keywords": ["sur-mesure", "personnalisé", "devis", "nexus circle", "unique"]
+    }
+  },
+  {
+    "id": "auto-ecole-2",
+    "title": "Auto-école - Pas de site web",
+    "category": "entreprise",
+    "channel": "appel",
+    "difficulty": "facile",
+    "context": "Auto-école indépendante dans un quartier résidentiel. Elle fonctionne uniquement par bouche-à-oreille et ne compte que sur les panneaux et les recommandations. Pas de présence digitale du tout.",
+    "objection": "On fonctionne très bien sans site, pourquoi en créer un maintenant ?",
+    "goal": "Obtenir un RDV de 15 minutes pour expliquer les bénéfices d'une présence digitale et capturer les candidats en ligne",
+    "ideal_answer": "Je comprends que ça fonctionne bien, c'est super ! Mais un site moderne peut vous apporter des candidats supplémentaires que vous perdez actuellement : ceux qui cherchent sur Google avant d'appeler, ceux qui préfèrent s'inscrire en ligne le soir ou le week-end. Un site avec formulaire de pré-inscription capture des candidats même quand vous êtes fermés. Pour un site vitrine moderne avec référencement local, on est dans un ordre d'idée à partir de 1500€ selon vos besoins. Beaucoup d'auto-écoles voient leurs inscriptions augmenter de 30-40%. Un échange de 15 minutes pour voir ce qui pourrait vous apporter de la valeur ?",
+    "scoring": {
+      "must_include_any": ["ordre d'idée", "à partir de", "1500", "fourchette", "indicatif"],
+      "must_include_all": [],
+      "bonus_keywords": ["candidats supplémentaires", "formulaire pré-inscription", "google", "24/7", "30-40%"],
+      "forbidden_keywords": ["garanti", "promis", "assuré", "remise", "obligatoire"],
+      "rdv_keywords": ["rdv", "rendez-vous", "échange", "15 min", "disponible"],
+      "price_fixed_keywords": ["exactement", "prix fixe", "2000€", "garanti au prix"],
+      "qualification_keywords": ["besoin", "valeur", "candidats"],
+      "framework_keywords": ["selon vos besoins", "personnalisé", "nexus circle"]
+    }
+  },
+  {
+    "id": "auto-ecole-3",
+    "title": "Auto-école - Pas le budget",
     "category": "entreprise",
     "channel": "appel",
     "difficulty": "moyen",
-    "context": "Auto-école familiale avec 2 agences. Le prospect a déjà un site web basique mais il ne génère pas beaucoup de candidats. Il est sceptique car il a déjà investi dans le web et les résultats n'étaient pas à la hauteur.",
-    "objection": "J'ai déjà un site, pourquoi en refaire un ? Et combien ça coûte exactement ?",
-    "goal": "Obtenir un RDV de 15 minutes pour présenter l'optimisation de son site et le référencement local",
-    "ideal_answer": "Je comprends votre préoccupation. Un site qui existe déjà est une bonne base, mais l'optimisation peut faire la différence. Pour un site vitrine optimisé avec référencement local, on est dans un ordre d'idée de 2500 à 3500€ selon vos besoins spécifiques. Chaque projet est unique, c'est pourquoi je vous propose un échange de 15 minutes pour analyser votre situation et vous faire une proposition sur-mesure. Quand seriez-vous disponible cette semaine ?",
+    "context": "Auto-école familiale qui traverse une période difficile financièrement. Elle hésite à investir dans un nouveau site alors que les candidats se font rares. Elle pense que c'est trop cher.",
+    "objection": "Je n'ai pas le budget pour ça, c'est trop cher pour moi en ce moment",
+    "goal": "Obtenir un RDV en rassurant sur la flexibilité du devis et en montrant que c'est un investissement rentable",
+    "ideal_answer": "Je comprends votre préoccupation, c'est une période difficile pour beaucoup. Les prix que j'ai mentionnés sont des fourchettes indicatives à partir de 1500€. Chaque projet est unique et nécessite un devis personnalisé adapté à votre budget réel. L'avantage de prendre un RDV avec Nexus Circle, c'est que vous obtiendrez un devis adapté à vos besoins et votre budget, sans engagement de votre part. Et surtout, un site moderne peut vous faire gagner plus que son coût en augmentant vos inscriptions. Beaucoup d'auto-écoles récupèrent leur investissement en quelques mois. Quand seriez-vous disponible pour un échange de 15 minutes ?",
     "scoring": {
-      "must_include_any": ["ordre d'idée", "fourchette", "2500", "3000", "3500", "indicatif"],
+      "must_include_any": ["fourchette indicative", "à partir de", "1500", "devis personnalisé", "adapté", "budget"],
       "must_include_all": [],
-      "bonus_keywords": ["référencement", "optimisation", "google", "local"],
-      "forbidden_keywords": ["garanti", "promis", "assuré", "remise", "réduction", "moins cher"],
-      "rdv_keywords": ["rdv", "rendez-vous", "échange", "15 min", "15 minutes", "créneau", "disponible"],
-      "price_fixed_keywords": ["ça coûte exactement", "prix fixe", "1500€", "2000€", "2500€", "3000€", "garanti au prix"],
-      "qualification_keywords": ["besoin", "situation", "agences", "candidats"],
-      "framework_keywords": ["sur-mesure", "personnalisé", "devis", "nexus circle"]
+      "bonus_keywords": ["sans engagement", "investissement", "récupèrent", "augmentant inscriptions"],
+      "forbidden_keywords": ["garanti", "promis", "pas cher", "gratuit", "remise"],
+      "rdv_keywords": ["rdv", "rendez-vous", "échange", "15 min", "disponible"],
+      "price_fixed_keywords": ["exactement", "prix fixe", "garanti au prix", "ça coûte 1500€"],
+      "qualification_keywords": ["besoin", "budget", "situation"],
+      "framework_keywords": ["personnalisé", "adapté", "sans engagement", "nexus circle"]
+    }
+  },
+  {
+    "id": "auto-ecole-4",
+    "title": "Auto-école - Site obsolète, pas de formulaire",
+    "category": "entreprise",
+    "channel": "dm",
+    "difficulty": "facile",
+    "context": "Auto-école avec plusieurs agences. Elle a un site créé il y a 8 ans qui n'est pas responsive (pas adapté mobile) et n'a pas de formulaire de pré-inscription. Les candidats ne peuvent pas s'inscrire en ligne.",
+    "objection": "Mon site fonctionne, pourquoi le changer ?",
+    "goal": "Obtenir un RDV pour expliquer les bénéfices d'un site moderne et responsive avec formulaire de pré-inscription",
+    "ideal_answer": "Je comprends que votre site fonctionne, c'est une bonne base ! Mais un site moderne et responsive vous permettrait d'attraper des candidats que vous perdez actuellement : ceux qui cherchent sur mobile (beaucoup maintenant), ceux qui veulent s'inscrire le soir ou le week-end quand vous êtes fermés. Un formulaire de pré-inscription capture des candidats 24/7. Pour un site moderne avec référencement et formulaire, on est dans un ordre d'idée à partir de 1500€ selon vos besoins. Chaque projet est personnalisé. On peut en discuter 15 minutes pour voir ce qui pourrait vous aider ?",
+    "scoring": {
+      "must_include_any": ["ordre d'idée", "à partir de", "1500", "formulaire", "24/7", "mobile"],
+      "must_include_all": [],
+      "bonus_keywords": ["responsive", "mobile", "pré-inscription", "candidats 24/7", "le soir", "week-end"],
+      "forbidden_keywords": ["garanti", "promis", "remise"],
+      "rdv_keywords": ["rdv", "discute", "15 min", "échange", "disponible"],
+      "price_fixed_keywords": ["exactement", "prix fixe"],
+      "qualification_keywords": ["besoin", "aide"],
+      "framework_keywords": ["personnalisé", "selon vos besoins", "nexus circle"]
+    }
+  },
+  {
+    "id": "auto-ecole-5",
+    "title": "Auto-école - Pas intéressé, pas le temps",
+    "category": "entreprise",
+    "channel": "whatsapp",
+    "difficulty": "dur",
+    "context": "Auto-école très occupée, le dirigeant est constamment en train de donner des cours ou de gérer les moniteurs. Il pense ne pas avoir le temps pour discuter d'un nouveau site.",
+    "objection": "Je n'ai vraiment pas le temps pour ça, je suis débordé",
+    "goal": "Obtenir un RDV en valorisant le gain de temps et en montrant que l'échange ne prend que 15 minutes",
+    "ideal_answer": "Je comprends parfaitement, vous êtes très occupé, c'est normal ! C'est justement pour ça que je propose un échange de 15 minutes seulement. L'objectif est simple : comprendre vos besoins et voir si Nexus Circle peut vous aider. Si ce n'est pas le cas, pas de problème, vous aurez juste perdu 15 minutes. Si c'est le cas, un site moderne peut vous faire gagner du temps : les candidats s'inscrivent en ligne même le soir, vous recevez moins d'appels pour les infos de base, et vous apparaissez sur Google sans effort. Ça vaut le coup de prendre 15 minutes ?",
+    "scoring": {
+      "must_include_any": ["15 minutes", "15 min", "gagner du temps", "s'inscrivent en ligne", "moins d'appels"],
+      "must_include_all": [],
+      "bonus_keywords": ["le soir", "même le soir", "24/7", "moins d'appels", "sans effort"],
+      "forbidden_keywords": ["garanti", "promis", "rapide", "facile"],
+      "rdv_keywords": ["rdv", "échange", "15 min", "15 minutes", "discuter"],
+      "price_fixed_keywords": ["exactement", "prix fixe"],
+      "qualification_keywords": ["besoin", "comprendre"],
+      "framework_keywords": ["nexus circle", "voir si", "peut vous aider"]
+    }
+  },
+  {
+    "id": "auto-ecole-6",
+    "title": "Auto-école - Déjà un prestataire web",
+    "category": "entreprise",
+    "channel": "appel",
+    "difficulty": "dur",
+    "context": "Auto-école qui travaille déjà avec une agence web locale pour son site actuel. Elle est satisfaite de leur relation et ne voit pas pourquoi changer ou avoir un deuxième prestataire.",
+    "objection": "On a déjà une agence qui s'occupe de notre site, on n'a pas besoin de vous",
+    "goal": "Obtenir un RDV en montrant qu'on peut compléter l'offre existante ou moderniser ce qui existe déjà",
+    "ideal_answer": "C'est une bonne chose d'avoir déjà un prestataire, ça veut dire que vous êtes déjà dans le digital ! L'idée n'est pas de le remplacer, mais peut-être de compléter son offre ou d'améliorer ce qui existe. Beaucoup d'auto-écoles ont un site mais n'ont pas de référencement local optimisé ou pas de formulaire de pré-inscription. Nexus Circle peut intervenir sur des améliorations spécifiques que votre agence actuelle ne couvre peut-être pas. Un échange de 15 minutes pour voir ce qui pourrait vous apporter de la valeur, sans engagement. Ça vous va ?",
+    "scoring": {
+      "must_include_any": ["compléter", "améliorer", "référencement local", "formulaire pré-inscription", "sans engagement"],
+      "must_include_all": [],
+      "bonus_keywords": ["complémentarité", "valeur ajoutée", "améliorations spécifiques", "ne couvre peut-être pas"],
+      "forbidden_keywords": ["meilleur", "remplace", "change d'agence", "garanti"],
+      "rdv_keywords": ["rdv", "échange", "15 min", "disponible"],
+      "price_fixed_keywords": ["exactement", "prix fixe"],
+      "qualification_keywords": ["valeur", "besoin"],
+      "framework_keywords": ["sans engagement", "nexus circle", "voir"]
+    }
+  },
+  {
+    "id": "auto-ecole-7",
+    "title": "Auto-école - Question sur les résultats",
+    "category": "entreprise",
+    "channel": "appel",
+    "difficulty": "moyen",
+    "context": "Auto-école qui a entendu parler des sites web qui génèrent beaucoup d'inscriptions mais est sceptique. Elle veut savoir combien de candidats en plus elle pourrait avoir et combien ça coûte exactement.",
+    "objection": "Combien de candidats en plus ça va me rapporter exactement ? Et combien ça coûte vraiment ?",
+    "goal": "Obtenir un RDV en expliquant qu'on ne peut pas garantir un chiffre précis mais en donnant des exemples et une fourchette de prix indicative",
+    "ideal_answer": "Excellente question ! Je ne peux pas vous garantir un chiffre exact car chaque situation est unique, mais beaucoup d'auto-écoles voient leurs inscriptions en ligne augmenter de 30 à 40% avec un site moderne et bien référencé. Pour le prix, on est dans un ordre d'idée à partir de 1500€ selon vos besoins spécifiques. Chaque projet est personnalisé, c'est pourquoi je vous propose un échange de 15 minutes pour analyser votre situation précise et vous faire une proposition sur-mesure avec un devis adapté. Quand seriez-vous disponible cette semaine ?",
+    "scoring": {
+      "must_include_any": ["ordre d'idée", "à partir de", "1500", "30", "40%", "30-40%", "personnalisé"],
+      "must_include_all": [],
+      "bonus_keywords": ["beaucoup d'auto-écoles", "exemples", "situation unique", "devis adapté", "sur-mesure"],
+      "forbidden_keywords": ["garanti", "exactement", "promis", "assuré", "ça coûte 1500€", "prix fixe"],
+      "rdv_keywords": ["rdv", "rendez-vous", "échange", "15 min", "disponible", "semaine"],
+      "price_fixed_keywords": ["exactement", "prix fixe", "garanti au prix", "ça coûte 1500€"],
+      "qualification_keywords": ["situation", "besoin", "analyser"],
+      "framework_keywords": ["personnalisé", "sur-mesure", "devis adapté", "nexus circle"]
+    }
+  },
+  {
+    "id": "auto-ecole-8",
+    "title": "Auto-école - Site récent mais mal référencé",
+    "category": "entreprise",
+    "channel": "dm",
+    "difficulty": "facile",
+    "context": "Auto-école qui a créé son site il y a 2 ans avec un ami développeur. Le site est moderne mais n'apparaît jamais sur Google. Elle ne comprend pas pourquoi et pense qu'un nouveau site coûterait trop cher.",
+    "objection": "J'ai créé mon site il y a 2 ans, pourquoi je devrais en refaire un maintenant ?",
+    "goal": "Obtenir un RDV pour expliquer qu'on peut optimiser le site existant plutôt que le refaire, et améliorer le référencement",
+    "ideal_answer": "C'est bien d'avoir un site récent ! Le problème n'est probablement pas le site lui-même, mais plutôt son référencement sur Google. On peut optimiser votre site existant sans forcément tout refaire : améliorer le référencement local pour apparaître quand on cherche 'auto-école [ville]', ajouter un formulaire de pré-inscription si vous n'en avez pas. Pour une optimisation avec référencement, on est dans un ordre d'idée à partir de 1500€ selon ce qu'il faut améliorer. Chaque projet est unique. On peut en discuter 15 minutes pour voir ce qui pourrait être optimisé sur votre site actuel ?",
+    "scoring": {
+      "must_include_any": ["optimiser", "référencement", "google", "à partir de", "1500", "formulaire"],
+      "must_include_all": [],
+      "bonus_keywords": ["sans forcément tout refaire", "optimiser existant", "référencement local", "auto-école [ville]"],
+      "forbidden_keywords": ["refaire", "tout refaire", "nouveau site", "garanti"],
+      "rdv_keywords": ["rdv", "discute", "15 min", "échange", "disponible"],
+      "price_fixed_keywords": ["exactement", "prix fixe"],
+      "qualification_keywords": ["optimiser", "améliorer", "besoin"],
+      "framework_keywords": ["unique", "selon", "nexus circle"]
     }
   },
   {

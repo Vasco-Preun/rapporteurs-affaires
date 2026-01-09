@@ -7,9 +7,8 @@ import { useState } from "react";
 
 const navItems = [
   { href: "/", label: "Accueil" },
-  { href: "/training", label: "Vidéos & Entraînement" },
-  { href: "/services", label: "Services" },
-  { href: "/primes", label: "Primes" },
+  { href: "/nexus-circle", label: "Pour qui tu travailles" },
+  { href: "/processus-vente", label: "Comment vendre" },
 ];
 
 export default function Navigation() {

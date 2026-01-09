@@ -3,58 +3,65 @@
     "id": "1",
     "title": "Script Appel - 30 secondes",
     "type": "appel",
-    "content": "Bonjour [Prénom], je suis [Votre nom], partenaire de Nexus Circle. Nous accompagnons les entreprises comme la vôtre dans leur transformation digitale. Avez-vous 15 minutes cette semaine pour un échange rapide sur vos besoins ?",
+    "content": "Bonjour [Prénom], je suis [Votre nom], partenaire de Nexus Circle. Nous accompagnons les auto-écoles comme la vôtre pour créer des sites modernes qui augmentent les inscriptions. Avez-vous 15 minutes cette semaine pour un échange rapide ?",
     "duration": "30 sec",
-    "tags": ["appel", "prospection"]
+    "tags": ["appel", "prospection", "auto-école"]
   },
   {
     "id": "2",
-    "title": "Script DM LinkedIn - Entreprise",
-    "type": "dm",
-    "content": "Bonjour [Prénom],\n\nJ'ai remarqué que [Entreprise] est en pleine croissance. Avez-vous déjà pensé à moderniser votre présence digitale ?\n\nNexus Circle accompagne les entreprises comme la vôtre avec des solutions sur-mesure : sites vitrines, e-commerce, outils internes, branding.\n\nSeriez-vous disponible pour un échange de 15 minutes cette semaine ?\n\nCordialement,\n[Votre nom]",
-    "tags": ["linkedin", "entreprise"]
+    "title": "Script Appel - Approche complète",
+    "type": "appel",
+    "content": "Bonjour [Prénom],\n\nJe suis [Votre nom], partenaire de Nexus Circle. Nous accompagnons les auto-écoles pour créer des sites modernes qui augmentent les inscriptions.\n\nJ'ai remarqué que [Nom Auto-école] est une référence dans votre secteur. Avez-vous déjà pensé à moderniser votre présence digitale pour attirer plus de candidats ?\n\nBeaucoup d'auto-écoles voient leurs inscriptions en ligne augmenter de 30-40% avec un site moderne et une meilleure visibilité sur Google. Et surtout, les candidats peuvent s'inscrire même le soir ou le week-end, quand vous êtes fermés.\n\nAvez-vous 15 minutes cette semaine pour un échange rapide ?",
+    "duration": "1 min",
+    "tags": ["appel", "prospection", "auto-école"]
   },
   {
     "id": "3",
-    "title": "Script DM LinkedIn - Influenceur",
+    "title": "Script DM LinkedIn - Auto-école",
     "type": "dm",
-    "content": "Salut [Prénom] 👋\n\nJe vois que tu développes une belle communauté ! As-tu déjà pensé à créer ton propre e-book ou application mobile pour monétiser davantage ?\n\nNexus Circle accompagne les créateurs comme toi dans leurs projets digitaux. On peut en discuter 15 minutes si tu veux ?\n\nÀ bientôt,\n[Votre nom]",
-    "tags": ["linkedin", "influenceur"]
+    "content": "Bonjour [Prénom],\n\nJ'ai remarqué que [Nom Auto-école] est très active et développe une belle communauté autour de la formation au permis.\n\nAvez-vous déjà pensé à créer un site web professionnel pour compléter votre présence digitale ?\n\nUn site moderne vous permettrait d'apparaître en première page Google quand quelqu'un cherche \"auto-école [ville]\", et les candidats pourraient s'inscrire directement en ligne, même le soir.\n\nBeaucoup d'auto-écoles voient leurs inscriptions augmenter de 30-40% avec un site optimisé.\n\nSeriez-vous disponible pour un échange de 15 minutes cette semaine ?\n\nCordialement,\n[Votre nom]\nPartenaire Nexus Circle",
+    "tags": ["linkedin", "auto-école", "dm"]
   },
   {
     "id": "4",
-    "title": "Script SMS/WhatsApp",
+    "title": "Script SMS/WhatsApp - Auto-école",
     "type": "sms",
-    "content": "Bonjour [Prénom], \n\nNexus Circle accompagne les entreprises dans leur digitalisation (sites web, e-commerce, apps). \n\nDisponible pour un échange de 15 min cette semaine ? \n\n[Votre nom]",
-    "tags": ["sms", "whatsapp"]
+    "content": "Bonjour [Prénom],\n\nNexus Circle accompagne les auto-écoles pour créer des sites modernes qui augmentent les inscriptions.\n\nBeaucoup d'auto-écoles voient leurs inscriptions en ligne augmenter de 30-40% avec un site optimisé pour Google.\n\nDisponible pour un échange de 15 min cette semaine ?\n\n[Votre nom]",
+    "tags": ["sms", "whatsapp", "auto-école"]
   },
   {
     "id": "5",
-    "title": "Script Email - Présentation",
+    "title": "Script Email - Auto-école",
     "type": "email",
-    "content": "Objet : Accompagnement digital pour [Entreprise]\n\nBonjour [Prénom],\n\nJe me permets de vous contacter car j'ai remarqué que [Entreprise] est en pleine expansion.\n\nNexus Circle accompagne les entreprises comme la vôtre dans leur transformation digitale avec des solutions sur-mesure : sites vitrines, e-commerce, applications, branding.\n\nSeriez-vous disponible pour un échange de 15 minutes cette semaine pour discuter de vos besoins ?\n\nJe reste à votre disposition.\n\nCordialement,\n[Votre nom]\nPartenaire Nexus Circle",
-    "tags": ["email", "entreprise"]
+    "content": "Objet : Site vitrine moderne pour [Nom Auto-école]\n\nBonjour [Prénom],\n\nJe me permets de vous contacter car j'ai remarqué que [Nom Auto-école] est une référence dans votre secteur.\n\nNexus Circle accompagne les auto-écoles comme la vôtre pour créer des sites modernes qui augmentent les inscriptions. Beaucoup d'auto-écoles voient leurs inscriptions en ligne augmenter de 30-40% avec un site optimisé pour Google et un formulaire de pré-inscription en ligne.\n\nUn site moderne vous permettrait d'apparaître en première page Google quand quelqu'un cherche \"auto-école [ville]\", et les candidats pourraient s'inscrire même le soir ou le week-end, quand vous êtes fermés.\n\nSeriez-vous disponible pour un échange de 15 minutes cette semaine pour discuter de votre projet ?\n\nJe reste à votre disposition.\n\nCordialement,\n[Votre nom]\nPartenaire Nexus Circle",
+    "tags": ["email", "auto-école"]
   },
   {
     "id": "6",
     "title": "Objection : Prix trop élevé",
     "type": "objection",
-    "content": "Je comprends votre préoccupation. Les prix que j'ai mentionnés sont des fourchettes indicatives. Chaque projet est unique et nécessite un devis personnalisé.\n\nL'avantage de prendre un RDV avec Nexus Circle, c'est que vous obtiendrez un devis adapté à vos besoins réels et votre budget. Sans engagement de votre part.\n\nQuand seriez-vous disponible pour cet échange ?",
-    "tags": ["objection", "prix"]
+    "content": "Je comprends votre préoccupation. Les prix que j'ai mentionnés sont des fourchettes indicatives (à partir de 1 500€). Chaque projet est unique et nécessite un devis personnalisé.\n\nL'avantage de prendre un RDV avec Nexus Circle, c'est que vous obtiendrez un devis adapté à vos besoins réels et votre budget. Sans engagement de votre part.\n\nEt surtout, un site moderne peut vous faire gagner beaucoup plus que son coût en augmentant vos inscriptions. Beaucoup d'auto-écoles récupèrent leur investissement en quelques mois grâce aux nouvelles inscriptions.\n\nQuand seriez-vous disponible pour cet échange ?",
+    "tags": ["objection", "prix", "auto-école"]
   },
   {
     "id": "7",
     "title": "Objection : Pas le temps",
     "type": "objection",
-    "content": "Je comprends que votre temps est précieux. C'est justement pour ça que je propose un échange de 15 minutes seulement.\n\nL'objectif est simple : comprendre vos besoins et voir si Nexus Circle peut vous aider. Si ce n'est pas le cas, pas de problème, vous aurez juste perdu 15 minutes.\n\nSi c'est le cas, vous pourriez gagner beaucoup de temps et d'argent sur le long terme.\n\nÇa vaut le coup, non ?",
-    "tags": ["objection", "temps"]
+    "content": "Je comprends que votre temps est précieux. C'est justement pour ça que je propose un échange de 15 minutes seulement.\n\nL'objectif est simple : comprendre vos besoins et voir si Nexus Circle peut vous aider. Si ce n'est pas le cas, pas de problème, vous aurez juste perdu 15 minutes.\n\nSi c'est le cas, vous pourriez augmenter vos inscriptions de 30-40% et gagner beaucoup de temps sur le long terme (les candidats s'inscrivent en ligne, même le soir).\n\nÇa vaut le coup, non ?",
+    "tags": ["objection", "temps", "auto-école"]
   },
   {
     "id": "8",
-    "title": "Objection : Déjà un prestataire",
+    "title": "Objection : On a déjà un site",
     "type": "objection",
-    "content": "C'est une bonne chose d'avoir déjà un prestataire ! L'idée n'est pas de le remplacer, mais peut-être de compléter son offre ou d'avoir une deuxième opinion.\n\nNexus Circle peut intervenir sur des projets spécifiques ou vous proposer des solutions que votre prestataire actuel ne couvre peut-être pas.\n\nUn échange de 15 minutes ne vous engage à rien et pourrait vous apporter des idées intéressantes. Qu'en pensez-vous ?",
-    "tags": ["objection", "prestataire"]
+    "content": "C'est une bonne chose d'avoir déjà un site ! L'idée n'est pas forcément de le remplacer, mais peut-être de le moderniser ou d'améliorer votre visibilité sur Google.\n\nBeaucoup d'auto-écoles ont un site mais n'apparaissent pas en première page quand on cherche \"auto-école [ville]\". Résultat : les candidats ne vous trouvent pas et vont chez vos concurrents.\n\nUn site moderne et optimisé vous permettrait d'apparaître sur Google et de recevoir des pré-inscriptions en ligne, même le soir.\n\nUn échange de 15 minutes ne vous engage à rien et pourrait vous apporter des idées intéressantes. Qu'en pensez-vous ?",
+    "tags": ["objection", "site existant", "auto-école"]
+  },
+  {
+    "id": "9",
+    "title": "Objection : Pas intéressé",
+    "type": "objection",
+    "content": "Je comprends. C'est justement pour ça que je propose un échange de 15 minutes seulement.\n\nL'objectif est simple : comprendre vos besoins et voir si on peut vous aider. Si ce n'est pas le cas, pas de problème, vous aurez juste perdu 15 minutes.\n\nSi c'est le cas, vous pourriez augmenter vos inscriptions de 30-40% avec un site moderne et optimisé pour Google. Ça vaut le coup, non ?",
+    "tags": ["objection", "pas intéressé", "auto-école"]
   }
 ]
-

@@ -1,43 +1,42 @@
 [
   {
     "id": "1",
-    "businessType": "Auto-école",
-    "context": "Auto-école familiale avec 2 agences, cherche à moderniser sa communication et augmenter ses inscriptions en ligne.",
-    "message": "Bonjour [Prénom],\n\nJ'ai remarqué que [Nom Auto-école] est une référence dans votre secteur. Avez-vous déjà pensé à moderniser votre présence digitale pour attirer plus de candidats ?\n\nBeaucoup d'auto-écoles voient leurs inscriptions en ligne augmenter de 30-40% avec un site moderne et une meilleure visibilité sur Google.\n\nSeriez-vous disponible pour un échange de 15 minutes cette semaine ?",
+    "businessType": "Auto-école - Approche par téléphone",
+    "context": "Auto-école familiale avec 2 agences dans une ville de 50 000 habitants. Le site actuel est obsolète (créé en 2015) et ne génère presque aucune inscription en ligne.",
+    "message": "Bonjour [Prénom],\n\nJe suis [Votre nom], partenaire de Nexus Circle. Nous accompagnons les auto-écoles comme la vôtre pour créer des sites modernes qui augmentent les inscriptions.\n\nJ'ai remarqué que [Nom Auto-école] est une référence dans votre secteur. Avez-vous déjà pensé à moderniser votre présence digitale pour attirer plus de candidats ?\n\nBeaucoup d'auto-écoles voient leurs inscriptions en ligne augmenter de 30-40% avec un site moderne et une meilleure visibilité sur Google. Et surtout, les candidats peuvent s'inscrire même le soir ou le week-end, quand vous êtes fermés.\n\nAvez-vous 15 minutes cette semaine pour un échange rapide ?",
     "objective": "Décrocher un RDV pour présenter : site vitrine moderne + référencement local + formulaire de pré-inscription en ligne",
-    "tags": ["auto-école", "site vitrine", "référencement"]
+    "tags": ["auto-école", "site vitrine", "appel", "référencement"]
   },
   {
     "id": "2",
-    "businessType": "Restaurant",
-    "context": "Restaurant traditionnel qui souhaite développer la vente à emporter et améliorer sa visibilité.",
-    "message": "Salut [Prénom] 👋\n\nJe passe souvent devant [Nom Restaurant] et j'ai vu que vous faites de la vente à emporter. Avez-vous déjà pensé à un site web avec commande en ligne ?\n\nÇa pourrait vous faire gagner du temps au téléphone et augmenter vos commandes, surtout le soir et le week-end.\n\nOn peut en discuter 15 minutes si tu veux ?",
-    "objective": "RDV pour présenter : site vitrine + système de commande en ligne + intégration avec vos réseaux sociaux",
-    "tags": ["restaurant", "e-commerce", "commande en ligne"]
+    "businessType": "Auto-école - Approche par LinkedIn",
+    "context": "Auto-école avec plusieurs agences, active sur LinkedIn. Le dirigeant poste régulièrement du contenu sur la formation au permis. Pas de site web actuellement.",
+    "message": "Bonjour [Prénom],\n\nJ'ai remarqué que [Nom Auto-école] est très active sur LinkedIn et développe une belle communauté autour de la formation au permis.\n\nAvez-vous déjà pensé à créer un site web professionnel pour compléter votre présence digitale ?\n\nUn site moderne vous permettrait d'apparaître en première page Google quand quelqu'un cherche \"auto-école [ville]\", et les candidats pourraient s'inscrire directement en ligne, même le soir.\n\nBeaucoup d'auto-écoles voient leurs inscriptions augmenter de 30-40% avec un site optimisé.\n\nSeriez-vous disponible pour un échange de 15 minutes cette semaine ?\n\nCordialement,\n[Votre nom]\nPartenaire Nexus Circle",
+    "objective": "Décrocher un RDV pour présenter : site vitrine moderne + référencement local + formulaire de pré-inscription en ligne",
+    "tags": ["auto-école", "site vitrine", "linkedin", "référencement"]
   },
   {
     "id": "3",
-    "businessType": "Salle de Sport",
-    "context": "Salle de sport qui veut digitaliser les inscriptions et créer une app pour ses membres.",
-    "message": "Bonjour [Prénom],\n\nJe vois que [Nom Salle] a une belle communauté ! Avez-vous déjà pensé à digitaliser les inscriptions et créer une app mobile pour vos membres ?\n\nÇa faciliterait la gestion des abonnements, les réservations de cours, et créerait un vrai lien avec vos membres.\n\nQuand seriez-vous disponible pour un échange de 15 minutes ?",
-    "objective": "RDV pour présenter : site vitrine + application mobile avec réservation de cours + gestion des abonnements en ligne",
-    "tags": ["salle de sport", "app mobile", "abonnements"]
+    "businessType": "Auto-école - Approche par WhatsApp/SMS",
+    "context": "Auto-école de quartier, vous avez son numéro via un contact commun. Le site actuel existe mais est très basique et ne génère pas d'inscriptions.",
+    "message": "Bonjour [Prénom],\n\nNexus Circle accompagne les auto-écoles pour créer des sites modernes qui augmentent les inscriptions.\n\nBeaucoup d'auto-écoles voient leurs inscriptions en ligne augmenter de 30-40% avec un site optimisé pour Google.\n\nDisponible pour un échange de 15 min cette semaine ?\n\n[Votre nom]",
+    "objective": "Décrocher un RDV pour présenter : site vitrine moderne + référencement local + formulaire de pré-inscription en ligne",
+    "tags": ["auto-école", "site vitrine", "whatsapp", "sms"]
   },
   {
     "id": "4",
-    "businessType": "Artisan (Plombier)",
-    "context": "Plombier indépendant qui reçoit beaucoup d'appels mais veut optimiser sa gestion et sa visibilité.",
-    "message": "Bonjour [Prénom],\n\nJe vois que vous êtes plombier dans [Ville]. Vous recevez probablement beaucoup d'appels pour des urgences et des devis, non ?\n\nOn pourrait vous créer un site web avec formulaire de devis en ligne, ça vous ferait gagner du temps et vous permettrait d'être mieux référencé sur Google.\n\nÇa vous intéresse ? On peut en discuter 15 minutes.",
-    "objective": "RDV pour présenter : site vitrine + formulaire de devis en ligne + référencement local Google",
-    "tags": ["artisan", "plombier", "devis en ligne"]
+    "businessType": "Auto-école - Objection 'On a déjà un site'",
+    "context": "Auto-école qui a un site mais qui n'est pas visible sur Google et ne génère aucune inscription. Le site a été créé il y a 5 ans.",
+    "message": "Bonjour [Prénom],\n\nJe comprends que vous avez déjà un site, c'est une bonne chose !\n\nL'idée n'est pas forcément de le remplacer, mais peut-être de le moderniser ou d'améliorer votre visibilité sur Google.\n\nBeaucoup d'auto-écoles ont un site mais n'apparaissent pas en première page quand on cherche \"auto-école [ville]\". Résultat : les candidats ne vous trouvent pas et vont chez vos concurrents.\n\nUn site moderne et optimisé vous permettrait d'apparaître sur Google et de recevoir des pré-inscriptions en ligne, même le soir.\n\nUn échange de 15 minutes ne vous engage à rien et pourrait vous apporter des idées intéressantes. Qu'en pensez-vous ?",
+    "objective": "Décrocher un RDV malgré l'objection, en montrant la valeur d'un site moderne et optimisé",
+    "tags": ["auto-école", "objection", "site existant", "référencement"]
   },
   {
     "id": "5",
-    "businessType": "E-commerce (Mode)",
-    "context": "Boutique de vêtements qui vend uniquement en physique et veut développer le e-commerce.",
-    "message": "Bonjour [Prénom],\n\nJ'ai découvert [Nom Boutique] récemment, j'adore vos créations ! Avez-vous déjà pensé à vendre en ligne ?\n\nUne boutique en ligne vous permettrait de toucher des clients partout en France, même quand votre magasin est fermé. Beaucoup de boutiques doublent leur CA en 6 mois avec le e-commerce.\n\nOn peut en discuter ?",
-    "objective": "RDV pour présenter : boutique e-commerce complète avec catalogue, paiement sécurisé, gestion des stocks",
-    "tags": ["e-commerce", "mode", "boutique en ligne"]
+    "businessType": "Auto-école - Objection 'Pas le budget'",
+    "context": "Auto-école qui hésite à cause du prix. Il faut rassurer sur la fourchette indicative et proposer un devis personnalisé.",
+    "message": "Bonjour [Prénom],\n\nJe comprends votre préoccupation. Les prix que j'ai mentionnés sont des fourchettes indicatives (à partir de 1 500€). Chaque projet est unique et nécessite un devis personnalisé.\n\nL'avantage de prendre un RDV avec Nexus Circle, c'est que vous obtiendrez un devis adapté à vos besoins réels et votre budget. Sans engagement de votre part.\n\nEt surtout, un site moderne peut vous faire gagner beaucoup plus que son coût en augmentant vos inscriptions. Beaucoup d'auto-écoles récupèrent leur investissement en quelques mois grâce aux nouvelles inscriptions.\n\nQuand seriez-vous disponible pour cet échange ?",
+    "objective": "Décrocher un RDV malgré l'objection budget, en rassurant sur le devis personnalisé",
+    "tags": ["auto-école", "objection", "budget", "prix"]
   }
 ]
-
