@@ -390,12 +390,68 @@ export default function ProcessusVentePage() {
           </div>
           <div className="relative flex justify-center">
             <div className="bg-background-primary px-6">
+              <MessageSquare className="text-gold/30" size={32} />
+            </div>
+          </div>
+        </div>
+
+        {/* Section 3 : Script */}
+        <section className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-text-primary mb-3 uppercase tracking-wide">Script</h2>
+            <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+              Message d&apos;approche pour contacter une auto-école
+            </p>
+          </div>
+
+          <div className="card border-2 border-gold/50">
+            <div className="flex items-start gap-4 mb-6">
+              <MessageSquare className="text-gold flex-shrink-0" size={40} />
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold text-text-primary mb-4 uppercase tracking-wide">Message d&apos;approche</h3>
+                <div className="bg-background-secondary rounded-lg p-6 border border-border-subtle">
+                  <div className="space-y-4 text-text-secondary leading-relaxed">
+                    <p>
+                      Bonjour <span className="text-gold font-semibold">(Prénom)</span>,
+                    </p>
+                    <p>
+                      Je me présente rapidement, je m&apos;appelle <span className="text-gold font-semibold">(Prénom)</span> et je travaille pour Nexus Circle, une agence spécialisée dans la création et l&apos;optimisation de sites web pour les auto-écoles et instituts de formation routière.
+                    </p>
+                    <p>
+                      En regardant votre site, j&apos;ai remarqué <span className="text-gold font-semibold">(un point précis : design un peu daté / manque de clarté / difficulté à trouver les infos / site peu adapté au mobile / etc.)</span>.
+                    </p>
+                    <p>
+                      On accompagne justement des structures comme la vôtre pour corriger ce type de problématique et améliorer la visibilité ainsi que les prises de contact.
+                    </p>
+                    <p className="pt-2">
+                      <span className="text-gold font-semibold">👉</span> Avant d&apos;aller plus loin, j&apos;aimerais surtout savoir : aujourd&apos;hui, est-ce que votre site vous apporte réellement des élèves ou des demandes ?
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-6 p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
+                  <p className="text-sm text-text-secondary">
+                    <strong className="text-yellow-400">💡 Astuce :</strong> Adapte le point précis selon ce que tu observes sur leur site. 
+                    Sois authentique et montre que tu as vraiment regardé leur site.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Séparateur moderne */}
+        <div className="relative my-20">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-border-subtle"></div>
+          </div>
+          <div className="relative flex justify-center">
+            <div className="bg-background-primary px-6">
               <Phone className="text-gold/30" size={32} />
             </div>
           </div>
         </div>
 
-        {/* Section 3 : Conclure un cold call */}
+        {/* Section 4 : Conclure un cold call */}
         <section className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-text-primary mb-3 uppercase tracking-wide">Conclure un cold call</h2>
