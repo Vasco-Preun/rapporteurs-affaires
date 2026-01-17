@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Chatbot from "@/components/Chatbot";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -12,8 +13,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Apport d'Affaires Auto-Écoles - Nexus Circle",
-  description: "Espace dédié aux apporteurs d'affaires pour sites vitrines auto-écoles. Décrochez des rendez-vous avec Nexus Circle.",
+  title: "Portail Partenaires Nexus Circle - Sites Web Premium pour Cabinets",
+  description: "Espace dédié aux apporteurs d'affaires pour sites web premium : avocats, architectes, médical, instituts de formation. Décrochez des rendez-vous avec Nexus Circle.",
 };
 
 export default function RootLayout({
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Navigation />
           <main className="flex-grow">{children}</main>
           <Footer />
+          <Chatbot />
         </div>
       </body>
     </html>

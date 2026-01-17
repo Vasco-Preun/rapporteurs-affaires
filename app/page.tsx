@@ -50,17 +50,17 @@ export default function HomePage() {
     {
       number: 1,
       title: "Prospection",
-      description: "Vous identifiez et contactez des auto-écoles intéressées par un nouveau site vitrine.",
+      description: "Vous identifiez et contactez des cabinets (avocats, architectes, médical) et instituts de formation professionnelle intéressés par un site web premium.",
     },
     {
       number: 2,
       title: "Rendez-vous",
-      description: "Vous décrochez un RDV avec l'auto-école. C'est votre objectif principal !",
+      description: "Vous décrochez un RDV avec le cabinet. C'est votre objectif principal !",
     },
     {
       number: 3,
       title: "Transmission",
-      description: "Vous transmettez les coordonnées de l'auto-école à Nexus Circle.",
+      description: "Vous transmettez les coordonnées du cabinet à Nexus Circle.",
     },
     {
       number: 4,
@@ -103,18 +103,16 @@ export default function HomePage() {
         
         {/* Contenu */}
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 py-20 w-full max-w-7xl mx-auto">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-text-primary mb-8 uppercase tracking-wide leading-tight">
-            Apport d&apos;Affaires <span className="text-gold">Auto-Écoles</span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-text-primary mb-6 uppercase tracking-wide leading-tight">
+            Apporteurs d&apos;affaires <span className="text-gold">Nexus</span>
           </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl text-text-secondary max-w-4xl mx-auto mb-12 leading-relaxed">
-            Ici, vous apportez des auto-écoles intéressées par un nouveau site vitrine.
-            <br />
-            Votre mission : décrocher un rendez-vous. Nexus Circle fait le reste.
+          <p className="text-base md:text-lg text-text-secondary max-w-3xl mx-auto mb-8 leading-relaxed">
+            Spécialisés pour : avocats, architectes, médical, instituts de formation
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/processus-vente" className="btn-primary inline-flex items-center justify-center text-lg px-10 py-5">
-              Commencer maintenant
-              <ArrowRight className="ml-2" size={20} />
+            <Link href="/processus-vente" className="btn-primary inline-flex items-center justify-center px-8 py-3">
+              Commencer
+              <ArrowRight className="ml-2" size={18} />
             </Link>
             <Link href="/nexus-circle" className="btn-secondary inline-flex items-center justify-center text-lg px-10 py-5">
               Pour qui tu travailles ?
@@ -134,7 +132,7 @@ export default function HomePage() {
             <div>
               <h2 className="text-2xl font-bold text-text-primary mb-2 uppercase tracking-wide">Votre Objectif</h2>
               <p className="text-text-secondary text-lg">
-                <strong>Décrocher un RDV</strong> avec une auto-école intéressée par un nouveau site vitrine. 
+                <strong>Décrocher un RDV</strong> avec un cabinet ou un institut de formation intéressé par un site web premium qui renforce sa crédibilité, qualifie ses demandes et génère de nouveaux contacts (ou inscriptions). 
                 Une fois le rendez-vous obtenu, <strong>Nexus Circle prend le relais</strong> : devis, négociation et signature.
                 Vous touchez votre commission après encaissement.
               </p>
@@ -167,7 +165,7 @@ export default function HomePage() {
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold text-text-primary mb-4 uppercase tracking-wide">Prêt à commencer ?</h2>
           <p className="text-text-secondary mb-8 max-w-2xl mx-auto">
-            Découvrez comment décrocher des rendez-vous avec des auto-écoles et comment présenter Nexus Circle.
+            Découvrez comment décrocher des rendez-vous avec des cabinets premium et instituts de formation, et comment présenter Nexus Circle.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/processus-vente" className="btn-primary inline-flex items-center justify-center text-lg px-10 py-5">

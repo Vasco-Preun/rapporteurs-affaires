@@ -1,20 +1,26 @@
 [
   {
     "id": "1",
-    "title": "Sites Vitrines pour Auto-Écoles",
-    "description": "Site web professionnel et moderne spécialement conçu pour les auto-écoles. Optimisé pour le référencement local et la conversion des candidats.",
-    "category": "auto-école",
+    "title": "Sites Web Premium pour Cabinets Professionnels",
+    "description": "Site web premium et structurant spécialement conçu pour les cabinets professionnels. Optimisé pour renforcer la crédibilité, qualifier les demandes et générer des contacts pertinents.",
+    "category": "cabinet",
     "features": [
-      "Design moderne et crédible",
+      "Design premium et structurant",
       "Responsive (mobile, tablette, desktop)",
-      "Référencement local Google optimisé",
-      "Chatbot pour l'autoformation (self-study)",
-      "Formulaire de pré-inscription en ligne",
-      "Présentation des agences et moniteurs",
-      "Tarifs et forfaits visibles",
-      "Intégration réseaux sociaux",
+      "Référencement local Google optimisé (quand pertinent)",
+      "Chatbot intelligent pour qualification",
+      "Formulaire de contact qualifié",
+      "Présentation claire des expertises et domaines d'intervention",
+      "Processus et méthodologie expliqués",
+      "Conformité RGPD / mentions légales / confidentialité",
       "Gestion de contenu simple"
     ],
-    "priceRange": "À partir de 1 500€"
+    "priceRange": "À partir de 1 500€",
+    "sectors": [
+      "Cabinets d'avocats",
+      "Cabinets d'architectes",
+      "Cabinets médicaux spécialisés / cliniques privées",
+      "Instituts de formation professionnelle (organismes de formation certifiés Qualiopi)"
+    ]
   }
 ]

@@ -170,7 +170,7 @@ export default function ProcessusVentePage() {
             Comment <span className="text-gold">vendre</span>
           </h1>
           <p className="text-xl md:text-2xl lg:text-3xl text-text-secondary max-w-4xl mx-auto mb-12 leading-relaxed">
-            Tout ce dont tu as besoin pour décrocher des rendez-vous avec des auto-écoles : processus, scripts, vidéos et entraînement.
+            Tout ce dont tu as besoin pour décrocher des rendez-vous avec des cabinets premium et instituts de formation : processus, scripts, vidéos et entraînement.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/guide-cold-call-auto-ecoles.pdf" download className="btn-primary inline-flex items-center justify-center text-lg px-10 py-5">
@@ -189,7 +189,7 @@ export default function ProcessusVentePage() {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-text-primary mb-3 uppercase tracking-wide">Ce que tu vends</h2>
             <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-              Site vitrine moderne spécialement conçu pour les auto-écoles
+              Sites web premium pour cabinets professionnels et instituts de formation
             </p>
           </div>
 
@@ -200,19 +200,19 @@ export default function ProcessusVentePage() {
                 <ul className="space-y-2 text-text-secondary">
                   <li className="flex items-start">
                     <CheckCircle className="text-gold mr-2 flex-shrink-0 mt-0.5" size={16} />
-                    <span>Présentation des agences et moniteurs</span>
+                    <span>Présentation claire des expertises et domaines d&apos;intervention</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="text-gold mr-2 flex-shrink-0 mt-0.5" size={16} />
-                    <span>Tarifs et forfaits visibles</span>
+                    <span>Processus et méthodologie expliqués</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="text-gold mr-2 flex-shrink-0 mt-0.5" size={16} />
-                    <span>Informations pratiques (horaires, localisation)</span>
+                    <span>Équipe et valeurs du cabinet</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="text-gold mr-2 flex-shrink-0 mt-0.5" size={16} />
-                    <span>Galerie photos et vidéos</span>
+                    <span>Conformité RGPD / mentions légales / confidentialité</span>
                   </li>
                 </ul>
               </div>
@@ -221,19 +221,23 @@ export default function ProcessusVentePage() {
                 <ul className="space-y-2 text-text-secondary">
                   <li className="flex items-start">
                     <CheckCircle className="text-gold mr-2 flex-shrink-0 mt-0.5" size={16} />
-                    <span>Formulaire de pré-inscription en ligne</span>
+                    <span>Parcours clair : expertises → process → prise de contact / RDV</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="text-gold mr-2 flex-shrink-0 mt-0.5" size={16} />
-                    <span>Référencement local Google optimisé</span>
+                    <span>Formulaire de contact qualifié</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="text-gold mr-2 flex-shrink-0 mt-0.5" size={16} />
-                    <span>Design responsive (mobile, tablette, desktop)</span>
+                    <span>Référencement local Google optimisé (quand pertinent)</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="text-gold mr-2 flex-shrink-0 mt-0.5" size={16} />
-                    <span>Intégration réseaux sociaux</span>
+                    <span>Design premium responsive (mobile, tablette, desktop)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="text-gold mr-2 flex-shrink-0 mt-0.5" size={16} />
+                    <span>Chatbot intelligent pour qualification</span>
                   </li>
                 </ul>
               </div>
@@ -264,7 +268,7 @@ export default function ProcessusVentePage() {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-text-primary mb-3 uppercase tracking-wide">Trouver des clients</h2>
             <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-              Comment cibler des auto-écoles avec le scraping
+              Comment cibler des cabinets premium avec le scraping
             </p>
           </div>
 
@@ -296,14 +300,14 @@ export default function ProcessusVentePage() {
                 <div className="flex-1">
                   <h3 className="text-lg font-bold text-text-primary mb-2 uppercase tracking-wide">Rechercher sur Google Maps</h3>
                   <p className="text-text-secondary mb-3">
-                    Tapez <strong>&quot;auto-école [ville]&quot;</strong> dans Google Maps
+                    Tapez <strong>&quot;cabinet d&apos;avocat [ville]&quot;</strong>, <strong>&quot;cabinet architecte [ville]&quot;</strong>, <strong>&quot;cabinet médical [ville]&quot;</strong> ou <strong>&quot;organisme formation [ville]&quot;</strong> dans Google Maps
                   </p>
                   <div className="bg-background-secondary rounded p-4 border border-border-subtle">
                     <p className="text-xs font-medium text-gold mb-2 uppercase tracking-widest">Conseils</p>
                     <ul className="space-y-1 text-sm text-text-secondary">
                       <li>• Commencez par votre ville ou département</li>
-                      <li>• Explorez les villes voisines</li>
-                      <li>• Notez les auto-écoles avec plusieurs agences</li>
+                      <li>• Explorez les villes voisines ou zones d&apos;activité</li>
+                      <li>• Notez les cabinets avec plusieurs sites ou spécialités</li>
                     </ul>
                   </div>
                 </div>
@@ -360,14 +364,14 @@ export default function ProcessusVentePage() {
                 <div className="flex-1">
                   <h3 className="text-lg font-bold text-text-primary mb-2 uppercase tracking-wide">Prioriser vos appels</h3>
                   <p className="text-text-secondary mb-3">
-                    Ciblez en priorité les auto-écoles avec le plus de potentiel.
+                    Ciblez en priorité les cabinets avec le plus de potentiel.
                   </p>
                   <div className="bg-background-secondary rounded p-4 border border-border-subtle">
                     <p className="text-xs font-medium text-gold mb-2 uppercase tracking-widest">Critères de priorité</p>
                     <ul className="space-y-1 text-sm text-text-secondary">
                       <li>• Sans site web → Priorité maximale</li>
-                      <li>• Site obsolète → Priorité haute</li>
-                      <li>• Plusieurs agences → Gros client potentiel</li>
+                      <li>• Site obsolète ou peu structuré → Priorité haute</li>
+                      <li>• Plusieurs sites ou spécialités → Gros client potentiel</li>
                     </ul>
                   </div>
                 </div>
@@ -377,7 +381,7 @@ export default function ProcessusVentePage() {
 
           <div className="mt-8 p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
             <p className="text-sm text-text-secondary">
-              <strong className="text-yellow-400">💡 Astuce :</strong> Scrapez 20-30 auto-écoles d&apos;un coup, 
+              <strong className="text-yellow-400">💡 Astuce :</strong> Scrapez 20-30 cabinets d&apos;un secteur d&apos;un coup, 
               organisez-les dans votre tableau, puis consacrez une demi-journée à les appeler toutes. Plus efficace !
             </p>
           </div>
@@ -400,7 +404,7 @@ export default function ProcessusVentePage() {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-text-primary mb-3 uppercase tracking-wide">Script</h2>
             <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-              Message d&apos;approche pour contacter une auto-école
+              Message d&apos;approche pour contacter un cabinet premium
             </p>
           </div>
 
@@ -415,16 +419,16 @@ export default function ProcessusVentePage() {
                       Bonjour <span className="text-gold font-semibold">(Prénom)</span>,
                     </p>
                     <p>
-                      Je me présente rapidement, je m&apos;appelle <span className="text-gold font-semibold">(Prénom)</span> et je travaille pour Nexus Circle, une agence spécialisée dans la création et l&apos;optimisation de sites web pour les auto-écoles et instituts de formation routière.
+                      Je me présente rapidement, je m&apos;appelle <span className="text-gold font-semibold">(Prénom)</span> et je travaille pour Nexus Circle, une agence spécialisée dans la création de sites web premium pour cabinets professionnels (avocats, architectes, médical) et instituts de formation professionnelle.
                     </p>
                     <p>
-                      En regardant votre site, j&apos;ai remarqué <span className="text-gold font-semibold">(un point précis : design un peu daté / manque de clarté / difficulté à trouver les infos / site peu adapté au mobile / etc.)</span>.
+                      En regardant votre site, j&apos;ai remarqué <span className="text-gold font-semibold">(un point précis : design peu structurant / manque de clarté sur les expertises / difficulté à trouver les informations / site peu adapté au mobile / etc.)</span>.
                     </p>
                     <p>
-                      On accompagne justement des structures comme la vôtre pour corriger ce type de problématique et améliorer la visibilité ainsi que les prises de contact.
+                      On accompagne justement des cabinets comme le vôtre pour créer des sites qui renforcent la crédibilité, qualifient les demandes et génèrent des contacts pertinents.
                     </p>
                     <p className="pt-2">
-                      <span className="text-gold font-semibold">👉</span> Avant d&apos;aller plus loin, j&apos;aimerais surtout savoir : aujourd&apos;hui, est-ce que votre site vous apporte réellement des élèves ou des demandes ?
+                      <span className="text-gold font-semibold">👉</span> Avant d&apos;aller plus loin, j&apos;aimerais surtout savoir : aujourd&apos;hui, est-ce que votre site vous apporte réellement des clients qualifiés ou des demandes pertinentes ?
                     </p>
                   </div>
                 </div>
@@ -466,7 +470,7 @@ export default function ProcessusVentePage() {
               <div className="flex-1">
                 <h3 className="text-2xl font-bold text-text-primary mb-2 uppercase tracking-wide">Guide PDF</h3>
                 <p className="text-text-secondary mb-4">
-                  Guide détaillé qui explique pas à pas comment conclure efficacement un appel prospection avec une auto-école.
+                  Guide détaillé qui explique pas à pas comment conclure efficacement un appel prospection avec un cabinet professionnel.
                   Tous les scripts, phrases à utiliser, et techniques pour décrocher le rendez-vous.
                 </p>
                 <a href="/guide-cold-call-auto-ecoles.pdf" download className="btn-primary inline-flex items-center justify-center">
@@ -589,7 +593,7 @@ export default function ProcessusVentePage() {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-text-primary mb-3 uppercase tracking-wide">Entraînement</h2>
             <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-              Entraîne-toi avec des scénarios réalistes d&apos;auto-écoles
+              Entraîne-toi avec des scénarios réalistes de cabinets professionnels et instituts de formation
             </p>
           </div>
         

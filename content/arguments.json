@@ -1,38 +1,38 @@
 [
   {
     "id": "1",
-    "service": "Site Vitrine Auto-École",
-    "problem": "Votre site web est obsolète ou inexistant, vous perdez des candidats potentiels qui cherchent une auto-école sur Google",
-    "benefit": "Un site moderne augmente votre crédibilité et attire de nouveaux candidats 24/7, même quand vous êtes fermés",
-    "example": "Une auto-école a vu ses inscriptions en ligne augmenter de 35% après la création de son nouveau site vitrine et l'optimisation de son référencement local",
+    "service": "Site Web Premium pour Cabinet",
+    "problem": "Votre site web est obsolète, peu structurant ou inexistant, vous perdez en crédibilité et en opportunités de contacts qualifiés",
+    "benefit": "Un site premium renforce votre crédibilité immédiate, qualifie vos demandes et génère des contacts pertinents 24/7",
+    "example": "Un cabinet professionnel avec un site structurant voit ses demandes qualifiées augmenter de manière significative, tout en réduisant les sollicitations non pertinentes",
     "closingQuestion": "Quand seriez-vous disponible cette semaine pour un échange de 15 minutes sur votre projet de site ?",
-    "tags": ["auto-école", "site vitrine", "référencement"]
+    "tags": ["cabinet", "site premium", "crédibilité"]
   },
   {
     "id": "2",
-    "service": "Site Vitrine Auto-École",
-    "problem": "Vous n'apparaissez pas en première page Google quand quelqu'un cherche 'auto-école [votre ville]', vos concurrents vous devancent",
-    "benefit": "Un site optimisé pour le référencement local vous fait apparaître en première page Google et vous apporte des candidats naturellement",
-    "example": "Une auto-école qui n'apparaissait pas sur Google a reçu 15 nouvelles demandes de pré-inscription le premier mois après la mise en ligne de son nouveau site",
-    "closingQuestion": "Aimeriez-vous découvrir comment améliorer votre visibilité sur Google ?",
-    "tags": ["auto-école", "référencement", "visibilité"]
+    "service": "Site Web Premium pour Cabinet",
+    "problem": "Vous recevez trop de demandes non pertinentes, votre site ne filtre pas suffisamment et ne met pas en avant vos expertises clairement",
+    "benefit": "Un site structurant avec un parcours clair (expertises → process → prise de contact) qualifie vos demandes et réduit les sollicitations non pertinentes",
+    "example": "Un cabinet professionnel a constaté une réduction de 40% des demandes non pertinentes après la mise en ligne de son nouveau site structurant",
+    "closingQuestion": "Aimeriez-vous découvrir comment qualifier davantage vos demandes avec un site structurant ?",
+    "tags": ["cabinet", "qualification", "structuration"]
   },
   {
     "id": "3",
-    "service": "Site Vitrine Auto-École",
-    "problem": "Les candidats ne peuvent pas s'inscrire en ligne, vous perdez des inscriptions le soir et le week-end",
-    "benefit": "Un formulaire de pré-inscription en ligne capture les candidats 24/7, même quand votre bureau est fermé",
-    "example": "Une auto-école a reçu 8 pré-inscriptions en ligne le premier week-end après la mise en ligne de son nouveau site, alors qu'elle était fermée",
-    "closingQuestion": "Seriez-vous intéressé par un système qui capture les candidats même quand vous êtes fermés ?",
-    "tags": ["auto-école", "formulaire", "conversions"]
+    "service": "Site Web Premium pour Cabinet",
+    "problem": "Votre site actuel ne reflète pas la qualité de votre cabinet, vous perdez en crédibilité face aux prospects",
+    "benefit": "Un site premium et professionnel inspire confiance et rassure les prospects avant même qu'ils vous contactent",
+    "example": "Un cabinet professionnel a constaté que 70% des prospects qui prenaient rendez-vous avaient déjà visité leur nouveau site et étaient mieux informés sur les expertises du cabinet",
+    "closingQuestion": "Quand pourrions-nous discuter de renforcer votre crédibilité en ligne ?",
+    "tags": ["cabinet", "crédibilité", "image"]
   },
   {
     "id": "4",
-    "service": "Site Vitrine Auto-École",
-    "problem": "Votre site actuel ne reflète pas la qualité de votre auto-école, vous perdez en crédibilité face aux candidats",
-    "benefit": "Un site moderne et professionnel inspire confiance et rassure les candidats avant même qu'ils vous appellent",
-    "example": "Une auto-école a constaté que 60% des candidats qui appelaient avaient déjà visité leur nouveau site et étaient mieux informés, ce qui a réduit le temps de présentation",
-    "closingQuestion": "Quand pourrions-nous discuter de moderniser votre présence digitale ?",
-    "tags": ["auto-école", "crédibilité", "image"]
+    "service": "Site Web Premium pour Cabinet",
+    "problem": "Vous n'apparaissez pas en première page Google quand quelqu'un cherche votre type de cabinet dans votre zone, vos concurrents vous devancent",
+    "benefit": "Un site optimisé pour le référencement local (quand pertinent) vous fait apparaître en première page Google et vous apporte des contacts naturellement",
+    "example": "Un cabinet professionnel qui n'apparaissait pas sur Google a reçu 12 nouvelles demandes qualifiées le premier mois après la mise en ligne de son nouveau site",
+    "closingQuestion": "Seriez-vous intéressé par améliorer votre visibilité locale sur Google ?",
+    "tags": ["cabinet", "référencement", "visibilité", "acquisition"]
   }
 ]
