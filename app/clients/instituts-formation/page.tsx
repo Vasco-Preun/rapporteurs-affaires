@@ -147,7 +147,7 @@ export default function ClientsInstitutsFormationPage() {
                   Un site structurant qui présente clairement les formations, valorise les certifications (Qualiopi) et facilite l&apos;inscription transforme le trafic en inscriptions qualifiées.
                 </p>
                 <p className="text-lg text-text-secondary leading-relaxed">
-                  <strong className="text-text-primary">Moins de demandes non qualifiées, plus d'inscriptions pertinentes.</strong> Un site qui travaille pour leur rentabilité.
+                  <strong className="text-text-primary">Moins de demandes non qualifiées, plus d&apos;inscriptions pertinentes.</strong> Un site qui travaille pour leur rentabilité.
                 </p>
               </div>
             </div>
