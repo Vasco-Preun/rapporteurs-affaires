@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import { Menu, X, ChevronDown, LogIn, LogOut, User } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import { useAuth } from "@/components/AuthProvider";
 
 const navItems = [
   { href: "/", label: "Accueil" },
@@ -20,6 +21,8 @@ const clientPages = [
 
 export default function Navigation() {
   const pathname = usePathname();
+  const router = useRouter();
+  const { user, logout } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [clientMenuOpen, setClientMenuOpen] = useState(false);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -118,6 +121,37 @@ export default function Navigation() {
                 </>
               )}
             </div>
+            
+            {/* Auth button */}
+            <div className="ml-2">
+              {user ? (
+                <div className="flex items-center gap-2">
+                  <span className="text-xs text-text-secondary hidden lg:block">
+                    {user.name}
+                  </span>
+                  <button
+                    onClick={async () => {
+                      await logout();
+                      router.push("/");
+                    }}
+                    className="px-3 py-2 rounded-md text-sm font-medium text-text-secondary hover:bg-border-subtle hover:text-text-primary transition-colors flex items-center gap-1"
+                    style={{ fontWeight: 500 }}
+                  >
+                    <LogOut size={16} />
+                    <span className="hidden sm:inline">Déconnexion</span>
+                  </button>
+                </div>
+              ) : (
+                <Link
+                  href="/login"
+                  className="px-3 py-2 rounded-md text-sm font-medium text-text-secondary hover:bg-border-subtle hover:text-text-primary transition-colors flex items-center gap-1"
+                  style={{ fontWeight: 500 }}
+                >
+                  <LogIn size={16} />
+                  <span className="hidden sm:inline">Connexion</span>
+                </Link>
+              )}
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -163,6 +197,37 @@ export default function Navigation() {
                 {page.label}
               </Link>
             ))}
+            
+            {/* Mobile Auth */}
+            <div className="px-3 py-2 border-t border-border-subtle mt-2 pt-2">
+              {user ? (
+                <div className="space-y-2">
+                  <div className="text-sm text-text-secondary">
+                    Connecté en tant que <span className="text-gold font-medium">{user.name}</span>
+                  </div>
+                  <button
+                    onClick={async () => {
+                      await logout();
+                      setMobileMenuOpen(false);
+                      router.push("/");
+                    }}
+                    className="w-full flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium text-text-secondary hover:bg-border-subtle hover:text-text-primary"
+                  >
+                    <LogOut size={18} />
+                    Déconnexion
+                  </button>
+                </div>
+              ) : (
+                <Link
+                  href="/login"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium text-text-secondary hover:bg-border-subtle hover:text-text-primary"
+                >
+                  <LogIn size={18} />
+                  Connexion
+                </Link>
+              )}
+            </div>
           </div>
         )}
       </div>

@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Target, Trophy, DollarSign, Calendar, CheckCircle, Clock } from "lucide-react";
+import { ArrowRight, Target, Trophy, DollarSign, Calendar, CheckCircle, Clock, Bot, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
 import type { PrimeItem } from "@/types";
+import PrimeBanner from "@/components/PrimeBanner";
 
 export default function HomePage() {
   const [activePrimes, setActivePrimes] = useState<PrimeItem[]>([]);
@@ -76,6 +77,9 @@ export default function HomePage() {
 
   return (
     <div className="relative overflow-hidden">
+      {/* Bannière Primes avec Chrono */}
+      <PrimeBanner />
+      
       {/* Background grid animé */}
       <div className="fixed inset-0 grid-pattern opacity-20 -z-10"></div>
       
@@ -107,7 +111,7 @@ export default function HomePage() {
         {/* Contenu */}
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 py-20 w-full max-w-7xl mx-auto animate-scale-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 uppercase tracking-wide leading-tight animate-slide-up">
-            <span className="text-gradient-animated">Apporteurs d&apos;affaires</span> <span className="text-gold animate-glow-pulse">Nexus</span>
+            <span className="text-text-primary">Apporteurs d&apos;affaires</span> <span className="text-gold">Nexus</span>
           </h1>
           <p className="text-base md:text-lg text-text-secondary max-w-3xl mx-auto mb-8 leading-relaxed">
             Spécialisés pour : avocats, architectes, médical, instituts de formation
@@ -183,6 +187,90 @@ export default function HomePage() {
               Qui est Nexus Circle ?
               <ArrowRight className="ml-2" size={20} />
             </Link>
+          </div>
+        </div>
+
+        {/* Section IA Assistant */}
+        <div className="mb-12">
+          <div className="card border-l-4 border-l-gold">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center">
+                  <Bot className="text-gold" size={24} />
+                </div>
+              </div>
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold text-text-primary mb-3 uppercase tracking-wide">Assistant IA — Entraînez-vous et posez vos questions</h2>
+                <p className="text-text-secondary mb-3 leading-relaxed">
+                  Utilisez notre <strong className="text-text-primary">assistant IA gratuit</strong> disponible en bas à droite de votre écran pour :
+                </p>
+                <ul className="space-y-2 text-text-secondary mb-4">
+                  <li className="flex items-start">
+                    <CheckCircle className="text-gold mr-2 flex-shrink-0 mt-0.5" size={18} />
+                    <span><strong className="text-text-primary">Poser des questions</strong> sur Nexus Circle, nos services, nos cibles, le processus de vente</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="text-gold mr-2 flex-shrink-0 mt-0.5" size={18} />
+                    <span><strong className="text-text-primary">S&apos;entraîner aux cold calls</strong> : simulez des conversations, obtenez des réponses types aux objections fréquentes</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="text-gold mr-2 flex-shrink-0 mt-0.5" size={18} />
+                    <span><strong className="text-text-primary">Analyser des sites web</strong> : donnez une URL d&apos;entreprise et obtenez des recommandations adaptées</span>
+                  </li>
+                </ul>
+                <p className="text-text-secondary text-sm italic">
+                  L&apos;assistant IA est disponible 24/7 et connaît tout sur Nexus Circle, nos 4 cibles (avocats, architectes, médical, instituts de formation) et les meilleures pratiques pour décrocher des rendez-vous.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Section Contact */}
+        <div className="mb-12">
+          <div className="card border-l-4 border-l-gold">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center">
+                  <Phone className="text-gold" size={24} />
+                </div>
+              </div>
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold text-text-primary mb-3 uppercase tracking-wide">Besoin d&apos;aide ? Appelez-nous</h2>
+                <p className="text-text-secondary mb-4 leading-relaxed">
+                  Vous avez une question urgente ? Vous voulez clarifier un point sur un prospect ? <strong className="text-text-primary">Nous sommes disponibles quand vous avez besoin.</strong>
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div className="bg-background-primary rounded-lg p-4 border border-border-subtle">
+                    <div className="flex items-center mb-2">
+                      <Phone className="text-gold mr-2" size={18} />
+                      <span className="text-text-primary font-medium">Pierre</span>
+                    </div>
+                    <a 
+                      href="tel:+33767636173" 
+                      className="text-gold hover:text-gold-hover transition-colors text-lg font-medium"
+                    >
+                      07 67 63 61 73
+                    </a>
+                  </div>
+                  <div className="bg-background-primary rounded-lg p-4 border border-border-subtle">
+                    <div className="flex items-center mb-2">
+                      <Phone className="text-gold mr-2" size={18} />
+                      <span className="text-text-primary font-medium">Vasco</span>
+                    </div>
+                    <a 
+                      href="tel:+33626452165" 
+                      className="text-gold hover:text-gold-hover transition-colors text-lg font-medium"
+                    >
+                      06 26 45 21 65
+                    </a>
+                  </div>
+                </div>
+                <p className="text-text-secondary text-sm">
+                  Cliquez sur le bouton téléphone en bas à gauche de votre écran pour accéder rapidement à nos numéros, ou utilisez les liens ci-dessus pour appeler directement.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 

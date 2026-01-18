@@ -192,8 +192,11 @@ export default function NexusCirclePage() {
         <section className="mb-16">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-text-primary mb-4 uppercase tracking-wide">Nos Cibles Entreprises Prioritaires</h2>
-            <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+            <p className="text-lg text-text-secondary max-w-2xl mx-auto mb-4">
               Nous travaillons avec des structures qui ont des enjeux de crédibilité, du budget et un besoin réel de structuration
+            </p>
+            <p className="text-base text-text-secondary max-w-2xl mx-auto italic">
+              <strong className="text-text-primary">Nous ne sommes pas fermés au marché français uniquement.</strong> Si vous identifiez des opportunités avec des clients étrangers (Suisse, Belgique, Luxembourg, etc.), nous les prenons également.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -4,6 +4,8 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
+import ContactFloating from "@/components/ContactFloating";
+import { AuthProvider } from "@/components/AuthProvider";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -25,12 +27,15 @@ export default function RootLayout({
   return (
     <html lang="fr" className={inter.variable}>
       <body className={inter.className}>
-        <div className="min-h-screen flex flex-col">
-          <Navigation />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-          <Chatbot />
-        </div>
+        <AuthProvider>
+          <div className="min-h-screen flex flex-col">
+            <Navigation />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+            <Chatbot />
+            <ContactFloating />
+          </div>
+        </AuthProvider>
       </body>
     </html>
   );

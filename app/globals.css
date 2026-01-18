@@ -267,9 +267,12 @@
 @layer components {
   /* Cards avec effets futuristes */
   .card {
-    @apply bg-background-secondary/80 backdrop-blur-sm rounded-lg shadow-lg border border-border-subtle p-6 transition-all duration-300;
+    @apply bg-background-secondary rounded-lg shadow-lg border border-border-subtle p-6 transition-all duration-300;
     position: relative;
     overflow: hidden;
+    background: rgba(17, 17, 17, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
   
   .card::before {
@@ -329,10 +332,13 @@
   }
   
   .btn-secondary {
-    @apply bg-background-secondary/80 backdrop-blur-sm text-text-secondary border border-border-subtle px-6 py-3 rounded-lg font-medium inline-flex items-center justify-center;
+    @apply text-text-secondary border border-border-subtle px-6 py-3 rounded-lg font-medium inline-flex items-center justify-center;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    background: rgba(17, 17, 17, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
   
   .btn-secondary::after {
@@ -358,8 +364,11 @@
   
   /* Input futuriste */
   .input-field {
-    @apply w-full px-4 py-2 bg-background-secondary/50 backdrop-blur-sm border border-border-subtle text-text-primary rounded-lg focus:ring-2 focus:ring-gold focus:border-gold outline-none;
+    @apply w-full px-4 py-2 border border-border-subtle text-text-primary rounded-lg focus:ring-2 focus:ring-gold focus:border-gold outline-none;
     transition: all 0.3s ease;
+    background: rgba(17, 17, 17, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
   
   .input-field:focus {

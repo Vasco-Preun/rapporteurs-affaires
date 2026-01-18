@@ -1,21 +1,21 @@
 [
   {
     "id": "1",
-    "title": "Challenge du Mois - Janvier 2026",
-    "description": "Décrochez 5 RDV validés ce mois et gagnez un bonus de 300€",
+    "title": "Prime Premier RDV",
+    "description": "300€ de prime pour votre premier RDV décroché",
     "amount": "300€",
-    "conditions": "Minimum 5 RDV validés avec transmission des coordonnées complètes à Nexus Circle",
-    "status": "active",
-    "startDate": "2026-01-01",
-    "endDate": "2026-01-31"
+    "conditions": "Premier RDV validé et transmis à Nexus Circle",
+    "status": "active"
   },
   {
     "id": "2",
-    "title": "Prime Premier RDV",
-    "description": "Bonus de 100€ pour votre premier RDV décroché",
+    "title": "Prime Tous les 3 RDV",
+    "description": "100€ de prime tous les 3 RDV décrochés",
     "amount": "100€",
-    "conditions": "Premier RDV validé et transmis à Nexus Circle",
-    "status": "active"
+    "conditions": "Tous les 3 RDV validés et transmis à Nexus Circle (ex: 3ème, 6ème, 9ème RDV, etc.)",
+    "status": "active",
+    "startDate": "2026-01-01",
+    "endDate": "2026-02-28"
   }
 ]
 
