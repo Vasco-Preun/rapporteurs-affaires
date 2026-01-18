@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import Groq from "groq-sdk";
+import { scrapePage, extractUrl, isAnalysisRequest } from "@/lib/scraper";
 
 const groq = new Groq({
   apiKey: process.env.GROQ_API_KEY || "",
@@ -41,20 +42,60 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Détecter si c'est une demande d'analyse avec URL
+    const url = extractUrl(message);
+    const isAnalysis = isAnalysisRequest(message);
+    let pageInfo = null;
+
+    if (url && isAnalysis) {
+      // Scraper la page
+      pageInfo = await scrapePage(url);
+    }
+
+    // Construire le message avec les informations de la page si disponible
+    let enhancedMessage = message;
+    if (pageInfo && !pageInfo.error) {
+      enhancedMessage = `${message}
+
+Informations extraites du site ${url}:
+- Titre: ${pageInfo.title}
+- Description: ${pageInfo.description}
+- Titres principaux: ${pageInfo.headings.slice(0, 5).join(', ')}
+- Texte principal: ${pageInfo.mainText.substring(0, 500)}
+- Navigation: ${pageInfo.navigation.slice(0, 5).join(', ')}
+
+Analyse la structure de cette entreprise et propose des recommandations pour un site premium Nexus Circle.`;
+    } else if (pageInfo?.error) {
+      enhancedMessage = `${message}
+
+Note: Impossible d'analyser la page (${pageInfo.error}). Réponds quand même à la question.`;
+    }
+
+    // Prompt système amélioré pour l'analyse
+    const systemPrompt = isAnalysis && pageInfo
+      ? `${SYSTEM_PROMPT}
+
+Tu peux analyser la structure d'entreprises à partir des informations de leurs sites web. Quand on te donne des informations sur une page web, analyse-la pour identifier :
+- Le type d'entreprise (avocat, architecte, médical, institut de formation)
+- Les points forts du site actuel
+- Les opportunités d'amélioration pour un site premium Nexus Circle
+- Comment présenter Nexus Circle à cette entreprise`
+      : SYSTEM_PROMPT;
+
     const completion = await groq.chat.completions.create({
       messages: [
         {
           role: "system",
-          content: SYSTEM_PROMPT,
+          content: systemPrompt,
         },
         {
           role: "user",
-          content: message,
+          content: enhancedMessage,
         },
       ],
       model: "llama-3.1-8b-instant", // Modèle gratuit et rapide de Groq
       temperature: 0.6,
-      max_tokens: 300, // Limite à ~300 tokens pour des réponses plus courtes
+      max_tokens: isAnalysis ? 500 : 300, // Plus de tokens pour les analyses
     });
 
     const response = completion.choices[0]?.message?.content || "Désolé, je n'ai pas pu générer de réponse.";

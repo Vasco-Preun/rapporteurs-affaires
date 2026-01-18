@@ -75,7 +75,10 @@ export default function HomePage() {
   ];
 
   return (
-    <div>
+    <div className="relative overflow-hidden">
+      {/* Background grid animé */}
+      <div className="fixed inset-0 grid-pattern opacity-20 -z-10"></div>
+      
       {/* Hero Section - Full Page */}
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Fond moderne avec gradient et effets */}
@@ -102,9 +105,9 @@ export default function HomePage() {
         </div>
         
         {/* Contenu */}
-        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 py-20 w-full max-w-7xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-text-primary mb-6 uppercase tracking-wide leading-tight">
-            Apporteurs d&apos;affaires <span className="text-gold">Nexus</span>
+        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 py-20 w-full max-w-7xl mx-auto animate-scale-in">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 uppercase tracking-wide leading-tight animate-slide-up">
+            <span className="text-gradient-animated">Apporteurs d&apos;affaires</span> <span className="text-gold animate-glow-pulse">Nexus</span>
           </h1>
           <p className="text-base md:text-lg text-text-secondary max-w-3xl mx-auto mb-8 leading-relaxed">
             Spécialisés pour : avocats, architectes, médical, instituts de formation
@@ -145,9 +148,13 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold text-text-primary mb-8 text-center uppercase tracking-wide">Le Processus</h2>
           
           <div className="space-y-6">
-            {steps.map((step) => (
-              <div key={step.number} className="flex items-start space-x-4 card">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gold text-background-primary flex items-center justify-center font-black text-lg">
+            {steps.map((step, index) => (
+              <div 
+                key={step.number} 
+                className="flex items-start space-x-4 card animate-slide-up"
+                style={{ animationDelay: `${index * 0.1}s`, opacity: 0, animationFillMode: 'forwards' }}
+              >
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gold text-background-primary flex items-center justify-center font-black text-lg animate-glow-pulse">
                   {step.number}
                 </div>
                 <div className="flex-grow">

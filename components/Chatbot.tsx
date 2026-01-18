@@ -25,6 +25,15 @@ export default function Chatbot() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  // Fonction pour convertir le markdown simple en HTML
+  const parseMarkdown = (text: string) => {
+    // Convertir **texte** en <strong>texte</strong>
+    let html = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    // Convertir les retours à la ligne en <br>
+    html = html.split('\n').join('<br>');
+    return { __html: html };
+  };
+
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
@@ -128,7 +137,10 @@ export default function Chatbot() {
                       : "bg-background-secondary text-text-secondary border border-border-subtle"
                   }`}
                 >
-                  <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+                  <div 
+                    className="text-sm whitespace-pre-wrap"
+                    dangerouslySetInnerHTML={parseMarkdown(message.content)}
+                  />
                 </div>
               </div>
             ))}
