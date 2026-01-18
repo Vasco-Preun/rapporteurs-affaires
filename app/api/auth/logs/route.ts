@@ -15,7 +15,7 @@ export async function GET(request: Request) {
     const url = new URL(request.url);
     const limit = parseInt(url.searchParams.get("limit") || "100");
 
-    const logs = getLoginLogs(limit);
+    const logs = await getLoginLogs(limit);
 
     return NextResponse.json({ logs });
   } catch (error) {

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/kv": "^0.2.4",
     "bcryptjs": "^2.4.3",
     "groq-sdk": "^0.37.0",
     "lucide-react": "^0.344.0",

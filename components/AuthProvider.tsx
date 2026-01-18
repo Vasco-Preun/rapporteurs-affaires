@@ -74,6 +74,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         body: JSON.stringify({ email, name, password }),
       });
 
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({ error: "Erreur réseau" }));
+        return { success: false, error: errorData.error || `Erreur ${res.status}` };
+      }
+
       const data = await res.json();
 
       if (data.success) {
@@ -82,8 +87,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       } else {
         return { success: false, error: data.error || "Erreur d'inscription" };
       }
-    } catch (error) {
-      return { success: false, error: "Erreur d'inscription" };
+    } catch (error: any) {
+      console.error("Registration error:", error);
+      return { success: false, error: error.message || "Erreur d'inscription. Vérifiez votre connexion." };
     }
   };
 

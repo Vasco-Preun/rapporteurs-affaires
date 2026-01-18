@@ -13,7 +13,7 @@ export async function GET() {
       return NextResponse.json({ authenticated: false });
     }
 
-    const user = getUserById(session.value);
+    const user = await getUserById(session.value);
 
     if (!user) {
       return NextResponse.json({ authenticated: false });
