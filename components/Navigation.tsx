@@ -25,6 +25,7 @@ export default function Navigation() {
   const { user, logout } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [clientMenuOpen, setClientMenuOpen] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -41,6 +42,20 @@ export default function Navigation() {
       setClientMenuOpen(false);
     }, 150); // Délai de 150ms avant fermeture
   };
+
+  // Vérifier le statut admin
+  useEffect(() => {
+    const checkAdminStatus = async () => {
+      try {
+        const res = await fetch("/api/admin/session");
+        const data = await res.json();
+        setIsAdmin(data.authenticated === true);
+      } catch (error) {
+        setIsAdmin(false);
+      }
+    };
+    checkAdminStatus();
+  }, []);
 
   useEffect(() => {
     return () => {
@@ -122,12 +137,12 @@ export default function Navigation() {
               )}
             </div>
             
-            {/* Admin link (only when logged in) */}
-            {user && (
+            {/* Admin link (only when admin authenticated) */}
+            {isAdmin && (
               <Link
                 href="/admin/logs"
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-1 ${
-                  pathname === "/admin/logs"
+                  pathname.startsWith("/admin")
                     ? "bg-border-subtle text-gold"
                     : "text-text-secondary hover:bg-border-subtle hover:text-text-primary"
                 }`}
@@ -221,18 +236,20 @@ export default function Navigation() {
                   <div className="text-sm text-text-secondary">
                     Connecté en tant que <span className="text-gold font-medium">{user.name}</span>
                   </div>
-                  <Link
-                    href="/admin/logs"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`w-full flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium ${
-                      pathname === "/admin/logs"
-                        ? "bg-border-subtle text-gold"
-                        : "text-text-secondary hover:bg-border-subtle hover:text-text-primary"
-                    }`}
-                  >
-                    <BarChart3 size={18} />
-                    Admin - Connexions
-                  </Link>
+                  {isAdmin && (
+                    <Link
+                      href="/admin/logs"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`w-full flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium ${
+                        pathname.startsWith("/admin")
+                          ? "bg-border-subtle text-gold"
+                          : "text-text-secondary hover:bg-border-subtle hover:text-text-primary"
+                      }`}
+                    >
+                      <BarChart3 size={18} />
+                      Admin - Connexions
+                    </Link>
+                  )}
                   <button
                     onClick={async () => {
                       await logout();

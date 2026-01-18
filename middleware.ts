@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 const SESSION_COOKIE = "partner_session";
+const ADMIN_SESSION_COOKIE = "admin_session";
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -16,12 +17,31 @@ export function middleware(request: NextRequest) {
                        pathname.startsWith("/favicon") ||
                        pathname.match(/\.(ico|png|jpg|jpeg|svg|webp|css|js)$/);
   
+  // Routes admin publiques (login admin)
+  const adminPublicRoutes = ["/admin/login"];
+  const isAdminPublicRoute = adminPublicRoutes.some(route => pathname === route);
+  
   // Si c'est une route publique, statique ou API, laisser passer
-  if (isPublicRoute || isStaticFile || isApiRoute) {
+  if (isPublicRoute || isStaticFile || isApiRoute || isAdminPublicRoute) {
     return NextResponse.next();
   }
   
-  // Vérifier si l'utilisateur est connecté
+  // Protection spéciale pour les routes admin
+  if (pathname.startsWith("/admin")) {
+    const adminSession = request.cookies.get(ADMIN_SESSION_COOKIE);
+    
+    // Si pas de session admin, rediriger vers /admin/login
+    if (!adminSession?.value || adminSession.value !== "authenticated") {
+      const adminLoginUrl = new URL("/admin/login", request.url);
+      adminLoginUrl.searchParams.set("redirect", pathname);
+      return NextResponse.redirect(adminLoginUrl);
+    }
+    
+    // Admin authentifié, continuer
+    return NextResponse.next();
+  }
+  
+  // Pour les autres routes, vérifier si l'utilisateur est connecté (apporteur d'affaires)
   const session = request.cookies.get(SESSION_COOKIE);
   
   // Si pas de session et pas sur une route publique, rediriger vers /login
