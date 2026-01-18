@@ -1,20 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useAuth } from "@/components/AuthProvider";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { LogIn, UserPlus, Mail, Lock, User } from "lucide-react";
 
-export default function LoginPage() {
+function LoginForm() {
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const { login, register } = useAuth();
+  const { login, register, user } = useAuth();
   const router = useRouter();
+  const searchParams = useSearchParams();
+  
+  // Si déjà connecté, rediriger vers la page d'accueil ou la page demandée
+  useEffect(() => {
+    if (user) {
+      const redirect = searchParams.get("redirect") || "/";
+      router.push(redirect);
+    }
+  }, [user, router, searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,7 +44,9 @@ export default function LoginPage() {
       }
 
       if (result.success) {
-        router.push("/");
+        // Rediriger vers la page demandée ou la page d'accueil
+        const redirect = searchParams.get("redirect") || "/";
+        router.push(redirect);
         router.refresh();
       } else {
         setError(result.error || "Une erreur est survenue");
@@ -163,5 +174,17 @@ export default function LoginPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-background-primary px-4">
+        <div className="text-text-secondary">Chargement...</div>
+      </div>
+    }>
+      <LoginForm />
+    </Suspense>
   );
 }

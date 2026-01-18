@@ -14,7 +14,11 @@ if (!useKV && !fs.existsSync(dataDir)) {
 }
 
 const usersKey = "users";
-const loginLogsKey = "login_logs";
+
+// Clé format : apporteur:last_login:<userId>
+function getLastLoginKey(userId: string): string {
+  return `apporteur:last_login:${userId}`;
+}
 
 // Fonctions de stockage abstraites
 export async function readUsersFromStorage(): Promise<any[]> {
@@ -62,50 +66,55 @@ export async function writeUsersToStorage(users: any[]): Promise<void> {
   }
 }
 
-export async function readLoginLogsFromStorage(): Promise<any[]> {
+// Enregistrer la dernière connexion d'un apporteur (seulement lors du login)
+export async function setLastLogin(userId: string): Promise<void> {
+  const lastLogin = {
+    at: new Date().toISOString(),
+  };
+
   if (useKV) {
     try {
-      const logs = await kv.get(loginLogsKey);
-      return logs ? (Array.isArray(logs) ? logs : []) : [];
+      const key = getLastLoginKey(userId);
+      await kv.set(key, lastLogin);
     } catch (error) {
-      console.error("Error reading login logs from KV:", error);
-      return [];
+      console.error("Error setting last login in KV:", error);
+      throw error;
     }
   } else {
-    // Stockage local
-    const loginLogsFile = path.join(dataDir, "login_logs.json");
+    // Stockage local (pour développement)
+    const lastLoginFile = path.join(dataDir, `last_login_${userId}.json`);
     try {
-      if (!fs.existsSync(loginLogsFile)) {
-        return [];
-      }
-      const content = fs.readFileSync(loginLogsFile, "utf8");
-      return JSON.parse(content);
+      fs.writeFileSync(lastLoginFile, JSON.stringify(lastLogin, null, 2), "utf8");
     } catch (error) {
-      console.error("Error reading login logs from file:", error);
-      return [];
+      console.error("Error writing last login to file:", error);
+      throw error;
     }
   }
 }
 
-export async function writeLoginLogsToStorage(logs: any[]): Promise<void> {
-  // Garder seulement les 1000 dernières connexions
-  const recentLogs = logs.slice(-1000);
-  
+// Récupérer la dernière connexion d'un apporteur
+export async function getLastLogin(userId: string): Promise<{ at: string } | null> {
   if (useKV) {
     try {
-      await kv.set(loginLogsKey, recentLogs);
+      const key = getLastLoginKey(userId);
+      const lastLogin = await kv.get<{ at: string }>(key);
+      return lastLogin || null;
     } catch (error) {
-      console.error("Error writing login logs to KV:", error);
-      throw error;
+      console.error("Error getting last login from KV:", error);
+      return null;
     }
   } else {
-    // Stockage local
-    const loginLogsFile = path.join(dataDir, "login_logs.json");
+    // Stockage local (pour développement)
+    const lastLoginFile = path.join(dataDir, `last_login_${userId}.json`);
     try {
-      fs.writeFileSync(loginLogsFile, JSON.stringify(recentLogs, null, 2), "utf8");
+      if (!fs.existsSync(lastLoginFile)) {
+        return null;
+      }
+      const content = fs.readFileSync(lastLoginFile, "utf8");
+      return JSON.parse(content);
     } catch (error) {
-      console.error("Error writing login logs to file:", error);
-      throw error;
+      console.error("Error reading last login from file:", error);
+      return null;
     }
   }
 }

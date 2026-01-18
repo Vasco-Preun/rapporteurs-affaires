@@ -1,8 +1,38 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+const SESSION_COOKIE = "partner_session";
+
 export function middleware(request: NextRequest) {
-  // Plus de protection par mot de passe - toutes les pages sont publiques
+  const { pathname } = request.nextUrl;
+  
+  // Routes publiques (accessibles sans authentification)
+  const publicRoutes = ["/login", "/api/auth"];
+  const isPublicRoute = publicRoutes.some(route => pathname.startsWith(route));
+  
+  // Routes d'API et statiques (toujours accessibles)
+  const isApiRoute = pathname.startsWith("/api");
+  const isStaticFile = pathname.startsWith("/_next") || 
+                       pathname.startsWith("/favicon") ||
+                       pathname.match(/\.(ico|png|jpg|jpeg|svg|webp|css|js)$/);
+  
+  // Si c'est une route publique, statique ou API, laisser passer
+  if (isPublicRoute || isStaticFile || isApiRoute) {
+    return NextResponse.next();
+  }
+  
+  // Vérifier si l'utilisateur est connecté
+  const session = request.cookies.get(SESSION_COOKIE);
+  
+  // Si pas de session et pas sur une route publique, rediriger vers /login
+  if (!session?.value) {
+    const loginUrl = new URL("/login", request.url);
+    // Ajouter l'URL d'origine comme paramètre pour rediriger après connexion
+    loginUrl.searchParams.set("redirect", pathname);
+    return NextResponse.redirect(loginUrl);
+  }
+  
+  // Utilisateur authentifié, continuer
   return NextResponse.next();
 }
 

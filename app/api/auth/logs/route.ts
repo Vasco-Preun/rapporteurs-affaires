@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getLoginLogs } from "@/lib/users";
+import { getAllLastLogins } from "@/lib/users";
 import { isAuthenticated } from "@/lib/auth";
 
 export async function GET(request: Request) {
@@ -12,14 +12,11 @@ export async function GET(request: Request) {
     //   return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
     // }
 
-    const url = new URL(request.url);
-    const limit = parseInt(url.searchParams.get("limit") || "100");
+    const lastLogins = await getAllLastLogins();
 
-    const logs = await getLoginLogs(limit);
-
-    return NextResponse.json({ logs });
+    return NextResponse.json({ lastLogins });
   } catch (error) {
-    console.error("Get logs error:", error);
+    console.error("Get last logins error:", error);
     return NextResponse.json(
       { error: "Une erreur est survenue" },
       { status: 500 }

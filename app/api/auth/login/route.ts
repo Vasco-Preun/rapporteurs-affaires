@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { verifyUser, logLogin } from "@/lib/users";
+import { verifyUser, recordLastLogin } from "@/lib/users";
 import { cookies } from "next/headers";
 
 const SESSION_COOKIE = "partner_session";
@@ -34,11 +34,8 @@ export async function POST(request: NextRequest) {
       maxAge: SESSION_DURATION,
     });
 
-    // Logger la connexion
-    const ip = request.headers.get("x-forwarded-for") || request.headers.get("x-real-ip") || "unknown";
-    const userAgent = request.headers.get("user-agent") || "unknown";
-    
-    await logLogin(result.user.id, result.user.email, result.user.name, ip, userAgent);
+    // Enregistrer la date/heure de dernière connexion (seulement lors du login réussi)
+    await recordLastLogin(result.user.id);
 
     return NextResponse.json({ 
       success: true,

@@ -2,8 +2,8 @@ import bcrypt from "bcryptjs";
 import {
   readUsersFromStorage,
   writeUsersToStorage,
-  readLoginLogsFromStorage,
-  writeLoginLogsToStorage,
+  setLastLogin as setLastLoginStorage,
+  getLastLogin as getLastLoginStorage,
 } from "@/lib/storage";
 
 export interface User {
@@ -15,13 +15,8 @@ export interface User {
   lastLogin?: string;
 }
 
-export interface LoginLog {
-  userId: string;
-  email: string;
-  name: string;
-  timestamp: string;
-  ip?: string;
-  userAgent?: string;
+export interface LastLogin {
+  at: string; // Format ISO: "YYYY-MM-DDTHH:MM:SSZ"
 }
 
 async function readUsers(): Promise<User[]> {
@@ -30,14 +25,6 @@ async function readUsers(): Promise<User[]> {
 
 async function writeUsers(users: User[]): Promise<void> {
   await writeUsersToStorage(users);
-}
-
-async function readLoginLogs(): Promise<LoginLog[]> {
-  return await readLoginLogsFromStorage();
-}
-
-async function writeLoginLogs(logs: LoginLog[]): Promise<void> {
-  await writeLoginLogsToStorage(logs);
 }
 
 export async function createUser(email: string, name: string, password: string): Promise<{ success: boolean; message: string; userId?: string }> {
@@ -85,9 +72,8 @@ export async function verifyUser(email: string, password: string): Promise<{ suc
     return { success: false, message: "Email ou mot de passe incorrect" };
   }
 
-  // Mettre à jour la dernière connexion
-  user.lastLogin = new Date().toISOString();
-  await writeUsers(users);
+  // Note: La dernière connexion est enregistrée dans Vercel KV par recordLastLogin() lors du login
+  // Pas besoin de mettre à jour ici
 
   return { success: true, user };
 }
@@ -101,28 +87,28 @@ export async function getAllUsers(): Promise<User[]> {
   return await readUsers();
 }
 
-export async function logLogin(userId: string, email: string, name: string, ip?: string, userAgent?: string): Promise<void> {
-  const logs = await readLoginLogs();
-  
-  const log: LoginLog = {
-    userId,
-    email,
-    name,
-    timestamp: new Date().toISOString(),
-    ip,
-    userAgent,
-  };
-
-  logs.push(log);
-  await writeLoginLogs(logs);
+// Enregistrer la dernière connexion (appelé uniquement lors du login réussi)
+export async function recordLastLogin(userId: string): Promise<void> {
+  await setLastLoginStorage(userId);
 }
 
-export async function getLoginLogs(limit: number = 100): Promise<LoginLog[]> {
-  const logs = await readLoginLogs();
-  return logs.slice(-limit).reverse(); // Les plus récents en premier
+// Récupérer la dernière connexion d'un apporteur
+export async function getLastLoginForUser(userId: string): Promise<LastLogin | null> {
+  return await getLastLoginStorage(userId);
 }
 
-export async function getLoginLogsByUser(userId: string): Promise<LoginLog[]> {
-  const logs = await readLoginLogs();
-  return logs.filter(log => log.userId === userId).reverse();
+// Récupérer les dernières connexions de tous les apporteurs (pour l'admin)
+export async function getAllLastLogins(): Promise<Array<{ userId: string; lastLogin: LastLogin | null; user?: User }>> {
+  const users = await readUsers();
+  const result = await Promise.all(
+    users.map(async (user) => {
+      const lastLogin = await getLastLoginStorage(user.id);
+      return {
+        userId: user.id,
+        lastLogin,
+        user,
+      };
+    })
+  );
+  return result;
 }
