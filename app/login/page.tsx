@@ -2,7 +2,7 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useAuth } from "@/components/AuthProvider";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { LogIn, UserPlus, Mail, Lock, User } from "lucide-react";
 
@@ -14,16 +14,15 @@ function LoginForm() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const { login, register, user } = useAuth();
-  const router = useRouter();
   const searchParams = useSearchParams();
   
   // Si déjà connecté, rediriger vers la page d'accueil ou la page demandée
   useEffect(() => {
     if (user) {
       const redirect = searchParams.get("redirect") || "/";
-      router.push(redirect);
+      window.location.href = redirect;
     }
-  }, [user, router, searchParams]);
+  }, [user, searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -45,9 +44,9 @@ function LoginForm() {
 
       if (result.success) {
         // Rediriger vers la page demandée ou la page d'accueil
+        // Utiliser window.location pour forcer un rechargement complet et récupérer le cookie
         const redirect = searchParams.get("redirect") || "/";
-        router.push(redirect);
-        router.refresh();
+        window.location.href = redirect;
       } else {
         setError(result.error || "Une erreur est survenue");
       }

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Menu, X, ChevronDown, LogIn, LogOut, User } from "lucide-react";
+import { Menu, X, ChevronDown, LogIn, LogOut, User, BarChart3 } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { useAuth } from "@/components/AuthProvider";
 
@@ -122,6 +122,22 @@ export default function Navigation() {
               )}
             </div>
             
+            {/* Admin link (only when logged in) */}
+            {user && (
+              <Link
+                href="/admin/logs"
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-1 ${
+                  pathname === "/admin/logs"
+                    ? "bg-border-subtle text-gold"
+                    : "text-text-secondary hover:bg-border-subtle hover:text-text-primary"
+                }`}
+                style={{ fontWeight: 500 }}
+              >
+                <BarChart3 size={16} />
+                <span className="hidden sm:inline">Admin</span>
+              </Link>
+            )}
+            
             {/* Auth button */}
             <div className="ml-2">
               {user ? (
@@ -205,6 +221,18 @@ export default function Navigation() {
                   <div className="text-sm text-text-secondary">
                     Connecté en tant que <span className="text-gold font-medium">{user.name}</span>
                   </div>
+                  <Link
+                    href="/admin/logs"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`w-full flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium ${
+                      pathname === "/admin/logs"
+                        ? "bg-border-subtle text-gold"
+                        : "text-text-secondary hover:bg-border-subtle hover:text-text-primary"
+                    }`}
+                  >
+                    <BarChart3 size={18} />
+                    Admin - Connexions
+                  </Link>
                   <button
                     onClick={async () => {
                       await logout();
