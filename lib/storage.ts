@@ -15,9 +15,9 @@ if (!useKV && !fs.existsSync(dataDir)) {
 
 const usersKey = "users";
 
-// Clé format : apporteur:last_login:<userId>
-function getLastLoginKey(userId: string): string {
-  return `apporteur:last_login:${userId}`;
+// Clé format : apporteur:login_history:<userId>
+function getLoginHistoryKey(userId: string): string {
+  return `apporteur:login_history:${userId}`;
 }
 
 // Fonctions de stockage abstraites
@@ -66,55 +66,82 @@ export async function writeUsersToStorage(users: any[]): Promise<void> {
   }
 }
 
-// Enregistrer la dernière connexion d'un apporteur (seulement lors du login)
+// Enregistrer une nouvelle connexion d'un apporteur (ajoute à l'historique)
 export async function setLastLogin(userId: string): Promise<void> {
-  const lastLogin = {
+  const newLogin = {
     at: new Date().toISOString(),
   };
 
   if (useKV) {
     try {
-      const key = getLastLoginKey(userId);
-      await kv.set(key, lastLogin);
+      const key = getLoginHistoryKey(userId);
+      // Récupérer l'historique existant ou créer un nouveau tableau
+      const existingHistory = await kv.get<Array<{ at: string }>>(key) || [];
+      // Ajouter la nouvelle connexion au début du tableau (plus récente en premier)
+      const updatedHistory = [newLogin, ...existingHistory];
+      // Limiter à 1000 connexions max pour éviter de surcharger le stockage
+      const limitedHistory = updatedHistory.slice(0, 1000);
+      await kv.set(key, limitedHistory);
     } catch (error) {
-      console.error("Error setting last login in KV:", error);
+      console.error("Error setting login history in KV:", error);
       throw error;
     }
   } else {
     // Stockage local (pour développement)
-    const lastLoginFile = path.join(dataDir, `last_login_${userId}.json`);
+    const historyFile = path.join(dataDir, `login_history_${userId}.json`);
     try {
-      fs.writeFileSync(lastLoginFile, JSON.stringify(lastLogin, null, 2), "utf8");
+      // Récupérer l'historique existant ou créer un nouveau tableau
+      let existingHistory: Array<{ at: string }> = [];
+      if (fs.existsSync(historyFile)) {
+        const content = fs.readFileSync(historyFile, "utf8");
+        existingHistory = JSON.parse(content) || [];
+      }
+      // Ajouter la nouvelle connexion au début du tableau
+      const updatedHistory = [newLogin, ...existingHistory];
+      // Limiter à 1000 connexions max
+      const limitedHistory = updatedHistory.slice(0, 1000);
+      fs.writeFileSync(historyFile, JSON.stringify(limitedHistory, null, 2), "utf8");
     } catch (error) {
-      console.error("Error writing last login to file:", error);
+      console.error("Error writing login history to file:", error);
       throw error;
     }
   }
 }
 
-// Récupérer la dernière connexion d'un apporteur
+// Récupérer la dernière connexion d'un apporteur (pour compatibilité)
 export async function getLastLogin(userId: string): Promise<{ at: string } | null> {
+  const history = await getLoginHistory(userId);
+  if (!history || history.length === 0) {
+    return null;
+  }
+  // Retourner la première connexion (la plus récente)
+  return history[0];
+}
+
+// Récupérer tout l'historique de connexions d'un apporteur
+export async function getLoginHistory(userId: string): Promise<Array<{ at: string }>> {
   if (useKV) {
     try {
-      const key = getLastLoginKey(userId);
-      const lastLogin = await kv.get<{ at: string }>(key);
-      return lastLogin || null;
+      const key = getLoginHistoryKey(userId);
+      const history = await kv.get<Array<{ at: string }>>(key);
+      return history || [];
     } catch (error) {
-      console.error("Error getting last login from KV:", error);
-      return null;
+      console.error("Error getting login history from KV:", error);
+      return [];
     }
   } else {
     // Stockage local (pour développement)
-    const lastLoginFile = path.join(dataDir, `last_login_${userId}.json`);
+    const historyFile = path.join(dataDir, `login_history_${userId}.json`);
     try {
-      if (!fs.existsSync(lastLoginFile)) {
-        return null;
+      if (!fs.existsSync(historyFile)) {
+        return [];
       }
-      const content = fs.readFileSync(lastLoginFile, "utf8");
-      return JSON.parse(content);
+      const content = fs.readFileSync(historyFile, "utf8");
+      const history = JSON.parse(content);
+      return Array.isArray(history) ? history : [];
     } catch (error) {
-      console.error("Error reading last login from file:", error);
-      return null;
+      console.error("Error reading login history from file:", error);
+      return [];
     }
   }
 }

@@ -4,6 +4,7 @@ import {
   writeUsersToStorage,
   setLastLogin as setLastLoginStorage,
   getLastLogin as getLastLoginStorage,
+  getLoginHistory as getLoginHistoryStorage,
 } from "@/lib/storage";
 
 export interface User {
@@ -16,6 +17,10 @@ export interface User {
 }
 
 export interface LastLogin {
+  at: string; // Format ISO: "YYYY-MM-DDTHH:MM:SSZ"
+}
+
+export interface LoginHistory {
   at: string; // Format ISO: "YYYY-MM-DDTHH:MM:SSZ"
 }
 
@@ -105,6 +110,24 @@ export async function getAllLastLogins(): Promise<Array<{ userId: string; lastLo
       const lastLogin = await getLastLoginStorage(user.id);
       return {
         userId: user.id,
+        lastLogin,
+        user,
+      };
+    })
+  );
+  return result;
+}
+
+// Récupérer l'historique complet de connexions de tous les apporteurs (pour l'admin)
+export async function getAllLoginHistories(): Promise<Array<{ userId: string; loginHistory: LoginHistory[]; lastLogin: LastLogin | null; user?: User }>> {
+  const users = await readUsers();
+  const result = await Promise.all(
+    users.map(async (user) => {
+      const loginHistory = await getLoginHistoryStorage(user.id);
+      const lastLogin = loginHistory.length > 0 ? loginHistory[0] : null;
+      return {
+        userId: user.id,
+        loginHistory,
         lastLogin,
         user,
       };
