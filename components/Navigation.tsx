@@ -137,21 +137,19 @@ export default function Navigation() {
               )}
             </div>
             
-            {/* Admin link (only when admin authenticated) */}
-            {isAdmin && (
-              <Link
-                href="/admin/logs"
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-1 ${
-                  pathname.startsWith("/admin")
-                    ? "bg-border-subtle text-gold"
-                    : "text-text-secondary hover:bg-border-subtle hover:text-text-primary"
-                }`}
-                style={{ fontWeight: 500 }}
-              >
-                <BarChart3 size={16} />
-                <span className="hidden sm:inline">Admin</span>
-              </Link>
-            )}
+            {/* Admin link (always visible, protected by middleware) */}
+            <Link
+              href="/admin/logs"
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-1 ${
+                pathname.startsWith("/admin")
+                  ? "bg-border-subtle text-gold"
+                  : "text-text-secondary hover:bg-border-subtle hover:text-text-primary"
+              }`}
+              style={{ fontWeight: 500 }}
+            >
+              <BarChart3 size={16} />
+              <span className="hidden sm:inline">Admin</span>
+            </Link>
             
             {/* Auth button */}
             <div className="ml-2">
@@ -236,20 +234,18 @@ export default function Navigation() {
                   <div className="text-sm text-text-secondary">
                     Connecté en tant que <span className="text-gold font-medium">{user.name}</span>
                   </div>
-                  {isAdmin && (
-                    <Link
-                      href="/admin/logs"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className={`w-full flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium ${
-                        pathname.startsWith("/admin")
-                          ? "bg-border-subtle text-gold"
-                          : "text-text-secondary hover:bg-border-subtle hover:text-text-primary"
-                      }`}
-                    >
-                      <BarChart3 size={18} />
-                      Admin - Connexions
-                    </Link>
-                  )}
+                  <Link
+                    href="/admin/logs"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`w-full flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium ${
+                      pathname.startsWith("/admin")
+                        ? "bg-border-subtle text-gold"
+                        : "text-text-secondary hover:bg-border-subtle hover:text-text-primary"
+                    }`}
+                  >
+                    <BarChart3 size={18} />
+                    Admin - Connexions
+                  </Link>
                   <button
                     onClick={async () => {
                       await logout();
