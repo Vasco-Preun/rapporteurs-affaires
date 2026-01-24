@@ -7,6 +7,35 @@ import type { PrimeItem } from "@/types";
 import PrimeBanner from "@/components/PrimeBanner";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
+// Composant pour chaque étape du processus avec animation
+function ProcessStep({ step, index }: { step: { number: number; title: string; description: string }; index: number }) {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+  
+  return (
+    <div 
+      ref={ref}
+      className="process-step-card"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+        transition: `opacity 0.6s ease-out ${index * 0.15}s, transform 0.6s ease-out ${index * 0.15}s`
+      }}
+    >
+      <div className="flex items-start space-x-4">
+        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gold text-background-primary flex items-center justify-center font-black text-lg animate-glow-pulse">
+          {step.number}
+        </div>
+        <div className="flex-grow">
+          <h3 className="text-xl font-bold mb-2 uppercase tracking-wide text-text-primary">
+            {step.title}
+          </h3>
+          <p className="text-text-secondary">{step.description}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function HomePage() {
   const [activePrimes, setActivePrimes] = useState<PrimeItem[]>([]);
   const [primesLoaded, setPrimesLoaded] = useState(false);
@@ -153,33 +182,9 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold text-text-primary mb-8 text-center uppercase tracking-wide">Le Processus</h2>
           
           <div className="space-y-6">
-            {steps.map((step, index) => {
-              const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
-              return (
-                <div 
-                  key={step.number} 
-                  ref={ref}
-                  className="process-step-card"
-                  style={{
-                    opacity: isVisible ? 1 : 0,
-                    transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-                    transition: `opacity 0.6s ease-out ${index * 0.15}s, transform 0.6s ease-out ${index * 0.15}s`
-                  }}
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gold text-background-primary flex items-center justify-center font-black text-lg animate-glow-pulse">
-                      {step.number}
-                    </div>
-                    <div className="flex-grow">
-                      <h3 className="text-xl font-bold mb-2 uppercase tracking-wide text-text-primary">
-                        {step.title}
-                      </h3>
-                      <p className="text-text-secondary">{step.description}</p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+            {steps.map((step, index) => (
+              <ProcessStep key={step.number} step={step} index={index} />
+            ))}
           </div>
         </div>
 
