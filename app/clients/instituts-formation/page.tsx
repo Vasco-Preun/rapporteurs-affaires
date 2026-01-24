@@ -57,7 +57,7 @@ export default function ClientsInstitutsFormationPage() {
             {[
               {
                 icon: <Target className="text-gold" size={32} />,
-                title: "Principal outil d&apos;inscription",
+                title: "Le site comme canal principal",
                 description: "Le site est votre premier canal de conversion. Un site optimisé transforme vos visiteurs en inscriptions, que ce soit via SEO, publicités ou CPF."
               },
               {
@@ -71,7 +71,7 @@ export default function ClientsInstitutsFormationPage() {
                 description: "Structuration claire des prérequis, formats, financements et profils. Moins de demandes non qualifiées, plus d'inscriptions pertinentes."
               }
             ].map((benefit, idx) => (
-              <div key={idx} className="card">
+              <div key={idx} className="process-step-card">
                 <div className="flex flex-col items-center text-center">
                   <div className="mb-4">{benefit.icon}</div>
                   <h3 className="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">{benefit.title}</h3>
@@ -93,7 +93,7 @@ export default function ClientsInstitutsFormationPage() {
                 description: "Dans un marché très concurrentiel, un site structurant qui présente clairement vos formations, parcours et certifications vous distingue."
               }
             ].map((benefit, idx) => (
-              <div key={idx} className="card">
+              <div key={idx} className="process-step-card">
                 <div className="flex flex-col items-center text-center">
                   <div className="mb-4">{benefit.icon}</div>
                   <h3 className="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">{benefit.title}</h3>
@@ -110,7 +110,7 @@ export default function ClientsInstitutsFormationPage() {
           <p className="text-lg text-text-secondary mb-8 text-center max-w-3xl mx-auto">
             Les fonctionnalités clés à mentionner quand tu présentes notre offre
           </p>
-          <div className="card">
+          <div className="process-step-card">
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
                 "Structuration claire de l'offre de formation",
@@ -135,7 +135,7 @@ export default function ClientsInstitutsFormationPage() {
 
         {/* Arguments à utiliser */}
         <section className="mb-16">
-          <div className="card border-l-4 border-l-gold">
+          <div className="process-step-card" style={{ borderLeft: '4px solid #C7B38A' }}>
             <div className="flex items-start gap-4">
               <TrendingUp className="text-gold flex-shrink-0 mt-1" size={40} />
               <div className="flex-1">
@@ -156,7 +156,7 @@ export default function ClientsInstitutsFormationPage() {
 
         {/* CTA */}
         <section className="mb-12 text-center">
-          <div className="card border-gold/30">
+          <div className="process-step-card" style={{ borderColor: 'rgba(199, 179, 138, 0.3)' }}>
             <h3 className="text-2xl font-bold mb-4 text-text-primary uppercase tracking-wide">Prêt à décrocher des rendez-vous ?</h3>
             <p className="text-text-secondary mb-6 max-w-2xl mx-auto">
               Maintenant que tu connais les arguments pour les instituts de formation, découvre comment présenter Nexus Circle et décrocher des rendez-vous.

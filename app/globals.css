@@ -241,6 +241,7 @@
 
 .animate-slide-up {
   animation: slide-in-up 0.6s ease-out forwards;
+  animation-fill-mode: forwards;
 }
 
 .animate-slide-left {
@@ -266,7 +267,7 @@
 
 @layer components {
   /* Cards avec effets futuristes */
-  .card {
+  .card:not(.card-no-hover) {
     @apply bg-background-secondary rounded-lg shadow-lg border border-border-subtle p-6 transition-all duration-300;
     position: relative;
     overflow: hidden;
@@ -275,7 +276,7 @@
     -webkit-backdrop-filter: blur(10px);
   }
   
-  .card::before {
+  .card:not(.card-no-hover)::before {
     content: '';
     position: absolute;
     top: 0;
@@ -286,11 +287,11 @@
     transition: left 0.5s;
   }
   
-  .card:hover::before {
+  .card:not(.card-no-hover):hover::before {
     left: 100%;
   }
   
-  .card:hover {
+  .card:not(.card-no-hover):hover {
     @apply shadow-2xl border-gold/50;
     transform: translateY(-4px) scale(1.02);
     animation: glow-pulse 2s ease-in-out infinite;
@@ -391,6 +392,182 @@
       linear-gradient(90deg, rgba(199, 179, 138, 0.1) 1px, transparent 1px);
     background-size: 50px 50px;
     animation: grid-pulse 4s ease-in-out infinite;
+  }
+  
+  /* Carte sans effet hover - désactive TOUS les effets */
+  .card-no-hover {
+    @apply bg-background-secondary rounded-lg border border-border-subtle p-6;
+    transition: none !important;
+    position: relative !important;
+    overflow: visible !important;
+    background: rgba(17, 17, 17, 0.8) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: auto !important;
+  }
+  
+  /* Désactiver complètement le pseudo-élément ::before */
+  .card-no-hover::before {
+    content: '' !important;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 0 !important;
+    height: 0 !important;
+    z-index: -1 !important;
+  }
+  
+  .card-no-hover:hover {
+    transform: none !important;
+    scale: 1 !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+    border-color: rgba(199, 179, 138, 0.1) !important;
+    animation: none !important;
+    transition: none !important;
+    translate: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background: rgba(17, 17, 17, 0.8) !important;
+    overflow: visible !important;
+  }
+  
+  .card-no-hover:hover::before {
+    content: '' !important;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 0 !important;
+    height: 0 !important;
+    z-index: -1 !important;
+  }
+  
+  /* S'assurer que le contenu reste visible */
+  .card-no-hover > * {
+    position: relative !important;
+    z-index: 1 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  .card-no-hover:hover > * {
+    position: relative !important;
+    z-index: 1 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* Classe complètement isolée pour les cartes du processus - AUCUN effet */
+  .process-step-card {
+    background-color: rgba(17, 17, 17, 0.8) !important;
+    border-radius: 0.5rem !important;
+    border: 1px solid rgba(199, 179, 138, 0.1) !important;
+    padding: 1.5rem !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    overflow: visible !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+    pointer-events: auto !important;
+    z-index: auto !important;
+    animation: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  .process-step-card::before {
+    display: none !important;
+    content: '' !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    z-index: -999 !important;
+  }
+  
+  .process-step-card::after {
+    display: none !important;
+    content: '' !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    z-index: -999 !important;
+  }
+  
+  .process-step-card:hover {
+    background-color: rgba(17, 17, 17, 0.8) !important;
+    border-radius: 0.5rem !important;
+    border: 1px solid rgba(199, 179, 138, 0.1) !important;
+    padding: 1.5rem !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    overflow: visible !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+    pointer-events: auto !important;
+    z-index: auto !important;
+    animation: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    scale: 1 !important;
+    translate: none !important;
+  }
+  
+  .process-step-card:hover::before {
+    display: none !important;
+    content: '' !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    z-index: -999 !important;
+  }
+  
+  .process-step-card:hover::after {
+    display: none !important;
+    content: '' !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    z-index: -999 !important;
+  }
+  
+  .process-step-card > * {
+    position: relative !important;
+    z-index: 1 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  .process-step-card:hover > * {
+    position: relative !important;
+    z-index: 1 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 }
 
